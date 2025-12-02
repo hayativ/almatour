@@ -11,8 +11,8 @@ from rest_framework.serializers import (
     Serializer, 
     ListField, 
     CharField,
+    BooleanField,
 )
-
 
 # Project modules
 from .models import (
@@ -25,8 +25,7 @@ from apps.users.models import (
     CustomUser,
 )
 
-
-class OrderCreateResponse400Serializer(Serializer):
+class OrderCreate400Serializer(Serializer):
     """
     Serializer for unsuccessful order creation responses.
     """
@@ -36,7 +35,7 @@ class OrderCreateResponse400Serializer(Serializer):
         fields = ("cart_items",)
 
 
-class OrderCreateResponse404Serializer(Serializer):
+class OrderCreate404Serializer(Serializer):
     """
     Serializer for unsuccessful order creation responses.
     """
@@ -58,10 +57,12 @@ class OrderCreateResponse404Serializer(Serializer):
             "delivery_address",
             )
 
+
 class HTTP405MethodNotAllowedSerializer(Serializer):
     """
     Serializer for HTTP 405 Method Not Allowed response.
     """
+
     detail = CharField()
 
     class Meta:
@@ -69,6 +70,123 @@ class HTTP405MethodNotAllowedSerializer(Serializer):
         fileds = (
             "detail",
         )
+
+
+class HTTP403PermissionDeniedSerializer(Serializer):
+    """
+    Serializer for HTTP 403 Permission Denied response.
+    """
+
+    detail = CharField()
+
+    class Meta:
+        fields = ("detail",)
+
+
+
+class ReviewCreate400Serializer(Serializer):
+    """
+    Serializer for Review create 400 responses (validation errors).
+    """
+
+    product = ListField(child=CharField(), required=False)
+    rate = ListField(child=CharField(), required=False)
+    text = ListField(child=CharField(), required=False)
+
+    class Meta:
+        fields = ("product", "rate", "text")
+
+
+class Review404Serializer(Serializer):
+    """
+    Serializer for Review related 404 responses (e.g., product not found).
+    """
+
+    detail = CharField()
+
+    class Meta:
+        fields = ("detail",)
+
+
+class CartItemList403Serializer(Serializer):
+    """
+    Serializer for CartItem list 403 responses (permission denied).
+    """
+
+    detail = CharField()
+
+    class Meta:
+        fields = ("detail",)
+
+
+class CartItemRetrieve404Serializer(Serializer):
+    """
+    Serializer for CartItem retrieve 404 responses (cart/user not found).
+    """
+
+    pk = ListField(child=CharField(), required=False)
+    detail = CharField(required=False)
+
+    class Meta:
+        fields = ("pk", "detail")
+
+
+class CartItemCreate400Serializer(Serializer):
+    """
+    Serializer for CartItem create 400 responses.
+    """
+
+    product = ListField(child=CharField(), required=False)
+    products = ListField(child=CharField(), required=False)
+    store_product = ListField(child=CharField(), required=False)
+    quantity = ListField(child=CharField(), required=False)
+
+    class Meta:
+        fields = ("product", "products", "store_product", "quantity")
+
+
+class CartItemPartialUpdate404Serializer(Serializer):
+    """
+    Serializer for partial_update 404 responses (CartItem not found).
+    """
+
+    pk = ListField(child=CharField())
+
+    class Meta:
+        fields = ("pk",)
+
+
+class CartItemDestroy404Serializer(Serializer):
+    """
+    Serializer for destroy 404 responses (CartItem not found).
+    """
+
+    pk = ListField(child=CharField())
+
+    class Meta:
+        fields = ("pk",)
+
+
+class OrderListGet403Serializer(Serializer):
+    """
+    Serializer for Order list 403 responses (permission denied).
+    """
+
+    detail = CharField()
+
+    class Meta:
+        fields = ("detail",)
+
+
+class OrderListGet404Serializer(Serializer):
+    """
+    Serializer for Order list 404 responses (user not found).
+    """
+    
+    detail = CharField()
+
+    class Meta:
+        fields = ("detail",)
 
 
 class ReviewSerializer(ModelSerializer):

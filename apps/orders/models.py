@@ -13,14 +13,23 @@ from django.db.models import (
     PositiveSmallIntegerField,
     PositiveIntegerField,
     PROTECT,
+    Manager,
 )
 from django.contrib.auth import get_user_model
 from django.core.validators import RegexValidator
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.core.exceptions import ValidationError
 
 # Project modules
 from apps.products.models import Product, StoreProductRelation
 from apps.abstracts.models import AbstractBaseModel
+
+
+class SoftDeleteManager(Manager):
+    """Manager that excludes soft-deleted objects."""
+    
+    def get_queryset(self):
+        return super().get_queryset().filter(deleted_at__isnull=True)
 
 
 class CartItemQuerySet(QuerySet):
@@ -37,6 +46,14 @@ class CartItemQuerySet(QuerySet):
         if self:
             return sum(cart_item.quantity for cart_item in self)
         return 0.0
+
+
+class CartItemManager(Manager):
+    """Cart Item Manager with soft delete filtering."""
+    
+    def get_queryset(self):
+        """Filter out soft-deleted objects."""
+        return CartItemQuerySet(self.model, using=self._db).filter(deleted_at__isnull=True)
 
 
 class CartItem(AbstractBaseModel):
@@ -65,7 +82,8 @@ class CartItem(AbstractBaseModel):
         verbose_name="Quantity"
     )
 
-    objects = CartItemQuerySet().as_manager()
+    objects = CartItemManager()
+    all_objects = Manager()
 
     class Meta:
         """Meta class."""
@@ -76,6 +94,10 @@ class CartItem(AbstractBaseModel):
     def __str__(self) -> str:
         """Magic method."""
         return f"{self.user.username}'s cart"
+
+    def delete(self, *args, **kwargs):
+        """Override delete to perform soft delete."""
+        self.soft_delete()
 
 
 class Order(AbstractBaseModel):
@@ -120,6 +142,9 @@ class Order(AbstractBaseModel):
         verbose_name="Order's status",
     )
 
+    objects = SoftDeleteManager()
+    all_objects = Manager()
+
     class Meta:
         """Meta class."""
 
@@ -130,6 +155,32 @@ class Order(AbstractBaseModel):
         """Magic str method."""
         return (f"Order № {self.pk}"
                 f" User: {self.user.username}")
+
+    def clean(self):
+        """Validate the model."""
+        super().clean()
+        # Phone number validation
+        if self.phone_number:
+            if not self.phone_number.startswith('+'):
+                raise ValidationError("Phone number must start with +")
+            digits = self.phone_number[1:]
+            if not digits.isdigit():
+                raise ValidationError("Phone number must contain only digits after +")
+            if len(digits) < 9 or len(digits) > 15:
+                raise ValidationError("Phone number must have between 9 and 15 digits")
+        
+        # Delivery address validation
+        if not self.delivery_address or not self.delivery_address.strip():
+            raise ValidationError("Delivery address cannot be empty")
+
+    def save(self, *args, **kwargs):
+        """Override save to call full_clean."""
+        self.full_clean()
+        super().save(*args, **kwargs)
+
+    def delete(self, *args, **kwargs):
+        """Override delete to perform soft delete."""
+        self.soft_delete()
 
 
 class OrderItem(AbstractBaseModel):
@@ -166,6 +217,9 @@ class OrderItem(AbstractBaseModel):
         verbose_name="Ordered quantity",
     )
 
+    objects = SoftDeleteManager()
+    all_objects = Manager()
+
     class Meta:
         """Meta class."""
 
@@ -175,6 +229,10 @@ class OrderItem(AbstractBaseModel):
     def __str__(self) -> str:
         """Magic str method."""
         return f"Order Item from order: {self.order.id}"
+
+    def delete(self, *args, **kwargs):
+        """Override delete to perform soft delete."""
+        self.soft_delete()
 
 
 class Review(AbstractBaseModel):
@@ -206,6 +264,9 @@ class Review(AbstractBaseModel):
     )
     text = TextField(verbose_name="Reviews's text")
 
+    objects = SoftDeleteManager()
+    all_objects = Manager()
+
     class Meta:
         """Meta class."""
 
@@ -214,5 +275,19 @@ class Review(AbstractBaseModel):
 
     def __str__(self) -> str:
         """Magic str method."""
-        return f'Comment from author {self.author.username}'
-        
+        return f'Comment from author {self.user.username}'
+
+    def clean(self):
+        """Validate the model."""
+        super().clean()
+        if not self.text or not self.text.strip():
+            raise ValidationError("Review text cannot be empty")
+
+    def save(self, *args, **kwargs):
+        """Override save to call full_clean."""
+        self.full_clean()
+        super().save(*args, **kwargs)
+
+    def delete(self, *args, **kwargs):
+        """Override delete to perform soft delete."""
+        self.soft_delete()
