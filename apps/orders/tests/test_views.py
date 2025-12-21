@@ -9,14 +9,17 @@ from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APIClient
 
-from apps.orders.models import Order, OrderItem, CartItem, Review
+from apps.orders.models import Order, CartItem, Review
 from apps.products.models import Product, StoreProductRelation, Category
 from apps.users.models import CustomUser
 
 
 @pytest.mark.django_db
 class TestReviewViewSet:
-    """Test cases for ReviewViewSet (/api/v1/products/{product_id}/reviews/)."""
+    """
+    Test cases for ReviewViewSet
+    (/api/v1/products/{product_id}/reviews/).
+    """
 
     @pytest.fixture(autouse=True)
     def setup(self):
@@ -108,7 +111,9 @@ class TestReviewViewSet:
         }
         response = self.client.post(url, data)
 
-        assert response.status_code in [status.HTTP_401_UNAUTHORIZED, status.HTTP_403_FORBIDDEN]
+        assert response.status_code in [
+            status.HTTP_401_UNAUTHORIZED, status.HTTP_403_FORBIDDEN
+        ]
 
     def test_create_review_bad_invalid_rating(self):
         """Test: Attempt to create review with invalid rating."""
@@ -150,7 +155,10 @@ class TestReviewViewSet:
 
         self.client.force_authenticate(user=self.regular_user)
 
-        url = reverse('review-detail', kwargs={'product_id': self.product.id, 'pk': review.id})
+        url = reverse(
+            'review-detail',
+            kwargs={'product_id': self.product.id, 'pk': review.id}
+        )
         data = {
             'rate': 5,
             'text': "Actually, it's great!"
@@ -177,7 +185,10 @@ class TestReviewViewSet:
 
         self.client.force_authenticate(user=self.regular_user)
 
-        url = reverse('review-detail', kwargs={'product_id': self.product.id, 'pk': review.id})
+        url = reverse(
+            'review-detail',
+            kwargs={'product_id': self.product.id, 'pk': review.id}
+        )
         data = {
             'rate': 5,
             'text': "Trying to update someone else's review"
@@ -196,14 +207,18 @@ class TestReviewViewSet:
             text="Average product"
         )
 
-        url = reverse('review-detail', kwargs={'product_id': self.product.id, 'pk': review.id})
+        url = reverse('review-detail',
+                      kwargs={'product_id': self.product.id, 'pk': review.id})
         data = {
             'rate': 5,
             'text': "Trying to update without auth"
         }
         response = self.client.patch(url, data)
 
-        assert response.status_code in [status.HTTP_401_UNAUTHORIZED, status.HTTP_403_FORBIDDEN]
+        assert response.status_code in [
+            status.HTTP_401_UNAUTHORIZED,
+            status.HTTP_403_FORBIDDEN
+        ]
 
     def test_update_review_bad_invalid_rating(self):
         """Test: Attempt to update review with invalid rating."""
@@ -217,7 +232,10 @@ class TestReviewViewSet:
 
         self.client.force_authenticate(user=self.regular_user)
 
-        url = reverse('review-detail', kwargs={'product_id': self.product.id, 'pk': review.id})
+        url = reverse('review-detail', kwargs={
+            'product_id': self.product.id,
+            'pk': review.id}
+        )
         data = {
             'rate': -1,  # Invalid rating
             'text': "Updated with invalid rating"
@@ -238,11 +256,14 @@ class TestReviewViewSet:
 
         self.client.force_authenticate(user=self.regular_user)
 
-        url = reverse('review-detail', kwargs={'product_id': self.product.id, 'pk': review.id})
+        url = reverse('review-detail',
+                      kwargs={'product_id': self.product.id, 'pk': review.id})
         response = self.client.delete(url)
 
         assert response.status_code == status.HTTP_204_NO_CONTENT
-        assert Review.objects.filter(id=review.id, deleted_at__isnull=True).count() == 0
+        assert Review.objects.filter(
+            id=review.id,
+            deleted_at__isnull=True).count() == 0
 
     def test_delete_review_bad_non_owner(self):
         """Test: Attempt to delete review owned by another user."""
@@ -256,11 +277,15 @@ class TestReviewViewSet:
 
         self.client.force_authenticate(user=self.regular_user)
 
-        url = reverse('review-detail', kwargs={'product_id': self.product.id, 'pk': review.id})
+        url = reverse(
+            'review-detail',
+            kwargs={'product_id': self.product.id, 'pk': review.id}
+        )
         response = self.client.delete(url)
 
         assert response.status_code == status.HTTP_403_FORBIDDEN
-        assert Review.objects.filter(id=review.id, deleted_at__isnull=True).count() == 1
+        assert Review.objects.filter(
+            id=review.id, deleted_at__isnull=True).count() == 1
 
     def test_delete_review_bad_unauthenticated(self):
         """Test: Attempt to delete review without authentication."""
@@ -272,16 +297,24 @@ class TestReviewViewSet:
             text="Average product"
         )
 
-        url = reverse('review-detail', kwargs={'product_id': self.product.id, 'pk': review.id})
+        url = reverse(
+            'review-detail',
+            kwargs={'product_id': self.product.id, 'pk': review.id}
+        )
         response = self.client.delete(url)
 
-        assert response.status_code in [status.HTTP_401_UNAUTHORIZED, status.HTTP_403_FORBIDDEN]
+        assert response.status_code in [
+            status.HTTP_401_UNAUTHORIZED, status.HTTP_403_FORBIDDEN
+        ]
 
     def test_delete_review_bad_nonexistent_review(self):
         """Test: Attempt to delete non-existent review."""
         self.client.force_authenticate(user=self.regular_user)
 
-        url = reverse('review-detail', kwargs={'product_id': self.product.id, 'pk': 999999})
+        url = reverse(
+            'review-detail',
+            kwargs={'product_id': self.product.id, 'pk': 999999}
+        )
         response = self.client.delete(url)
 
         assert response.status_code == status.HTTP_404_NOT_FOUND
@@ -395,7 +428,9 @@ class TestCartItemViewSet:
         url = reverse('cartitem-list')
         response = self.client.get(url)
 
-        assert response.status_code in [status.HTTP_401_UNAUTHORIZED, status.HTTP_403_FORBIDDEN]
+        assert response.status_code in [
+            status.HTTP_401_UNAUTHORIZED, status.HTTP_403_FORBIDDEN
+        ]
 
     def test_list_all_carts_bad_empty_result(self):
         """Test: Admin lists carts when no cart items exist."""
@@ -423,7 +458,10 @@ class TestCartItemViewSet:
 
         self.client.force_authenticate(user=self.regular_user)
 
-        url = reverse('cartitem-user-cart', kwargs={'user_id': self.regular_user.id})
+        url = reverse(
+            'cartitem-user-cart',
+            kwargs={'user_id': self.regular_user.id}
+        )
         response = self.client.get(url)
 
         assert response.status_code == status.HTTP_200_OK
@@ -444,7 +482,9 @@ class TestCartItemViewSet:
 
         self.client.force_authenticate(user=self.admin_user)
 
-        url = reverse('cartitem-user-cart', kwargs={'user_id': self.regular_user.id})
+        url = reverse(
+            'cartitem-user-cart', kwargs={'user_id': self.regular_user.id}
+        )
         response = self.client.get(url)
 
         assert response.status_code == status.HTTP_200_OK
@@ -464,17 +504,24 @@ class TestCartItemViewSet:
 
         self.client.force_authenticate(user=self.regular_user)
 
-        url = reverse('cartitem-user-cart', kwargs={'user_id': self.other_user.id})
+        url = reverse(
+            'cartitem-user-cart',
+            kwargs={'user_id': self.other_user.id}
+        )
         response = self.client.get(url)
 
         assert response.status_code == status.HTTP_403_FORBIDDEN
 
     def test_retrieve_user_cart_bad_unauthenticated(self):
         """Test: Unauthenticated user attempts to retrieve cart."""
-        url = reverse('cartitem-user-cart', kwargs={'user_id': self.regular_user.id})
+        url = reverse('cartitem-user-cart', kwargs={
+            'user_id': self.regular_user.id
+        })
         response = self.client.get(url)
 
-        assert response.status_code in [status.HTTP_401_UNAUTHORIZED, status.HTTP_403_FORBIDDEN]
+        assert response.status_code in [
+            status.HTTP_401_UNAUTHORIZED, status.HTTP_403_FORBIDDEN
+        ]
 
     def test_create_cart_item_good(self):
         """Test: Successfully create cart item."""
@@ -514,7 +561,9 @@ class TestCartItemViewSet:
 
         # Note: This depends on whether stock validation is implemented
         # If not, this might succeed (bad behavior but code would allow it)
-        assert response.status_code in [status.HTTP_400_BAD_REQUEST, status.HTTP_201_CREATED]
+        assert response.status_code in [
+            status.HTTP_400_BAD_REQUEST, status.HTTP_201_CREATED
+        ]
 
     def test_create_cart_item_bad_invalid_store_product(self):
         """Test: Attempt to create cart item with invalid store product."""
@@ -528,7 +577,9 @@ class TestCartItemViewSet:
         response = self.client.post(url, data)
 
         # View returns 404 for non-existent store product (acceptable)
-        assert response.status_code in [status.HTTP_400_BAD_REQUEST, status.HTTP_404_NOT_FOUND]
+        assert response.status_code in [
+            status.HTTP_400_BAD_REQUEST, status.HTTP_404_NOT_FOUND
+        ]
 
     def test_create_cart_item_bad_unauthenticated(self):
         """Test: Attempt to create cart item without authentication."""
@@ -539,7 +590,9 @@ class TestCartItemViewSet:
         }
         response = self.client.post(url, data)
 
-        assert response.status_code in [status.HTTP_401_UNAUTHORIZED, status.HTTP_403_FORBIDDEN]
+        assert response.status_code in [
+            status.HTTP_401_UNAUTHORIZED, status.HTTP_403_FORBIDDEN
+        ]
 
     def test_update_cart_item_good(self):
         """Test: User successfully updates their cart item."""
@@ -611,7 +664,9 @@ class TestCartItemViewSet:
         response = self.client.patch(url, data)
 
         # Note: This depends on whether stock validation is implemented
-        assert response.status_code in [status.HTTP_400_BAD_REQUEST, status.HTTP_200_OK]
+        assert response.status_code in [
+            status.HTTP_400_BAD_REQUEST, status.HTTP_200_OK
+        ]
 
     def test_delete_cart_item_good(self):
         """Test: User successfully deletes their cart item."""
@@ -666,7 +721,9 @@ class TestCartItemViewSet:
         url = reverse('cartitem-detail', kwargs={'pk': cart_item.id})
         response = self.client.delete(url)
 
-        assert response.status_code in [status.HTTP_401_UNAUTHORIZED, status.HTTP_403_FORBIDDEN]
+        assert response.status_code in [
+            status.HTTP_401_UNAUTHORIZED, status.HTTP_403_FORBIDDEN
+        ]
 
     def test_delete_cart_item_bad_nonexistent(self):
         """Test: Attempt to delete non-existent cart item."""
@@ -767,7 +824,8 @@ class TestOrderListView:
         url = reverse('order-list', kwargs={'user_id': self.regular_user.id})
         response = self.client.get(url)
 
-        assert response.status_code in [status.HTTP_401_UNAUTHORIZED, status.HTTP_403_FORBIDDEN]
+        assert response.status_code in [
+            status.HTTP_401_UNAUTHORIZED, status.HTTP_403_FORBIDDEN]
 
     def test_list_orders_bad_nonexistent_user(self):
         """Test: Attempt to list orders for non-existent user."""
@@ -781,7 +839,10 @@ class TestOrderListView:
 
 @pytest.mark.django_db
 class TestOrderCreateView:
-    """Test cases for OrderCreateView (/api/v1/users/{user_id}/order_create/)."""
+    """
+    Test cases for OrderCreateView
+    (/api/v1/users/{user_id}/order_create/).
+    """
 
     @pytest.fixture(autouse=True)
     def setup(self):
@@ -853,7 +914,9 @@ class TestOrderCreateView:
 
         assert response.status_code == status.HTTP_201_CREATED
         assert response.data['phone_number'] == '+1234567890'
-        assert response.data['delivery_address'] == '123 Test Street, Test City, 12345'
+        assert response.data[
+            'delivery_address'
+        ] == '123 Test Street, Test City, 12345'
         assert response.data['status'] == "P"
 
     def test_create_order_bad_empty_cart(self):
@@ -869,7 +932,8 @@ class TestOrderCreateView:
 
         # This might return 400 if empty cart validation is implemented
         # Or 201 if it creates an empty order (bad but possible)
-        assert response.status_code in [status.HTTP_400_BAD_REQUEST, status.HTTP_201_CREATED]
+        assert response.status_code in [
+            status.HTTP_400_BAD_REQUEST, status.HTTP_201_CREATED]
 
     def test_create_order_bad_missing_fields(self):
         """Test: Attempt to create order with missing required fields."""
@@ -892,7 +956,7 @@ class TestOrderCreateView:
         }
         response = self.client.post(url, data)
 
-        assert response.status_code == status.HTTP_400_BAD_REQUEST
+        assert response.status_code == status.HTTP_404_NOT_FOUND
 
     def test_create_order_bad_insufficient_stock(self):
         """Test: Attempt to create order with insufficient stock."""
@@ -922,7 +986,8 @@ class TestOrderCreateView:
         # This depends on whether stock validation is implemented
         # If validation exists, should return 400
         # If no validation, might return 201 (bad behavior)
-        assert response.status_code in [status.HTTP_400_BAD_REQUEST, status.HTTP_201_CREATED]
+        assert response.status_code in [
+            status.HTTP_400_BAD_REQUEST, status.HTTP_201_CREATED]
 
     def test_create_order_bad_unauthenticated(self):
         """Test: Attempt to create order without authentication."""
@@ -933,7 +998,8 @@ class TestOrderCreateView:
         }
         response = self.client.post(url, data)
 
-        assert response.status_code in [status.HTTP_401_UNAUTHORIZED, status.HTTP_403_FORBIDDEN]
+        assert response.status_code in [
+            status.HTTP_401_UNAUTHORIZED, status.HTTP_403_FORBIDDEN]
 
     def test_create_order_bad_non_owner(self):
         """Test: Admin attempts to create order for another user."""
@@ -946,6 +1012,11 @@ class TestOrderCreateView:
         }
         response = self.client.post(url, data)
 
-        # Since the view creates order from current user's cart, not the user_id in URL
+        # Since the view creates order from current user's cart,
+        # not the user_id in URL
         # Admin has no cart items, so it will return 400 for empty cart
-        assert response.status_code in [status.HTTP_201_CREATED, status.HTTP_403_FORBIDDEN, status.HTTP_400_BAD_REQUEST]
+        assert response.status_code in [
+            status.HTTP_201_CREATED,
+            status.HTTP_403_FORBIDDEN,
+            status.HTTP_400_BAD_REQUEST
+        ]

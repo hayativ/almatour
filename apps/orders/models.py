@@ -53,7 +53,9 @@ class CartItemManager(Manager):
 
     def get_queryset(self):
         """Filter out soft-deleted objects."""
-        return CartItemQuerySet(self.model, using=self._db).filter(deleted_at__isnull=True)
+        return CartItemQuerySet(self.model, using=self._db).filter(
+            deleted_at__isnull=True
+        )
 
 
 class CartItem(AbstractBaseModel):
@@ -66,11 +68,6 @@ class CartItem(AbstractBaseModel):
         on_delete=CASCADE,
         verbose_name="User",
     )
-    # product = ForeignKey(
-    #     to=Product,
-    #     on_delete=CASCADE,
-    #     verbose_name="Related product"
-    # )
     store_product = ForeignKey(
         to=StoreProductRelation,
         on_delete=PROTECT,

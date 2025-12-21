@@ -1,4 +1,5 @@
 [tool.pytest]
 minversion = "9.0"
 pythonpath = ["."]
+python_files = ["test_*.py", "*_test.py"]
 DJANGO_SETTINGS_MODULE = "settings.env.local"

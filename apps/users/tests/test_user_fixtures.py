@@ -1,7 +1,7 @@
 import pytest
 from apps.users.tools import User, UserRepository
 from typing import Optional
-from conftest import Settings
+# from conftest import Settings
 
 @pytest.fixture
 def my_fixture() -> str:
@@ -58,5 +58,5 @@ class TestUserRepository:
         assert user.is_active is False
 
 
-def test_we_are_in_debug_mode(enable_debug_mode: Settings) -> None:
+def test_we_are_in_debug_mode(enable_debug_mode) -> None:
     assert enable_debug_mode.debug is True, "Debug mode must be enabled in this test"

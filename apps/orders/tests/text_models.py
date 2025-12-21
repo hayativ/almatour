@@ -6,10 +6,10 @@ Tests all models: Order, OrderItem, CartItem, Review.
 import pytest
 from decimal import Decimal
 from django.core.exceptions import ValidationError
-from django.db import IntegrityError, transaction
+from django.db import transaction
 
 from apps.orders.models import Order, OrderItem, CartItem, Review
-from apps.products.models import Product, StoreProductRelation, Store
+from apps.products.models import Product, StoreProductRelation
 from apps.orders.tests.tools import (
     OrderBuilder,
     OrderItemBuilder,
@@ -27,7 +27,9 @@ User = CustomUser
 class TestOrderModel:
     """Test cases for the Order model."""
 
-    def test_order_creation_valid(self, sample_order: Order, regular_user: User):
+    def test_order_creation_valid(
+            self, sample_order: Order, regular_user: User
+    ):
         """Test valid order creation."""
         assert sample_order.user == regular_user
         assert sample_order.phone_number == "+1234567890"
@@ -37,7 +39,9 @@ class TestOrderModel:
         assert sample_order.updated_at is not None
         assert sample_order.deleted_at is None
 
-    def test_order_creation_minimal(self, order_builder: OrderBuilder, regular_user: User):
+    def test_order_creation_minimal(
+            self, order_builder: OrderBuilder, regular_user: User
+    ):
         """Test order creation with minimal required fields."""
         order = (order_builder
                  .with_user(regular_user)
@@ -49,7 +53,9 @@ class TestOrderModel:
         assert order.delivery_address == "123 Test St"
         assert order.status == "P"
 
-    def test_order_status_choices(self, order_builder: OrderBuilder, regular_user: User):
+    def test_order_status_choices(
+            self, order_builder: OrderBuilder, regular_user: User
+    ):
         """Test all valid order status choices."""
         statuses = [
             "P",
@@ -61,12 +67,15 @@ class TestOrderModel:
             order = (order_builder
                      .with_user(regular_user)
                      .with_phone_number(f"+123456789{statuses.index(status)}")
-                     .with_delivery_address(f"Address {statuses.index(status)}")
+                     .with_delivery_address(f"Address {statuses.index(
+                         status)}")
                      .with_status(status)
                      .build())
             assert order.status == status
 
-    def test_order_phone_number_validation(self, order_builder: OrderBuilder, regular_user: User):
+    def test_order_phone_number_validation(
+            self, order_builder: OrderBuilder, regular_user: User
+    ):
         """Test phone number validation."""
         valid_numbers = [
             "+1234567890",
@@ -82,7 +91,9 @@ class TestOrderModel:
                      .build())
             assert order.phone_number == phone
 
-    def test_order_phone_number_invalid(self, order_builder: OrderBuilder, regular_user: User):
+    def test_order_phone_number_invalid(
+            self, order_builder: OrderBuilder, regular_user: User
+    ):
         """Test invalid phone numbers."""
         invalid_numbers = [
             "1234567890",  # Missing +
@@ -99,7 +110,9 @@ class TestOrderModel:
                  .with_delivery_address("123 Test St")
                  .build())
 
-    def test_order_delivery_address_validation(self, order_builder: OrderBuilder, regular_user: User):
+    def test_order_delivery_address_validation(
+            self, order_builder: OrderBuilder, regular_user: User
+    ):
         """Test delivery address validation."""
         valid_addresses = [
             "123 Main St",
@@ -115,7 +128,9 @@ class TestOrderModel:
                      .build())
             assert order.delivery_address == address
 
-    def test_order_delivery_address_invalid(self, order_builder: OrderBuilder, regular_user: User):
+    def test_order_delivery_address_invalid(
+            self, order_builder: OrderBuilder, regular_user: User
+    ):
         """Test invalid delivery addresses."""
         invalid_addresses = [
             "",  # Empty
@@ -146,7 +161,8 @@ class TestOrderModel:
 
         # Should not be in active queryset
         assert sample_order not in Order.objects.all()
-        assert Order.all_objects.filter(id=original_id, deleted_at__isnull=False).exists() is True
+        assert Order.all_objects.filter(
+            id=original_id, deleted_at__isnull=False).exists() is True
 
     def test_order_manager_methods(self, sample_order: Order):
         """Test custom manager methods."""
@@ -304,8 +320,10 @@ class TestOrderItemModel:
         item_id = sample_order_item.id
         sample_order.delete()  # This is a soft delete
 
-        # Order item should still exist in all_objects but not in active queryset
-        # Note: Since we override delete() on Order to soft delete, the CASCADE doesn't trigger hard delete
+        # Order item should still exist
+        # in all_objects but not in active queryset
+        # Note: Since we override delete() on Order
+        # to soft delete, the CASCADE doesn't trigger hard delete
         # The order item remains in the database
         assert OrderItem.all_objects.filter(id=item_id).exists() is True
 
@@ -316,12 +334,13 @@ class TestOrderItemModel:
     ):
         """Test that order item prevents store product deletion (PROTECT)."""
         item_id = sample_order_item.id
-        # Since we're using soft delete, we need to trigger a hard delete to test PROTECT
+        # Since we're using soft delete,
+        #  we need to trigger a hard delete to test PROTECT
         # Soft delete won't trigger the protection
         with transaction.atomic():
-            with pytest.raises(Exception):  # Could be ProtectedError or IntegrityError
-                # Use delete() on queryset to bypass the overridden delete method
-                StoreProductRelation.objects.filter(id=store_product_relation.id).delete()
+            with pytest.raises(Exception):
+                StoreProductRelation.objects.filter(
+                    id=store_product_relation.id).delete()
 
         # Order item should still exist
         assert OrderItem.all_objects.filter(id=item_id).exists() is True
@@ -333,7 +352,8 @@ class TestOrderItemModel:
 
         # Should not be in active queryset
         assert sample_order_item not in OrderItem.objects.all()
-        assert OrderItem.all_objects.filter(id=original_id, deleted_at__isnull=False).exists() is True
+        assert OrderItem.all_objects.filter(
+            id=original_id, deleted_at__isnull=False).exists() is True
 
     def test_order_item_manager_methods(self, sample_order_item: OrderItem):
         """Test custom manager methods."""
@@ -414,23 +434,25 @@ class TestCartItemModel:
     ):
         """Test that cart item CASCADE relationship works with user."""
         from apps.products.models import Store, StoreProductRelation, Category, Product
-        
+
         # Create a complete setup without using fixtures to avoid conflicts
         # Create category and product
         category = Category.objects.create(name="Test Cat", description="Desc")
-        product = Product.objects.create(category=category, name="Test Prod", price=Decimal("10.00"))
-        
+        product = Product.objects.create(
+            category=category, name="Test Prod", price=Decimal("10.00"))
+
         # Create another user to own the store (not the regular_user)
         store_owner = User.objects.create_user(
             username="storeowner",
             email="storeowner@example.com",
             password="testpass123"
         )
-        store = Store.objects.create(owner=store_owner, name="Store", description="Desc")
+        store = Store.objects.create(
+            owner=store_owner, name="Store", description="Desc")
         relation = StoreProductRelation.objects.create(
             product=product, store=store, quantity=10, price=Decimal("10.00")
         )
-        
+
         # Create cart item for regular_user
         cart_item = CartItem.objects.create(
             user=regular_user,
@@ -438,10 +460,10 @@ class TestCartItemModel:
             quantity=1
         )
         item_id = cart_item.id
-        
+
         # Delete the user - cart item should cascade delete
         regular_user.delete()
-        
+
         # Cart item should be deleted (hard delete due to CASCADE on user)
         assert CartItem.all_objects.filter(id=item_id).exists() is False
 
@@ -452,57 +474,62 @@ class TestCartItemModel:
     ):
         """Test that cart item prevents store product deletion (PROTECT)."""
         item_id = sample_cart_item.id
-        # Since we're using soft delete, we need to trigger a hard delete to test PROTECT
         with transaction.atomic():
-            with pytest.raises(Exception):  # Could be ProtectedError or IntegrityError
-                # Use delete() on queryset to bypass the overridden delete method
-                StoreProductRelation.objects.filter(id=store_product_relation.id).delete()
+            with pytest.raises(Exception):
+                StoreProductRelation.objects.filter(
+                    id=store_product_relation.id).delete()
 
-        # Cart item should still exist
         assert CartItem.all_objects.filter(id=item_id).exists() is True
 
     def test_cart_item_soft_delete(self):
         """Test soft delete functionality."""
-        from apps.products.models import Store, StoreProductRelation, Category, Product
-        
-        # Create test data
-        user = User.objects.create_user(username="testuser", email="test@test.com", password="pass")
+        from apps.products.models import (
+            Store, StoreProductRelation, Category, Product
+        )
+
+        user = User.objects.create_user(
+            username="testuser", email="test@test.com", password="pass")
         category = Category.objects.create(name="Cat", description="Desc")
-        product = Product.objects.create(category=category, name="Prod", price=Decimal("10.00"))
-        store = Store.objects.create(owner=user, name="Store", description="Desc")
+        product = Product.objects.create(
+            category=category, name="Prod", price=Decimal("10.00"))
+        store = Store.objects.create(
+            owner=user, name="Store", description="Desc")
         relation = StoreProductRelation.objects.create(
             product=product, store=store, quantity=10, price=Decimal("10.00")
         )
-        cart_item = CartItem.objects.create(user=user, store_product=relation, quantity=1)
-        
-        original_id = cart_item.id
-        cart_item.delete()  # This calls soft_delete()
+        cart_item = CartItem.objects.create(
+            user=user, store_product=relation, quantity=1)
 
-        # Should not be in active queryset
+        original_id = cart_item.id
+        cart_item.delete()
+
         assert CartItem.objects.filter(id=original_id).exists() is False
-        # Should be in all_objects queryset and have deleted_at set
-        assert CartItem.all_objects.filter(id=original_id, deleted_at__isnull=False).exists() is True
+        assert CartItem.all_objects.filter(
+            id=original_id, deleted_at__isnull=False).exists() is True
 
     def test_cart_item_manager_methods(self):
         """Test custom manager methods."""
-        from apps.products.models import Store, StoreProductRelation, Category, Product
-        
-        # Create test data
-        user = User.objects.create_user(username="testuser2", email="test2@test.com", password="pass")
+        from apps.products.models import (
+            Store, StoreProductRelation, Category, Product
+        )
+
+        user = User.objects.create_user(
+            username="testuser2", email="test2@test.com", password="pass")
         category = Category.objects.create(name="Cat2", description="Desc")
-        product = Product.objects.create(category=category, name="Prod2", price=Decimal("10.00"))
-        store = Store.objects.create(owner=user, name="Store2", description="Desc")
+        product = Product.objects.create(
+            category=category, name="Prod2", price=Decimal("10.00"))
+        store = Store.objects.create(
+            owner=user, name="Store2", description="Desc")
         relation = StoreProductRelation.objects.create(
             product=product, store=store, quantity=10, price=Decimal("10.00")
         )
-        cart_item = CartItem.objects.create(user=user, store_product=relation, quantity=1)
-        
+        cart_item = CartItem.objects.create(
+            user=user, store_product=relation, quantity=1)
+
         original_id = cart_item.id
-        
-        # Should be in active queryset
+
         assert CartItem.objects.filter(id=original_id).exists() is True
 
-        # After soft delete, should not be in active queryset
         cart_item.delete()
         assert CartItem.objects.filter(id=original_id).exists() is False
         assert CartItem.all_objects.filter(id=original_id).exists() is True
@@ -514,26 +541,19 @@ class TestCartItemModel:
         store_product_relation: StoreProductRelation
     ):
         """Test that duplicate cart items are prevented."""
-        # Create first cart item
         (cart_item_builder
          .with_user(regular_user)
          .with_store_product(store_product_relation)
          .with_quantity(1)
          .build())
-
-        # Try to create duplicate - should fail at database level with unique constraint
-        # Note: There's no unique constraint defined in the model, so this test expectation is wrong
-        # We should either add a unique constraint or change the test
-        # For now, let's verify we CAN create duplicates (no constraint exists)
         cart_item_2 = (cart_item_builder
-         .with_user(regular_user)
-         .with_store_product(store_product_relation)
-         .with_quantity(2)
-         .build())
-        
-        # Both should exist since there's no unique constraint
+                       .with_user(regular_user)
+                       .with_store_product(store_product_relation)
+                       .with_quantity(2)
+                       .build())
         assert cart_item_2 is not None
-        assert CartItem.objects.filter(user=regular_user, store_product=store_product_relation).count() == 2
+        assert CartItem.objects.filter(
+            user=regular_user, store_product=store_product_relation).count() == 2
 
 
 @pytest.mark.django_db
@@ -573,17 +593,19 @@ class TestReviewModel:
         assert review.rate == 3
         assert review.text == "OK product"
 
-    def test_review_rate_choices(self, review_builder: ReviewBuilder, sample_product: Product, regular_user: User):
+    def test_review_rate_choices(
+            self, review_builder: ReviewBuilder, sample_product: Product, regular_user: User
+    ):
         """Test all valid review rate choices."""
         rates = [0, 1, 2, 3, 4, 5]
 
         for rate in rates:
             review = (review_builder
-                     .with_product(sample_product)
-                     .with_user(regular_user)
-                     .with_rate(rate)
-                     .with_text(f"Review with rate {rate}")
-                     .build())
+                      .with_product(sample_product)
+                      .with_user(regular_user)
+                      .with_rate(rate)
+                      .with_text(f"Review with rate {rate}")
+                      .build())
             assert review.rate == rate
 
     def test_review_rate_invalid(
@@ -593,7 +615,8 @@ class TestReviewModel:
         regular_user: User
     ):
         """Test invalid review rates."""
-        invalid_rates = [-1, 6, 10]  # Out of range (removed 3.5 as it's not an int)
+        invalid_rates = [-1, 6,
+                         10]
 
         for rate in invalid_rates:
             with pytest.raises(ValidationError):
@@ -638,13 +661,12 @@ class TestReviewModel:
     ):
         """Test that review can exist when product is deleted (SET_NULL)."""
         review_id = sample_review.id
-        sample_product.delete()  # This is a soft delete
-
-        # Review should still exist and product reference should still be there
-        # because soft delete doesn't trigger SET_NULL
+        sample_product.delete()
         review = Review.all_objects.get(id=review_id)
-        # With soft delete, the foreign key relationship remains intact
-        assert review.product is not None or review.product_id == sample_product.id
+        assert (
+            (review.product is not None)
+            or (review.product_id == sample_product.id)
+        )
 
     def test_review_soft_delete(self, sample_review: Review):
         """Test soft delete functionality."""
@@ -653,7 +675,8 @@ class TestReviewModel:
 
         # Should not be in active queryset
         assert sample_review not in Review.objects.all()
-        assert Review.all_objects.filter(id=original_id, deleted_at__isnull=False).exists() is True
+        assert Review.all_objects.filter(
+            id=original_id, deleted_at__isnull=False).exists() is True
 
     def test_review_manager_methods(self, sample_review: Review):
         """Test custom manager methods."""
@@ -670,7 +693,9 @@ class TestReviewModel:
 class TestOrderValidator:
     """Test cases for the OrderValidator utility class."""
 
-    def test_validate_phone_number_valid(self, order_validator: OrderValidator):
+    def test_validate_phone_number_valid(
+            self, order_validator: OrderValidator
+    ):
         """Test valid phone number validation."""
         valid_numbers = [
             "+1234567890",
@@ -683,7 +708,9 @@ class TestOrderValidator:
             assert is_valid is True
             assert error is None
 
-    def test_validate_phone_number_invalid(self, order_validator: OrderValidator):
+    def test_validate_phone_number_invalid(
+        self, order_validator: OrderValidator
+    ):
         """Test invalid phone number validation."""
         invalid_cases = [
             ("1234567890", "Phone number should start with +"),
@@ -699,7 +726,9 @@ class TestOrderValidator:
             assert is_valid is False
             assert expected_error in error
 
-    def test_validate_delivery_address_valid(self, order_validator: OrderValidator):
+    def test_validate_delivery_address_valid(
+            self, order_validator: OrderValidator
+    ):
         """Test valid delivery address validation."""
         valid_addresses = [
             "123 Main St, City, State",
@@ -708,11 +737,14 @@ class TestOrderValidator:
         ]
 
         for address in valid_addresses:
-            is_valid, error = order_validator.validate_delivery_address(address)
+            is_valid, error = order_validator.validate_delivery_address(
+                address)
             assert is_valid is True
             assert error is None
 
-    def test_validate_delivery_address_invalid(self, order_validator: OrderValidator):
+    def test_validate_delivery_address_invalid(
+            self, order_validator: OrderValidator
+    ):
         """Test invalid delivery address validation."""
         invalid_cases = [
             ("", "Delivery address cannot be empty"),
@@ -722,7 +754,8 @@ class TestOrderValidator:
         ]
 
         for address, expected_error in invalid_cases:
-            is_valid, error = order_validator.validate_delivery_address(address)
+            is_valid, error = order_validator.validate_delivery_address(
+                address)
             assert is_valid is False
             assert expected_error in error
 
@@ -763,7 +796,9 @@ class TestOrderValidator:
             assert is_valid is True
             assert error is None
 
-    def test_validate_review_text_invalid(self, order_validator: OrderValidator):
+    def test_validate_review_text_invalid(
+            self, order_validator: OrderValidator
+    ):
         """Test invalid review text validation."""
         invalid_cases = [
             ("", "Review text cannot be empty"),
@@ -781,7 +816,11 @@ class TestOrderValidator:
 class TestStockValidator:
     """Test cases for the StockValidator utility class."""
 
-    def test_can_add_to_cart_valid(self, stock_validator: StockValidator, store_product_relation: StoreProductRelation):
+    def test_can_add_to_cart_valid(
+            self,
+            stock_validator: StockValidator,
+            store_product_relation: StoreProductRelation
+    ):
         """Test valid cart addition scenarios."""
         valid_scenarios = [
             (5, 0),   # Add 5, have 0 in cart
@@ -797,14 +836,21 @@ class TestStockValidator:
             assert can_add is True
             assert error is None
 
-    def test_can_add_to_cart_invalid(self, stock_validator: StockValidator, store_product_relation: StoreProductRelation):
+    def test_can_add_to_cart_invalid(
+            self,
+            stock_validator: StockValidator,
+            store_product_relation: StoreProductRelation
+    ):
         """Test invalid cart addition scenarios."""
         invalid_scenarios = [
             (-1, 0, "Requested quantity must be positive"),
             (0, 0, "Requested quantity must be positive"),
-            (101, 0, "exceeds available stock"),  # Changed from 51 to 101 since stock is 100
-            (1, 100, "exceeds available stock"),  # Changed from 1,50 to 1,100 since stock is 100
-            (25, 80, "exceeds available stock"),  # Changed from 25,30 to 25,80 since stock is 100
+            # Changed from 51 to 101 since stock is 100
+            (101, 0, "exceeds available stock"),
+            # Changed from 1,50 to 1,100 since stock is 100
+            (1, 100, "exceeds available stock"),
+            # Changed from 25,30 to 25,80 since stock is 100
+            (25, 80, "exceeds available stock"),
         ]
 
         for requested, existing, expected_error in invalid_scenarios:
@@ -826,13 +872,13 @@ class TestStockValidator:
         # Create cart items within stock limits
         cart_items = [
             cart_item_builder.with_user(regular_user)
-                           .with_store_product(store_product_relation)
-                           .with_quantity(10)  # Within stock of 100
-                           .build(),
+            .with_store_product(store_product_relation)
+            .with_quantity(10)  # Within stock of 100
+            .build(),
             cart_item_builder.with_user(regular_user)
-                           .with_store_product(store_product_relation_2)
-                           .with_quantity(20)  # Within stock of 50
-                           .build()
+            .with_store_product(store_product_relation_2)
+            .with_quantity(20)  # Within stock of 50
+            .build()
         ]
 
         can_create, errors = stock_validator.can_create_order_items(cart_items)
@@ -851,13 +897,13 @@ class TestStockValidator:
         # Create cart items exceeding stock limits
         cart_items = [
             cart_item_builder.with_user(regular_user)
-                           .with_store_product(store_product_relation)
-                           .with_quantity(150)  # Exceeds stock of 100
-                           .build(),
+            .with_store_product(store_product_relation)
+            .with_quantity(150)  # Exceeds stock of 100
+            .build(),
             cart_item_builder.with_user(regular_user)
-                           .with_store_product(store_product_relation_2)
-                           .with_quantity(60)   # Exceeds stock of 50
-                           .build()
+            .with_store_product(store_product_relation_2)
+            .with_quantity(60)   # Exceeds stock of 50
+            .build()
         ]
 
         can_create, errors = stock_validator.can_create_order_items(cart_items)
@@ -877,17 +923,17 @@ class TestStockValidator:
         """Test order total calculation."""
         order_items = [
             order_item_builder.with_order(sample_order)
-                             .with_store_product(store_product_relation)
-                             .with_name("Product 1")
-                             .with_price(Decimal("10.00"))
-                             .with_quantity(2)
-                             .build(),
+            .with_store_product(store_product_relation)
+            .with_name("Product 1")
+            .with_price(Decimal("10.00"))
+            .with_quantity(2)
+            .build(),
             order_item_builder.with_order(sample_order)
-                             .with_store_product(store_product_relation_2)
-                             .with_name("Product 2")
-                             .with_price(Decimal("5.00"))
-                             .with_quantity(3)
-                             .build()
+            .with_store_product(store_product_relation_2)
+            .with_name("Product 2")
+            .with_price(Decimal("5.00"))
+            .with_quantity(3)
+            .build()
         ]
 
         total = stock_validator.calculate_order_total(order_items)

@@ -41,9 +41,9 @@ class TestCategoryFixtureUsage:
         """Example: Using the category_builder fixture to create custom categories."""
         # Create a custom category using the builder
         custom_category = (category_builder
-                          .with_name("Custom Category")
-                          .with_description("A category built with fixtures")
-                          .build())
+                           .with_name("Custom Category")
+                           .with_description("A category built with fixtures")
+                           .build())
 
         assert custom_category.name == "Custom Category"
         assert custom_category.description == "A category built with fixtures"
@@ -84,11 +84,11 @@ class TestProductFixtureUsage:
         """Example: Using the product_builder fixture to create custom products."""
         # Create a custom product using the builder
         custom_product = (product_builder
-                         .with_category(sample_category)
-                         .with_name("Custom Product")
-                         .with_description("A product built with fixtures")
-                         .with_price(Decimal("123.45"))
-                         .build())
+                          .with_category(sample_category)
+                          .with_name("Custom Product")
+                          .with_description("A product built with fixtures")
+                          .with_price(Decimal("123.45"))
+                          .build())
 
         assert custom_product.name == "Custom Product"
         assert custom_product.price == Decimal("123.45")
@@ -97,7 +97,8 @@ class TestProductFixtureUsage:
     def test_using_product_validator_fixture(self, product_validator: ProductValidator):
         """Example: Using the product_validator fixture."""
         # Test valid product name
-        is_valid, error = product_validator.validate_product_name("Valid Product Name")
+        is_valid, error = product_validator.validate_product_name(
+            "Valid Product Name")
         assert is_valid is True
         assert error is None
 
@@ -113,7 +114,7 @@ class TestProductFixtureUsage:
         for invalid_data in invalid_product_data:
             # At least one validation should fail for each invalid data entry
             has_error = False
-            
+
             if "name" in invalid_data:
                 is_valid, error = product_validator.validate_product_name(
                     invalid_data.get("name", "")
@@ -127,7 +128,7 @@ class TestProductFixtureUsage:
                 )
                 if not is_valid:
                     has_error = True
-            
+
             assert has_error, f"Expected validation error for {invalid_data}"
 
 
@@ -146,10 +147,10 @@ class TestStoreFixtureUsage:
         """Example: Using the store_builder fixture to create custom stores."""
         # Create a custom store using the builder
         custom_store = (store_builder
-                       .with_owner(seller_user)
-                       .with_name("Custom Store")
-                       .with_description("A store built with fixtures")
-                       .build())
+                        .with_owner(seller_user)
+                        .with_name("Custom Store")
+                        .with_description("A store built with fixtures")
+                        .build())
 
         assert custom_store.name == "Custom Store"
         assert custom_store.owner == seller_user
@@ -205,11 +206,11 @@ class TestStoreProductRelationFixtureUsage:
         """Example: Using the store_product_relation_builder fixture."""
         # Create a custom relation using the builder
         custom_relation = (store_product_relation_builder
-                          .with_product(sample_product)
-                          .with_store(sample_store)
-                          .with_quantity(25)
-                          .with_price(Decimal("550.00"))
-                          .build())
+                           .with_product(sample_product)
+                           .with_store(sample_store)
+                           .with_quantity(25)
+                           .with_price(Decimal("550.00"))
+                           .build())
 
         assert custom_relation.product == sample_product
         assert custom_relation.store == sample_store
@@ -223,21 +224,21 @@ class TestStoreProductRelationFixtureUsage:
         for invalid_data in invalid_store_product_data:
             # At least one validation should fail for each invalid data entry
             has_error = False
-            
+
             if "quantity" in invalid_data:
                 is_valid, error = product_validator.validate_store_product_quantity(
                     invalid_data["quantity"]
                 )
                 if not is_valid:
                     has_error = True
-            
+
             if "price" in invalid_data:
                 is_valid, error = product_validator.validate_store_product_price(
                     invalid_data["price"]
                 )
                 if not is_valid:
                     has_error = True
-            
+
             assert has_error, f"Expected validation error for {invalid_data}"
 
 
@@ -263,12 +264,15 @@ class TestProductTestDataFactoryUsage:
         assert len(scenario['categories']) == 2
         assert len(scenario['products']) == 3
         assert len(scenario['stores']) == 2
-        assert len(scenario['store_product_relations']) == 6  # 3 products × 2 stores
+        assert len(scenario['store_product_relations']
+                   ) == 6  # 3 products × 2 stores
 
     def test_factory_category_creation(self, product_test_data_factory: ProductTestDataFactory):
         """Example: Using factory to create individual categories."""
-        category1 = product_test_data_factory.create_category("Test Category 1", "Description 1")
-        category2 = product_test_data_factory.create_category("Test Category 2", "Description 2")
+        category1 = product_test_data_factory.create_category(
+            "Test Category 1", "Description 1")
+        category2 = product_test_data_factory.create_category(
+            "Test Category 2", "Description 2")
 
         assert category1.name == "Test Category 1"
         assert category2.name == "Test Category 2"
@@ -392,7 +396,7 @@ class TestComplexFixtureCombinations:
             matching_products = [
                 product for product in multiple_products
                 if search_term.lower() in product.name.lower() or
-                   search_term.lower() in (product.description or "").lower()
+                search_term.lower() in (product.description or "").lower()
             ]
             search_results[search_term] = matching_products
 
@@ -417,7 +421,8 @@ class TestComplexFixtureCombinations:
             ]
 
         # Verify all products are categorized
-        total_categorized_products = sum(len(products) for products in category_products.values())
+        total_categorized_products = sum(
+            len(products) for products in category_products.values())
         assert total_categorized_products == len(multiple_products)
 
         # Verify we have store relations for all products
@@ -437,10 +442,12 @@ class TestComplexFixtureCombinations:
 
         # Validate all product data
         for product in scenario['products']:
-            is_valid, error = product_validator.validate_product_name(product.name)
+            is_valid, error = product_validator.validate_product_name(
+                product.name)
             assert is_valid is True, f"Invalid product name: {product.name}"
 
-            is_valid, error = product_validator.validate_product_price(product.price)
+            is_valid, error = product_validator.validate_product_price(
+                product.price)
             assert is_valid is True, f"Invalid product price: {product.price}"
 
         # Validate all store data
@@ -450,11 +457,13 @@ class TestComplexFixtureCombinations:
 
         # Validate all store-product relations
         for relation in scenario['store_product_relations']:
-            is_valid, error = product_validator.validate_store_product_quantity(relation.quantity)
+            is_valid, error = product_validator.validate_store_product_quantity(
+                relation.quantity)
             assert is_valid is True, f"Invalid quantity: {relation.quantity}"
 
         # Test inventory totals
-        total_inventory = sum(relation.quantity for relation in scenario['store_product_relations'])
+        total_inventory = sum(
+            relation.quantity for relation in scenario['store_product_relations'])
         assert total_inventory > 0
 
         # Test unique product-store combinations
