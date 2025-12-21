@@ -16,8 +16,7 @@ from django.db.models import (
     Manager,
 )
 from django.contrib.auth import get_user_model
-from django.core.validators import RegexValidator
-from django.core.validators import MaxValueValidator, MinValueValidator
+from django.core.validators import MaxValueValidator, MinValueValidator, RegexValidator
 from django.core.exceptions import ValidationError
 
 # Project modules
@@ -28,7 +27,8 @@ from apps.abstracts.models import AbstractBaseModel
 class SoftDeleteManager(Manager):
     """Manager that excludes soft-deleted objects."""
 
-    def get_queryset(self):
+    def get_queryset(self) -> QuerySet:
+        """Return queryset excluding soft-deleted objects."""
         return super().get_queryset().filter(deleted_at__isnull=True)
 
 

@@ -22,7 +22,8 @@ from apps.abstracts.models import AbstractBaseModel
 class SoftDeleteManager(Manager):
     """Manager that excludes soft-deleted objects."""
 
-    def get_queryset(self):
+    def get_queryset(self) -> QuerySet:
+        """Return queryset excluding soft-deleted objects."""
         return super().get_queryset().filter(deleted_at__isnull=True)
 
 
@@ -42,7 +43,7 @@ class Category(AbstractBaseModel):
         """Returns the string representation of the object."""
         return self.name
 
-    def clean(self):
+    def clean(self) -> None:
         """Validate the model."""
         super().clean()
         if self.name and len(self.name) > self.MAX_NAME_LENGTH:
@@ -50,12 +51,12 @@ class Category(AbstractBaseModel):
                 f"Category name can't exceed {self.MAX_NAME_LENGTH} characters"
             )
 
-    def save(self, *args, **kwargs):
+    def save(self, *args, **kwargs) -> None:
         """Override save to call full_clean."""
         self.full_clean()
         super().save(*args, **kwargs)
 
-    def delete(self, *args, **kwargs):
+    def delete(self, *args, **kwargs) -> None:
         """Override delete to perform soft delete and cascade to products."""
         # Soft delete all related products first
         for product in self.products.all():

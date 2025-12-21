@@ -1,6 +1,8 @@
-import pytest
 import os
 from dataclasses import dataclass
+from typing import Generator
+
+import pytest
 
 # Configure Django settings for pytest before any imports
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings.env.local')
@@ -10,8 +12,9 @@ os.environ.setdefault('DEBUG', 'True')
 
 logs: list[str] = []
 
+
 @pytest.fixture(autouse=True, scope="session")
-def clear_logs():
+def clear_logs() -> Generator[None, None, None]:
     from datetime import datetime
     logs.append(f"Logs cleared at {datetime.now().microsecond}s")
     print(f"Logs before clearing: {logs}")

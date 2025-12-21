@@ -142,6 +142,8 @@ class CartItemBaseSerializer(ModelSerializer):
 
 
 class CartItemRetrieveSerializer(Serializer):
+    """Serializer for retrieving cart items with user and total price."""
+
     MAX_PRICE_DIGITS = 10
     MAX_DECIMAL_PLACES = 2
 

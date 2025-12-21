@@ -140,10 +140,12 @@ class ProductViewSet(viewsets.ModelViewSet):
     filterset_fields = ['category']
     search_fields = ['name', 'description']
 
-    def get_permissions(self):
+    def get_permissions(self) -> list:
+        """Return appropriate permissions based on the action."""
         if self.action in ['create', 'update', 'partial_update', 'destroy']:
             return [permissions.IsAuthenticated()]
         return [permissions.AllowAny()]
 
-    def perform_create(self, serializer):
+    def perform_create(self, serializer) -> None:
+        """Save the product with the current user as seller."""
         serializer.save(seller=self.request.user)
