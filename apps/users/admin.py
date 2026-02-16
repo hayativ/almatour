@@ -1,92 +1,27 @@
-# Django modules
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
+from unfold.admin import ModelAdmin
 
-# Project modules
-from .models import CustomUser
+from apps.users.models import CustomUser
 
 
 @admin.register(CustomUser)
-class CustomUserAdmin(UserAdmin):
-    """
-    Custom User Admin configuration class.
-    """
+class CustomUserAdmin(UserAdmin, ModelAdmin):
+    """Admin configuration for CustomUser."""
 
-    list_display = (
-        "id",
-        "email",
-        "username",
-        "first_name",
-        "last_name",
-        "is_active",
-        "is_staff",
-        "is_superuser",
-        "date_joined",
+    list_display = ('email', 'username', 'phone', 'is_active', 'is_superuser', 'date_joined')
+    list_filter = ('is_active', 'is_superuser')
+    search_fields = ('email', 'username', 'phone')
+    ordering = ('-date_joined',)
+
+    fieldsets = (
+        (None, {'fields': ('email', 'username', 'phone', 'password')}),
+        ('Permissions', {'fields': ('is_active', 'is_superuser')}),
+        ('Important dates', {'fields': ('last_login', 'date_joined')}),
     )
-    search_fields = (
-        "email",
-        "username",
-        "first_name",
-        "last_name",
+    add_fieldsets = (
+        (None, {
+            'classes': ('wide',),
+            'fields': ('email', 'username', 'phone', 'password1', 'password2'),
+        }),
     )
-    list_filter = (
-        "is_active",
-        "is_staff",
-        "is_superuser",
-        "date_joined",
-    )
-    ordering = ("-date_joined",)
-
-    fieldsets = [
-        (
-            "User Information",
-            {
-                "fields": (
-                    "email",
-                    "username",
-                    "first_name",
-                    "last_name",
-                    "password",
-                ),
-            },
-        ),
-        (
-            "Permissions",
-            {
-                "fields": (
-                    "is_active",
-                    "is_staff",
-                    "is_superuser",
-                    "groups",
-                    "user_permissions",
-                ),
-            },
-        ),
-        (
-            "Important Dates",
-            {
-                "fields": ("last_login", "date_joined"),
-            },
-        ),
-    ]
-
-    add_fieldsets = [
-        (
-            "Create User",
-            {
-                "classes": ("wide",),
-                "fields": (
-                    "email",
-                    "username",
-                    "first_name",
-                    "last_name",
-                    "password1",
-                    "password2",
-                    "is_active",
-                    "is_staff",
-                ),
-            },
-        ),
-    ]
-
-    readonly_fields = ("last_login", "date_joined")

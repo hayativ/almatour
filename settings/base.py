@@ -36,9 +36,10 @@ DJANGO_AND_THIRD_PARTY_APPS = [
 ]
 
 PROJECT_APPS = [
-    "apps.orders.apps.OrdersConfig",
     "apps.users.apps.UsersConfig",
-    "apps.products.apps.ProductsConfig",
+    "apps.places.apps.PlacesConfig",
+    "apps.events.apps.EventsConfig",
+    "apps.info.apps.InfoConfig",
     "apps.abstracts.apps.AbstractsConfig",
 ]
 
@@ -104,9 +105,9 @@ AUTH_USER_MODEL = "users.CustomUser"
 # Unfold
 #
 UNFOLD = {
-    "SITE_HEADER": "Online Marketplace API",
-    "SITE_TITLE": "Online Marketplace API",
-    "SITE_SYMBOL": "🛒",
+    "SITE_HEADER": "Almatour",
+    "SITE_TITLE": "Almatour",
+    "SITE_SYMBOL": "🏔️",
     "SHOW_LANG_SWITCH": False,
 
     "SIDEBAR": {
@@ -119,21 +120,30 @@ UNFOLD = {
                 ],
             },
             {
-                "label": "Products",
-                "icon": "package",
+                "label": "Places",
+                "icon": "map-pin",
                 "items": [
-                    {"model": "products.Category"},
-                    {"model": "products.Product"},
+                    {"model": "places.Place"},
+                    {"model": "places.PlaceTranslation"},
                 ],
             },
             {
-                "label": "Orders",
-                "icon": "shopping-cart",
+                "label": "Events",
+                "icon": "calendar",
                 "items": [
-                    {"model": "orders.CartItem"},
-                    {"model": "orders.Order"},
-                    {"model": "orders.OrderItem"},
-                    {"model": "orders.Review"},
+                    {"model": "events.Event"},
+                    {"model": "events.EventTranslation"},
+                    {"model": "events.CalendarEvent"},
+                ],
+            },
+            {
+                "label": "Info",
+                "icon": "info",
+                "items": [
+                    {"model": "info.Souvenir"},
+                    {"model": "info.App"},
+                    {"model": "info.Advertisement"},
+                    {"model": "info.AdvertisementTranslation"},
                 ],
             },
         ]

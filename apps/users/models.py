@@ -3,28 +3,22 @@ from django.db import models
 
 
 class CustomUser(AbstractUser):
-    """
-    CustomUser database (table) model.
-    """
-    MAX_EMAIL_LENGTH = 20
-    MAX_ADDRESS_LENGTH = 255
+    """Custom user model for Almatour."""
 
     email = models.EmailField(unique=True)
-    phone = models.CharField(
-        max_length=MAX_EMAIL_LENGTH,
-        blank=True,
-        null=True
-    )
-    is_seller = models.BooleanField(default=False)
-    address = models.CharField(
-        max_length=MAX_ADDRESS_LENGTH,
-        blank=True,
-        null=True
-    )
+    phone = models.CharField(max_length=20, unique=True)
+
+    # Remove fields we don't need from AbstractUser
+    first_name = None
+    last_name = None
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username']
+    REQUIRED_FIELDS = ['username', 'phone']
+
+    class Meta:
+        db_table = 'users_customuser'
+        verbose_name = 'User'
+        verbose_name_plural = 'Users'
 
     def __str__(self) -> str:
-        """Returns the string representation of the object."""
         return self.email
