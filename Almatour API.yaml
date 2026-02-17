@@ -1,0 +1,7 @@
+openapi: 3.0.3
+info:
+  title: Almatour API
+  version: 1.0.0
+  description: Almatour – tourism guide for Almaty
+paths: {}
+components: {}
