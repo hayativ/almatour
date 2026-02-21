@@ -1,0 +1,90 @@
+<div class="signup-container">
+  <div class="signup-card">
+    <h1>{{ t.title }}</h1>
+    <p class="subtitle">{{ t.subtitle }}</p>
+
+    <form (ngSubmit)="onSubmit()" class="signup-form">
+      <div class="form-group">
+        <label for="email">{{ t.email }}</label>
+        <input
+          type="email"
+          id="email"
+          [(ngModel)]="email"
+          name="email"
+          [placeholder]="t.emailPlaceholder"
+          class="form-input"
+          [class.input-error]="emailError"
+          [disabled]="isLoading"
+          (blur)="onEmailChange()"
+          (input)="onEmailChange()"
+        />
+        @if (emailError) {
+          <span class="field-error">{{ emailError }}</span>
+        }
+      </div>
+
+      <div class="form-group">
+        <label for="password">{{ t.password }}</label>
+        <input
+          type="password"
+          id="password"
+          [(ngModel)]="password"
+          name="password"
+          [placeholder]="t.passwordPlaceholder"
+          class="form-input"
+          [class.input-error]="passwordError"
+          [disabled]="isLoading"
+          (blur)="onPasswordChange()"
+          (input)="onPasswordChange()"
+        />
+        @if (passwordError) {
+          <span class="field-error">{{ passwordError }}</span>
+        }
+        <small class="password-hint">{{ t.passwordHint }}</small>
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword">{{ t.confirmPassword }}</label>
+        <input
+          type="password"
+          id="confirmPassword"
+          [(ngModel)]="confirmPassword"
+          name="confirmPassword"
+          [placeholder]="t.confirmPasswordPlaceholder"
+          class="form-input"
+          [class.input-error]="confirmPasswordError"
+          [disabled]="isLoading"
+          (blur)="onConfirmPasswordChange()"
+          (input)="onConfirmPasswordChange()"
+        />
+        @if (confirmPasswordError) {
+          <span class="field-error">{{ confirmPasswordError }}</span>
+        }
+      </div>
+
+      @if (errorMessage) {
+        <div class="error-message">
+          {{ errorMessage }}
+        </div>
+      }
+
+      <button
+        type="submit"
+        class="submit-button"
+        [disabled]="isLoading"
+      >
+        @if (isLoading) {
+          <span class="loading-spinner"></span>
+          {{ t.creatingAccount }}
+        } @else {
+          {{ t.signUp }}
+        }
+      </button>
+    </form>
+
+    <p class="login-link">
+      {{ t.haveAccount }}
+      <a routerLink="/login" class="login-anchor">{{ t.signIn }}</a>
+    </p>
+  </div>
+</div>

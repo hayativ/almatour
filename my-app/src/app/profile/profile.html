@@ -1,0 +1,93 @@
+<div class="profile-container">
+  <div class="profile-card">
+    <h1>{{ t.title }}</h1>
+
+    @if (user$ | async; as user) {
+      <div class="user-info">
+        <div class="avatar-section">
+          <div class="avatar" (click)="triggerFileInput()" (keydown.enter)="triggerFileInput()" (keydown.space)="triggerFileInput()" tabindex="0" role="button" aria-label="Change profile picture">
+            @if (getDisplayPhotoURL(user)) {
+              <img [src]="getDisplayPhotoURL(user)" [alt]="user.displayName || 'User avatar'" />
+            } @else {
+              <div class="avatar-placeholder">
+                {{ (user.displayName || user.email || 'User')[0]?.toUpperCase() }}
+              </div>
+            }
+            <div class="avatar-overlay">
+              @if (uploading$ | async) {
+                <span class="upload-spinner"></span>
+              } @else {
+                <span class="upload-icon">📷</span>
+              }
+            </div>
+          </div>
+          <input 
+            type="file" 
+            #fileInput 
+            (change)="onFileSelected($event)" 
+            accept="image/*"
+            class="file-input-hidden"
+          />
+          <button class="change-photo-btn" (click)="triggerFileInput()" [disabled]="uploading$ | async">
+            @if (uploading$ | async) {
+              {{ t.uploading }}
+            } @else {
+              {{ t.changePhoto }}
+            }
+          </button>
+        </div>
+
+        <div class="user-details">
+          <h2>{{ user.displayName || 'User' }}</h2>
+          <p class="email">{{ user.email }}</p>
+          <p class="user-id">{{ t.userId }}: {{ user.uid }}</p>
+
+          @if (user.metadata.creationTime) {
+            <p class="creation-date">{{ t.memberSince }}: {{ user.metadata.creationTime | date:'longDate' }}</p>
+          }
+
+          @if (user.metadata.lastSignInTime) {
+            <p class="last-signin">{{ t.lastSignIn }}: {{ user.metadata.lastSignInTime | date:'short' }}</p>
+          }
+
+          @if (user.emailVerified) {
+            <p class="verified-badge">{{ t.emailVerified }}</p>
+          } @else {
+            <p class="unverified-badge">{{ t.emailNotVerified }}</p>
+          }
+        </div>
+      </div>
+
+      @if (uploadError) {
+        <div class="upload-error">
+          {{ uploadError }}
+        </div>
+      }
+
+      @if (uploadSuccess) {
+        <div class="upload-success">
+          {{ uploadSuccess }}
+        </div>
+      }
+
+      <div class="profile-actions">
+        <button class="logout-button" (click)="logout()">
+          {{ t.signOut }}
+        </button>
+
+        <a routerLink="/paintings" class="browse-paintings-link">
+          {{ t.browsePaintings }}
+        </a>
+
+        <a routerLink="/favorites" class="favorites-link">
+          {{ t.viewFavorites }}
+        </a>
+      </div>
+    } @else {
+      <div class="not-logged-in">
+        <p>You are not logged in.</p>
+        <a routerLink="/login" class="login-link">Sign In</a>
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<div class="favorites-container">
+  <h1>{{ t.title }}</h1>
+
+  @if (mergeMessage) {
+    <div class="merge-message">
+      <p>{{ mergeMessage }}</p>
+      <button class="dismiss-btn" (click)="dismissMergeMessage()">×</button>
+    </div>
+  }
+
+  @if (loading) {
+    <div class="loading-state">
+      <p>{{ t.loading }}</p>
+    </div>
+  }
+
+  @if (!loading && favoritePaintings.length === 0) {
+    <div class="empty-state">
+      <div class="empty-icon">♡</div>
+      <h2>{{ t.empty }}</h2>
+      <p>{{ t.emptyMessage }}</p>
+      <a routerLink="/paintings" class="browse-link">{{ t.browsePaintings }}</a>
+    </div>
+  }
+
+  @if (!loading && favoritePaintings.length > 0) {
+    <p class="favorites-count">{{ favoritePaintings.length }} {{ t.count }}</p>
+    
+    <ul class="favorites-grid">
+      @for (painting of favoritePaintings; track painting.id) {
+        <li class="favorite-card">
+          <a [routerLink]="['/paintings', painting.id]" class="painting-link">
+            <img
+              [src]="getImageUrl(painting.image_id)"
+              [alt]="painting.title"
+              crossorigin="anonymous"
+              class="painting-image"
+            />
+            <div class="painting-info">
+              <strong>{{ painting.title }}</strong>
+              <em>{{ painting.artist_display }}</em>
+              <small>{{ painting.date_display }}</small>
+            </div>
+          </a>
+          <button class="remove-btn" (click)="removeFavorite(painting.id)" [title]="t.remove">
+            {{ t.remove }}
+          </button>
+        </li>
+      }
+    </ul>
+  }
+</div>

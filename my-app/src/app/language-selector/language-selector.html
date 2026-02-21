@@ -1,0 +1,32 @@
+<div class="language-selector" (clickOutside)="closeDropdown()">
+    <button 
+        class="language-btn" 
+        (click)="toggleDropdown()"
+        [attr.aria-expanded]="isOpen"
+        aria-haspopup="listbox"
+    >
+        <span class="flag">{{ currentLanguage?.flag }}</span>
+        <span class="lang-code">{{ currentLanguage?.code?.toUpperCase() }}</span>
+        <span class="arrow" [class.open]="isOpen">▼</span>
+    </button>
+    
+    @if (isOpen) {
+        <ul class="language-dropdown" role="listbox">
+            @for (lang of translationService.availableLanguages; track lang.code) {
+                <li 
+                    class="language-option"
+                    [class.selected]="lang.code === translationService.currentLanguage()"
+                    (click)="selectLanguage(lang.code)"
+                    role="option"
+                    [attr.aria-selected]="lang.code === translationService.currentLanguage()"
+                >
+                    <span class="flag">{{ lang.flag }}</span>
+                    <span class="lang-name">{{ lang.name }}</span>
+                    @if (lang.code === translationService.currentLanguage()) {
+                        <span class="checkmark">✓</span>
+                    }
+                </li>
+            }
+        </ul>
+    }
+</div>

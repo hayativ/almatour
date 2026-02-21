@@ -1,0 +1,44 @@
+<div class="home-container">
+  <div class="hero-section">
+    <h1>{{ t.title }}</h1>
+    <p class="subtitle">{{ t.subtitle }}</p>
+    <a routerLink="/paintings" class="cta-button">{{ t.exploreButton }}</a>
+  </div>
+
+  <section class="featured-section">
+    <h2>{{ t.featuredArtworks }}</h2>
+
+    @if (loading$ | async) {
+      <p class="loading">{{ t.loadingFeatured }}</p>
+    }
+
+    @if (featuredPaintings$ | async; as featuredPaintings) {
+      @if (featuredPaintings.length > 0) {
+        <div class="featured-grid">
+          @for (painting of featuredPaintings; track painting.id) {
+            <a [routerLink]="['/paintings', painting.id]" class="featured-card">
+              <img
+                [src]="getImageUrl(painting.image_id)"
+                [alt]="painting.title"
+                (error)="onImageError($event)"
+                crossorigin="anonymous"
+                loading="lazy"
+              />
+              <div class="featured-info">
+                <h3>{{ painting.title }}</h3>
+                <p class="artist">{{ painting.artist_display }}</p>
+                <p class="date">{{ painting.date_display }}</p>
+              </div>
+            </a>
+          }
+        </div>
+      }
+    }
+  </section>
+
+  <section class="about-preview">
+    <h2>{{ t.aboutMuseum }}</h2>
+    <p>{{ t.aboutDescription }}</p>
+    <a routerLink="/about" class="learn-more">{{ t.learnMore }}</a>
+  </section>
+</div>

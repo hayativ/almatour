@@ -1,0 +1,41 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <a routerLink="/" class="navbar-brand">
+      {{ title }}
+    </a>
+
+    <ul class="nav-links">
+      @for (link of navLinks(); track link.path) {
+        <li>
+          <a
+            [routerLink]="link.path"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: link.exact }"
+            class="nav-link"
+          >
+            {{ link.label }}
+          </a>
+        </li>
+      }
+      <li>
+        @if (isLoggedIn) {
+          <a routerLink="/profile" routerLinkActive="active" class="nav-link profile-link">
+            @if (userPhotoURL) {
+              <img [src]="userPhotoURL" alt="Profile" class="nav-avatar" />
+            } @else {
+              <span class="nav-avatar-placeholder">{{ userInitial }}</span>
+            }
+            {{ profileText }}
+          </a>
+        } @else {
+          <a routerLink="/login" routerLinkActive="active" class="nav-link">
+            {{ loginText }}
+          </a>
+        }
+      </li>
+      <li class="language-selector-wrapper">
+        <app-language-selector></app-language-selector>
+      </li>
+    </ul>
+  </div>
+</nav>

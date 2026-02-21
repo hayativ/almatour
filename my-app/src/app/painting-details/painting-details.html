@@ -1,0 +1,122 @@
+<div class="details-container">
+  @if (isLoading) {
+    <div class="loading-state">
+      <div class="spinner"></div>
+      <p>Loading painting details...</p>
+    </div>
+  }
+  @if (errorMessage) {
+    <div class="error-state">
+      <p class="error">{{ errorMessage }}</p>
+      <button (click)="goBack()" class="back-button">← Back to Collection</button>
+    </div>
+  }
+
+  @if (painting) {
+    <div class="painting-details">
+      <button (click)="goBack()" class="back-button">← Back to Collection</button>
+      
+      <div class="details-grid">
+        <div class="image-section">
+          <img
+            [src]="getImageUrl(painting.image_id)"
+            [alt]="painting.title"
+            class="painting-image"
+            crossorigin="anonymous"
+          />
+        </div>
+
+        <div class="info-section">
+          <h1 class="painting-title">{{ painting.title }}</h1>
+          
+          <div class="info-group">
+            <h3>Artist</h3>
+            <p>{{ painting.artist_display }}</p>
+          </div>
+
+          <div class="info-group">
+            <h3>Date</h3>
+            <p>{{ painting.date_display }}</p>
+          </div>
+
+          @if (painting.place_of_origin) {
+            <div class="info-group">
+              <h3>Place of Origin</h3>
+              <p>{{ painting.place_of_origin }}</p>
+            </div>
+          }
+
+          @if (painting.medium_display) {
+            <div class="info-group">
+              <h3>Medium</h3>
+              <p>{{ painting.medium_display }}</p>
+            </div>
+          }
+
+          @if (painting.dimensions) {
+            <div class="info-group">
+              <h3>Dimensions</h3>
+              <p>{{ painting.dimensions }}</p>
+            </div>
+          }
+
+          @if (painting.credit_line) {
+            <div class="info-group">
+              <h3>Credit Line</h3>
+              <p>{{ painting.credit_line }}</p>
+            </div>
+          }
+
+          @if (painting.inscriptions) {
+            <div class="info-group">
+              <h3>Inscriptions</h3>
+              <p>{{ painting.inscriptions }}</p>
+            </div>
+          }
+
+          <div class="info-group">
+            <h3>Artwork ID</h3>
+            <p>{{ painting.id }}</p>
+          </div>
+        </div>
+      </div>
+
+      @if (painting.description || painting.short_description) {
+        <div class="description-section">
+          <h2>About This Artwork</h2>
+          @if (painting.description) {
+            <div class="description-content" [innerHTML]="painting.description"></div>
+          } @else if (painting.short_description) {
+            <p class="short-description">{{ painting.short_description }}</p>
+          }
+        </div>
+      }
+
+      @if (painting.provenance_text) {
+        <div class="provenance-section">
+          <h2>Provenance</h2>
+          <div class="provenance-content">{{ painting.provenance_text }}</div>
+        </div>
+      }
+
+      @if (painting.exhibition_history) {
+        <div class="exhibition-section">
+          <h2>Exhibition History</h2>
+          <div class="exhibition-content">{{ painting.exhibition_history }}</div>
+        </div>
+      }
+
+      @if (painting.publication_history) {
+        <div class="publication-section">
+          <h2>Publication History</h2>
+          <div class="publication-content">{{ painting.publication_history }}</div>
+        </div>
+      }
+
+      <div class="actions">
+        <a routerLink="/paintings" class="action-button">View More Artworks</a>
+      </div>
+    </div>
+  }
+</div>
+
