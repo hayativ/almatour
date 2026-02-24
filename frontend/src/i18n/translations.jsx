@@ -1,0 +1,248 @@
+import { createContext, useContext, useState } from 'react'
+
+const LangContext = createContext(null)
+
+const translations = {
+    en: {
+        nav: { home: 'Home', places: 'Places', events: 'Events', login: 'Login', profile: 'Profile', title: 'Almatour' },
+        home: {
+            hero: 'Discover Almaty',
+            heroSub: 'Your ultimate tourism guide to the heart of Kazakhstan',
+            explorePlaces: 'Explore Places',
+            upcomingEvents: 'Upcoming Events',
+            viewAll: 'View All',
+            featuredPlaces: 'Featured Places',
+            ads: 'Discover More',
+            souvenirs: 'Souvenir Shops',
+            apps: 'Useful Apps',
+        },
+        places: {
+            title: 'Places to Visit',
+            allCategories: 'All',
+            category0: 'Sights',
+            category1: 'Museums',
+            category2: 'Parks',
+            category3: 'Restaurants',
+            noResults: 'No places found',
+            loading: 'Loading places...',
+        },
+        events: {
+            title: 'Events in Almaty',
+            allCategories: 'All',
+            category0: 'Concerts',
+            category1: 'Exhibitions',
+            category2: 'Sports',
+            category3: 'Festivals',
+            noResults: 'No events found',
+            loading: 'Loading events...',
+            date: 'Date',
+            time: 'Time',
+            duration: 'Duration',
+            cost: 'Cost',
+            free: 'Free',
+            artist: 'Artist',
+            addToCalendar: 'Add to Calendar',
+            removeFromCalendar: 'Remove',
+            mins: 'min',
+        },
+        auth: {
+            loginTitle: 'Sign In',
+            loginSub: 'Access your Almatour account',
+            registerTitle: 'Create Account',
+            registerSub: 'Join the Almatour community',
+            email: 'Email',
+            password: 'Password',
+            username: 'Username',
+            phone: 'Phone',
+            signIn: 'Sign In',
+            signUp: 'Sign Up',
+            noAccount: "Don't have an account?",
+            haveAccount: 'Already have an account?',
+            signingIn: 'Signing in...',
+            creatingAccount: 'Creating account...',
+        },
+        profile: {
+            title: 'Profile',
+            email: 'Email',
+            username: 'Username',
+            phone: 'Phone',
+            signOut: 'Sign Out',
+            myCalendar: 'My Calendar Events',
+            noCalendar: 'No calendar events yet',
+        },
+        footer: {
+            copy: '© 2026 Almatour. All rights reserved.',
+            tagline: 'Your guide to Almaty',
+        },
+        common: { loading: 'Loading...', error: 'An error occurred', back: '← Back' },
+    },
+    ru: {
+        nav: { home: 'Главная', places: 'Места', events: 'События', login: 'Войти', profile: 'Профиль', title: 'Алматур' },
+        home: {
+            hero: 'Откройте Алматы',
+            heroSub: 'Ваш главный гид по сердцу Казахстана',
+            explorePlaces: 'Исследовать места',
+            upcomingEvents: 'Ближайшие события',
+            viewAll: 'Все',
+            featuredPlaces: 'Популярные места',
+            ads: 'Узнать больше',
+            souvenirs: 'Сувенирные магазины',
+            apps: 'Полезные приложения',
+        },
+        places: {
+            title: 'Места для посещения',
+            allCategories: 'Все',
+            category0: 'Достопримечательности',
+            category1: 'Музеи',
+            category2: 'Парки',
+            category3: 'Рестораны',
+            noResults: 'Нет результатов',
+            loading: 'Загрузка...',
+        },
+        events: {
+            title: 'События в Алматы',
+            allCategories: 'Все',
+            category0: 'Концерты',
+            category1: 'Выставки',
+            category2: 'Спорт',
+            category3: 'Фестивали',
+            noResults: 'Нет событий',
+            loading: 'Загрузка...',
+            date: 'Дата',
+            time: 'Время',
+            duration: 'Длительность',
+            cost: 'Стоимость',
+            free: 'Бесплатно',
+            artist: 'Артист',
+            addToCalendar: 'Добавить',
+            removeFromCalendar: 'Удалить',
+            mins: 'мин',
+        },
+        auth: {
+            loginTitle: 'Вход',
+            loginSub: 'Войдите в аккаунт Алматур',
+            registerTitle: 'Регистрация',
+            registerSub: 'Присоединяйтесь к Алматур',
+            email: 'Эл. почта',
+            password: 'Пароль',
+            username: 'Имя пользователя',
+            phone: 'Телефон',
+            signIn: 'Войти',
+            signUp: 'Зарегистрироваться',
+            noAccount: 'Нет аккаунта?',
+            haveAccount: 'Уже есть аккаунт?',
+            signingIn: 'Вход...',
+            creatingAccount: 'Создание...',
+        },
+        profile: {
+            title: 'Профиль',
+            email: 'Эл. почта',
+            username: 'Имя пользователя',
+            phone: 'Телефон',
+            signOut: 'Выйти',
+            myCalendar: 'Мои события',
+            noCalendar: 'Нет событий в календаре',
+        },
+        footer: {
+            copy: '© 2026 Алматур. Все права защищены.',
+            tagline: 'Ваш гид по Алматы',
+        },
+        common: { loading: 'Загрузка...', error: 'Произошла ошибка', back: '← Назад' },
+    },
+    kz: {
+        nav: { home: 'Басты бет', places: 'Орындар', events: 'Оқиғалар', login: 'Кіру', profile: 'Профиль', title: 'Алматур' },
+        home: {
+            hero: 'Алматыны ашыңыз',
+            heroSub: 'Қазақстан жүрегіне саяхат нұсқаулығы',
+            explorePlaces: 'Орындарды зерттеу',
+            upcomingEvents: 'Алдағы оқиғалар',
+            viewAll: 'Барлығы',
+            featuredPlaces: 'Танымал орындар',
+            ads: 'Көбірек білу',
+            souvenirs: 'Сувенир дүкендері',
+            apps: 'Пайдалы қосымшалар',
+        },
+        places: {
+            title: 'Бару орындары',
+            allCategories: 'Барлығы',
+            category0: 'Көрікті жерлер',
+            category1: 'Мұражайлар',
+            category2: 'Саябақтар',
+            category3: 'Мейрамханалар',
+            noResults: 'Нәтиже табылмады',
+            loading: 'Жүктелуде...',
+        },
+        events: {
+            title: 'Алматыдағы оқиғалар',
+            allCategories: 'Барлығы',
+            category0: 'Концерттер',
+            category1: 'Көрмелер',
+            category2: 'Спорт',
+            category3: 'Фестивальдер',
+            noResults: 'Оқиғалар жоқ',
+            loading: 'Жүктелуде...',
+            date: 'Күні',
+            time: 'Уақыт',
+            duration: 'Ұзақтығы',
+            cost: 'Құны',
+            free: 'Тегін',
+            artist: 'Әртіс',
+            addToCalendar: 'Қосу',
+            removeFromCalendar: 'Жою',
+            mins: 'мин',
+        },
+        auth: {
+            loginTitle: 'Кіру',
+            loginSub: 'Алматур аккаунтына кіріңіз',
+            registerTitle: 'Тіркелу',
+            registerSub: 'Алматур қауымдастығына қосылыңыз',
+            email: 'Эл. пошта',
+            password: 'Құпия сөз',
+            username: 'Пайдаланушы аты',
+            phone: 'Телефон',
+            signIn: 'Кіру',
+            signUp: 'Тіркелу',
+            noAccount: 'Аккаунтыңыз жоқ па?',
+            haveAccount: 'Аккаунтыңыз бар ма?',
+            signingIn: 'Кіру...',
+            creatingAccount: 'Жасалуда...',
+        },
+        profile: {
+            title: 'Профиль',
+            email: 'Эл. пошта',
+            username: 'Пайдаланушы аты',
+            phone: 'Телефон',
+            signOut: 'Шығу',
+            myCalendar: 'Менің оқиғаларым',
+            noCalendar: 'Календарда оқиғалар жоқ',
+        },
+        footer: {
+            copy: '© 2026 Алматур. Барлық құқықтар қорғалған.',
+            tagline: 'Алматы бойынша нұсқаулық',
+        },
+        common: { loading: 'Жүктелуде...', error: 'Қате орын алды', back: '← Артқа' },
+    },
+}
+
+export function LangProvider({ children }) {
+    const [lang, setLang] = useState(() => {
+        const stored = localStorage.getItem('almatour_lang')
+        if (stored && ['en', 'ru', 'kz'].includes(stored)) return stored
+        return 'en'
+    })
+
+    const t = translations[lang]
+
+    const setLanguage = (l) => {
+        setLang(l)
+        localStorage.setItem('almatour_lang', l)
+    }
+
+    return (
+        <LangContext.Provider value={{ lang, t, setLanguage }}>
+            {children}
+        </LangContext.Provider>
+    )
+}
+
+export const useLang = () => useContext(LangContext)

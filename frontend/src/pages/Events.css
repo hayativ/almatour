@@ -1,0 +1,58 @@
+.events-page {
+    padding: 2rem 1.5rem;
+}
+
+.events-page h1 {
+    margin-bottom: 1.5rem;
+}
+
+.events-list-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.ev-list-card {
+    text-decoration: none;
+    color: inherit;
+}
+
+.ev-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.ev-body {
+    padding: 1rem 1.25rem;
+}
+
+.ev-body h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+}
+
+.ev-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    margin-bottom: 0.5rem;
+}
+
+.ev-cost {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: rgba(0, 212, 170, 0.15);
+    color: var(--accent2);
+}
+
+@media (max-width: 768px) {
+    .events-list-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,99 @@
+.profile-page {
+    padding: 2rem 1.5rem;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), #7c3aed);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.profile-email {
+    color: var(--text-dim);
+    font-size: 1rem;
+    margin-top: 0.25rem;
+}
+
+.profile-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.info-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.info-label {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+.info-value {
+    font-size: 1.05rem;
+    color: var(--text);
+    font-weight: 500;
+}
+
+.calendar-section {
+    margin-top: 3rem;
+}
+
+.calendar-section h2 {
+    margin-bottom: 1.5rem;
+}
+
+.cal-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.cal-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+}
+
+.cal-info h4 {
+    margin-bottom: 0.2rem;
+}
+
+.cal-info h4 a {
+    color: var(--text);
+}
+
+.cal-info h4 a:hover {
+    color: var(--accent-light);
+}
+
+.cal-date {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+}

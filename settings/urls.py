@@ -1,6 +1,6 @@
 # Django modules
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 from drf_spectacular.views import (
     SpectacularAPIView,
@@ -21,4 +21,9 @@ urlpatterns = [
         SpectacularRedocView.as_view(url_name='schema'),
         name='redoc'
     ),
+    # API endpoints
+    path('api/v1/places/', include('apps.places.urls')),
+    path('api/v1/events/', include('apps.events.urls')),
+    path('api/v1/info/', include('apps.info.urls')),
+    path('api/v1/users/', include('apps.users.urls')),
 ]
