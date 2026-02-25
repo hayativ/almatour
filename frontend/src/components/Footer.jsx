@@ -7,7 +7,7 @@ export default function Footer() {
         <footer className="footer">
             <div className="footer-container">
                 <div className="footer-brand">
-                    <span className="footer-icon">🏔️</span>
+                    <span className="footer-icon">🍏</span>
                     <span className="footer-name">Almatour</span>
                 </div>
                 <p className="footer-tagline">{t.footer.tagline}</p>

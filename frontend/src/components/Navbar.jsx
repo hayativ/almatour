@@ -14,12 +14,12 @@ export default function Navbar() {
         <nav className="navbar">
             <div className="nav-container">
                 <Link to="/" className="nav-brand">
-                    <span className="brand-icon">🏔️</span>
+                    <span className="brand-icon">🍏</span>
                     <span className="brand-text">{t.nav.title}</span>
                 </Link>
 
                 <div className="nav-links">
-                    <Link to="/" className={isActive('/')}>{t.nav.home}</Link>
+                    <Link to="/" className={isActive('/')}>{t.nav.info}</Link>
                     <Link to="/places" className={isActive('/places')}>{t.nav.places}</Link>
                     <Link to="/events" className={isActive('/events')}>{t.nav.events}</Link>
                 </div>

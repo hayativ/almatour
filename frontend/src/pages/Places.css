@@ -3,92 +3,59 @@
 }
 
 .places-page h1 {
-    margin-bottom: 1.5rem;
-}
-
-.category-filters {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
     margin-bottom: 2rem;
 }
 
-.filter-btn {
-    padding: 0.5rem 1.25rem;
-    border-radius: 999px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    background: var(--bg-card);
-    color: var(--text-dim);
-    border: 1px solid var(--border);
-    transition: all var(--transition);
-}
-
-.filter-btn:hover {
-    border-color: var(--accent);
-    color: var(--text);
-}
-
-.filter-btn.active {
-    background: var(--accent);
-    color: #fff;
-    border-color: var(--accent);
-}
-
-.places-list-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-}
-
-.place-list-card {
-    text-decoration: none;
-    color: inherit;
-}
-
-.plc-img {
+.map-container {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.plc-body {
-    padding: 1rem 1.25rem;
-}
-
-.plc-body h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.3rem;
-    color: var(--text);
-}
-
-.plc-addr {
-    color: var(--text-dim);
-    font-size: 0.9rem;
-}
-
-.no-results {
-    text-align: center;
-    color: var(--text-dim);
-    padding: 3rem;
-    font-size: 1.1rem;
-}
-
-.pagination {
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
     display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 1rem;
-    margin-top: 2rem;
+    align-items: center;
+    min-height: 400px;
 }
 
-.page-info {
+.map-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.map-fallback {
+    max-width: 256px;
+    min-height: auto;
+    object-fit: contain;
+}
+
+.map-info {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.map-label {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+}
+
+.map-coords {
     color: var(--text-dim);
-    font-weight: 500;
+    font-size: 0.95rem;
 }
 
 @media (max-width: 768px) {
-    .places-list-grid {
-        grid-template-columns: 1fr;
+    .map-container {
+        min-height: 250px;
+    }
+
+    .map-image {
+        min-height: 250px;
     }
 }

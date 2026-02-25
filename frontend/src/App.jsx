@@ -2,7 +2,9 @@ import { Routes, Route } from 'react-router-dom'
 import { LangProvider } from './i18n/translations'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import Home from './pages/Home'
+import Info from './pages/Info'
+import Souvenirs from './pages/Souvenirs'
+import Apps from './pages/Apps'
 import Places from './pages/Places'
 import PlaceDetail from './pages/PlaceDetail'
 import Events from './pages/Events'
@@ -18,7 +20,9 @@ export default function App() {
                 <Navbar />
                 <main style={{ flex: 1 }}>
                     <Routes>
-                        <Route path="/" element={<Home />} />
+                        <Route path="/" element={<Info />} />
+                        <Route path="/souvenirs" element={<Souvenirs />} />
+                        <Route path="/apps" element={<Apps />} />
                         <Route path="/places" element={<Places />} />
                         <Route path="/places/:id" element={<PlaceDetail />} />
                         <Route path="/events" element={<Events />} />

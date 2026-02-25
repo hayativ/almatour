@@ -4,7 +4,7 @@ const LangContext = createContext(null)
 
 const translations = {
     en: {
-        nav: { home: 'Home', places: 'Places', events: 'Events', login: 'Login', profile: 'Profile', title: 'Almatour' },
+        nav: { info: 'Info', places: 'Places', events: 'Events', login: 'Login', profile: 'Profile', title: 'Almatour' },
         home: {
             hero: 'Discover Almaty',
             heroSub: 'Your ultimate tourism guide to the heart of Kazakhstan',
@@ -16,8 +16,21 @@ const translations = {
             souvenirs: 'Souvenir Shops',
             apps: 'Useful Apps',
         },
+        info: {
+            title: 'Info',
+            souvenirsCategory: 'Souvenirs',
+            appsCategory: 'Apps',
+            souvenirsTitle: 'Souvenir Shops',
+            appsTitle: 'Useful Apps',
+            noSouvenirs: 'No souvenirs found',
+            noApps: 'No apps found',
+            souvenirsDesc: 'Find the best souvenir shops in Almaty',
+            appsDesc: 'Discover useful apps for your trip',
+            visitSite: 'Visit Site',
+        },
         places: {
             title: 'Places to Visit',
+            mapTitle: 'Map of Almaty',
             allCategories: 'All',
             category0: 'Sights',
             category1: 'Museums',
@@ -77,7 +90,7 @@ const translations = {
         common: { loading: 'Loading...', error: 'An error occurred', back: '← Back' },
     },
     ru: {
-        nav: { home: 'Главная', places: 'Места', events: 'События', login: 'Войти', profile: 'Профиль', title: 'Алматур' },
+        nav: { info: 'Инфо', places: 'Места', events: 'События', login: 'Войти', profile: 'Профиль', title: 'Алматур' },
         home: {
             hero: 'Откройте Алматы',
             heroSub: 'Ваш главный гид по сердцу Казахстана',
@@ -89,8 +102,21 @@ const translations = {
             souvenirs: 'Сувенирные магазины',
             apps: 'Полезные приложения',
         },
+        info: {
+            title: 'Инфо',
+            souvenirsCategory: 'Сувениры',
+            appsCategory: 'Приложения',
+            souvenirsTitle: 'Сувенирные магазины',
+            appsTitle: 'Полезные приложения',
+            noSouvenirs: 'Сувениры не найдены',
+            noApps: 'Приложения не найдены',
+            souvenirsDesc: 'Лучшие сувенирные магазины Алматы',
+            appsDesc: 'Полезные приложения для путешествия',
+            visitSite: 'Перейти',
+        },
         places: {
             title: 'Места для посещения',
+            mapTitle: 'Карта Алматы',
             allCategories: 'Все',
             category0: 'Достопримечательности',
             category1: 'Музеи',
@@ -150,7 +176,7 @@ const translations = {
         common: { loading: 'Загрузка...', error: 'Произошла ошибка', back: '← Назад' },
     },
     kz: {
-        nav: { home: 'Басты бет', places: 'Орындар', events: 'Оқиғалар', login: 'Кіру', profile: 'Профиль', title: 'Алматур' },
+        nav: { info: 'Ақпарат', places: 'Орындар', events: 'Оқиғалар', login: 'Кіру', profile: 'Профиль', title: 'Алматур' },
         home: {
             hero: 'Алматыны ашыңыз',
             heroSub: 'Қазақстан жүрегіне саяхат нұсқаулығы',
@@ -162,8 +188,21 @@ const translations = {
             souvenirs: 'Сувенир дүкендері',
             apps: 'Пайдалы қосымшалар',
         },
+        info: {
+            title: 'Ақпарат',
+            souvenirsCategory: 'Сувенирлер',
+            appsCategory: 'Қосымшалар',
+            souvenirsTitle: 'Сувенир дүкендері',
+            appsTitle: 'Пайдалы қосымшалар',
+            noSouvenirs: 'Сувенирлер табылмады',
+            noApps: 'Қосымшалар табылмады',
+            souvenirsDesc: 'Алматыдағы ең жақсы сувенир дүкендері',
+            appsDesc: 'Сапарыңыз үшін пайдалы қосымшалар',
+            visitSite: 'Өту',
+        },
         places: {
             title: 'Бару орындары',
+            mapTitle: 'Алматы картасы',
             allCategories: 'Барлығы',
             category0: 'Көрікті жерлер',
             category1: 'Мұражайлар',
