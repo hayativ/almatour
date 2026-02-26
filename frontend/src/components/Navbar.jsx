@@ -14,7 +14,7 @@ export default function Navbar() {
         <nav className="navbar">
             <div className="nav-container">
                 <Link to="/" className="nav-brand">
-                    <span className="brand-icon">🍏</span>
+                    <img src="/Logo.jpg" alt="Almatour" className="brand-icon-img" />
                     <span className="brand-text">{t.nav.title}</span>
                 </Link>
 
