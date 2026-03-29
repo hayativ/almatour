@@ -16,5 +16,6 @@ class PlaceSerializer(serializers.ModelSerializer):
         model = Place
         fields = [
             'id', 'image', 'category', 'address', 'link',
+            'latitude', 'longitude',
             'created_at', 'updated_at', 'translations',
         ]
