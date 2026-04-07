@@ -17,8 +17,8 @@ class Place(AbstractBaseModel):
     category = models.IntegerField(choices=Category.choices)
     address = models.TextField()
     link = models.TextField()
-    latitude = models.FloatField(null=True, blank=True)
-    longitude = models.FloatField(null=True, blank=True)
+    lat = models.FloatField(null=True, blank=True)
+    lng = models.FloatField(null=True, blank=True)
 
     class Meta:
         db_table = 'places_place'
