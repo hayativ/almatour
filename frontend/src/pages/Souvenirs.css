@@ -1,0 +1,67 @@
+.souvenirs-page {
+    padding: 2rem 1.5rem;
+}
+
+.souvenirs-page .back-link {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    color: var(--accent-light);
+    font-weight: 600;
+}
+
+.souvenirs-page h1 {
+    margin-bottom: 2rem;
+}
+
+.souvenirs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.souvenir-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.souvenir-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.souvenir-body {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.souvenir-body h3 {
+    font-size: 1.1rem;
+    color: var(--text);
+}
+
+.souvenir-addr {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+}
+
+.souvenir-link {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+.no-results {
+    text-align: center;
+    color: var(--text-dim);
+    padding: 3rem;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .souvenirs-grid {
+        grid-template-columns: 1fr;
+    }
+}

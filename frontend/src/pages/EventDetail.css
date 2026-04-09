@@ -1,0 +1,53 @@
+.event-detail {
+    padding: 2rem 1.5rem;
+}
+
+.event-detail-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.meta-card {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.meta-icon {
+    font-size: 1.5rem;
+}
+
+.meta-card strong {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.meta-card p {
+    font-size: 1rem;
+    color: var(--text);
+    margin: 0;
+}
+
+.detail-addr {
+    color: var(--text-dim);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.calendar-action {
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .event-detail-meta {
+        grid-template-columns: 1fr 1fr;
+    }
+}
