@@ -587,7 +587,7 @@ EVENTS_DATA = [
     {
         "id": 1,
         "image": "https://sxodim.com/uploads/posts/2026/01/15/optimized/eadbbf33219d4f446982451ce810c21f_545x305-q-85.jpg",
-        "date": date(2026, 2, 20),
+        "date": date(2026, 4, 15),
         "start_time": dtime(20, 0),
         "duration": 120,
         "artist": "Контркультура: Чёрная Экономика",
@@ -600,7 +600,7 @@ EVENTS_DATA = [
     {
         "id": 2,
         "image": "https://sxodim.com/uploads/posts/2025/12/05/optimized/ebabe72cacfa99f8640097f8214aa31b_545x305-q-85.jpg",
-        "date": date(2026, 2, 24),
+        "date": date(2026, 4, 15),
         "start_time": dtime(19, 0),
         "duration": 90,
         "artist": "«Алматы махаббатым» концерт-спектаклі",
@@ -613,7 +613,7 @@ EVENTS_DATA = [
     {
         "id": 3,
         "image": "https://sxodim.com/uploads/posts/2025/07/24/optimized/6b0643b02517289c42c53f581588dc08_545x305-q-85.jpg",
-        "date": date(2026, 4, 17),
+        "date": date(2026, 4, 16),
         "start_time": dtime(19, 0),
         "duration": 120,
         "artist": "LUCAVEROS",
@@ -626,7 +626,7 @@ EVENTS_DATA = [
     {
         "id": 4,
         "image": "https://sxodim.com/uploads/posts/2026/01/15/optimized/eadbbf33219d4f446982451ce810c21f_545x305-q-85.jpg",
-        "date": date(2026, 3, 27),
+        "date": date(2026, 4, 17),
         "start_time": dtime(20, 0),
         "duration": 90,
         "artist": "Jay Sean & Nana (The Darkman)",
@@ -639,7 +639,7 @@ EVENTS_DATA = [
     {
         "id": 5,
         "image": "https://sxodim.com/uploads/posts/2025/12/05/optimized/ebabe72cacfa99f8640097f8214aa31b_545x305-q-85.jpg",
-        "date": date(2026, 2, 17),
+        "date": date(2026, 4, 18),
         "start_time": dtime(20, 0),
         "duration": 10,
         "artist": "Трио Shestero — Акустический блюз",
@@ -652,7 +652,7 @@ EVENTS_DATA = [
     {
         "id": 6,
         "image": "https://sxodim.com/uploads/posts/2025/10/29/optimized/4425210afb398173bece8058a8f24b5f_545x305-q-85.jpg",
-        "date": date(2026, 2, 19),
+        "date": date(2026, 4, 19),
         "start_time": dtime(20, 0),
         "duration": 90,
         "artist": "Квартет Екатерины Хоменковой — Our favorite things",
@@ -665,7 +665,7 @@ EVENTS_DATA = [
     {
         "id": 7,
         "image": "https://sxodim.com/uploads/posts/2026/01/30/optimized/1c76eb5b0385b166cb9ed6ebdac7d75c_545x305-q-85.jpg",
-        "date": date(2026, 2, 20),
+        "date": date(2026, 4, 21),
         "start_time": dtime(19, 0),
         "duration": 120,
         "artist": "Посвящение Уэсу Монтгомери — джаз, проверенный временем",
@@ -678,7 +678,7 @@ EVENTS_DATA = [
     {
         "id": 8,
         "image": "https://sxodim.com/uploads/posts/2026/02/02/optimized/7249af96e8203866704e164277a2672d_545x305-q-85.jpg",
-        "date": date(2026, 2, 20),
+        "date": date(2026, 4, 22),
         "start_time": dtime(19, 30),
         "duration": 90,
         "artist": "Галымжан Мейрам — «Золотые хиты Сан-Ремо»",
@@ -691,7 +691,7 @@ EVENTS_DATA = [
     {
         "id": 9,
         "image": "https://sxodim.com/uploads/posts/2026/02/16/optimized/7256e2c92dcb433a6ea32b66cec6798b_545x305-q-85.jpg",
-        "date": date(2026, 2, 21),
+        "date": date(2026, 4, 23),
         "start_time": dtime(19, 0),
         "duration": 120,
         "artist": "La Bohême — «Февральская точка»",
@@ -704,7 +704,7 @@ EVENTS_DATA = [
     {
         "id": 10,
         "image": "https://sxodim.com/uploads/posts/2026/02/02/optimized/c3fc714bdcd9831bfa483048b855bb0a_545x305-q-85.jpg",
-        "date": date(2026, 2, 21),
+        "date": date(2026, 4, 23),
         "start_time": dtime(19, 0),
         "duration": 120,
         "artist": "Jazz Colours & Сурья — Good bye, Winter!",
@@ -717,7 +717,7 @@ EVENTS_DATA = [
     {
         "id": 11,
         "image": "https://sxodim.com/uploads/posts/2026/02/02/optimized/d71b9ef6ea84244c98cfd428fd0aa364_545x305-q-85.jpg",
-        "date": date(2026, 2, 21),
+        "date": date(2026, 4, 21),
         "start_time": dtime(22, 0),
         "duration": 90,
         "artist": "Dair Ard — Кельтский фолк",
@@ -730,7 +730,7 @@ EVENTS_DATA = [
     {
         "id": 12,
         "image": "https://sxodim.com/uploads/posts/2025/04/28/optimized/3d18b515325c18bbcff765c59671d5bf_545x305-q-85.jpg",
-        "date": date(2026, 2, 22),
+        "date": date(2026, 4, 22),
         "start_time": dtime(18, 0),
         "duration": 120,
         "artist": "Bugarabu & Рамхи — «Аура ритма»",
@@ -743,7 +743,7 @@ EVENTS_DATA = [
     {
         "id": 13,
         "image": "https://sxodim.com/uploads/posts/2026/01/26/optimized/b579c38c6c9d53206e35e8b0690dc240_545x305-q-85.jpg",
-        "date": date(2026, 2, 23),
+        "date": date(2026, 4, 23),
         "start_time": dtime(20, 0),
         "duration": 120,
         "artist": "All stars jam session — Джазовая музыка и импровизация",
@@ -756,7 +756,7 @@ EVENTS_DATA = [
     {
         "id": 14,
         "image": "https://sxodim.com/uploads/posts/2026/02/02/optimized/278ca14931fcadb22cfe860453dbaadf_545x305-q-85.jpg",
-        "date": date(2026, 2, 24),
+        "date": date(2026, 4, 24),
         "start_time": dtime(20, 0),
         "duration": 90,
         "artist": "Раушан Абишева — River of Love",
@@ -769,7 +769,7 @@ EVENTS_DATA = [
     {
         "id": 15,
         "image": "https://sxodim.com/uploads/posts/2026/02/02/optimized/278ca14931fcadb22cfe860453dbaadf_545x305-q-85.jpg",
-        "date": date(2026, 2, 25),
+        "date": date(2026, 4, 25),
         "start_time": dtime(20, 0),
         "duration": 60,
         "artist": "Pop Queens — Dua Lipa & Rihanna Night (Юлия Яковлева и резиденты EverJazz)",
@@ -782,7 +782,7 @@ EVENTS_DATA = [
     {
         "id": 16,
         "image": "https://sxodim.com/uploads/posts/2026/01/30/optimized/6e362e301137ae506245155b0631b00c_1522x570-q-85.jpg",
-        "date": date(2026, 2, 26),
+        "date": date(2026, 4, 26),
         "start_time": dtime(20, 0),
         "duration": 60,
         "artist": "Eric B. Turner (США) — Джаз и блюз из сердца Америки",
@@ -795,7 +795,7 @@ EVENTS_DATA = [
     {
         "id": 17,
         "image": "https://sxodim.com/uploads/posts/2026/02/02/optimized/64cfdb0076e988cb7f809635aa947d10_545x305-q-85.jpg",
-        "date": date(2026, 2, 27),
+        "date": date(2026, 4, 27),
         "start_time": dtime(19, 0),
         "duration": 120,
         "artist": "Диана Макина",
@@ -808,7 +808,7 @@ EVENTS_DATA = [
     {
         "id": 18,
         "image": "https://sxodim.com/uploads/posts/2025/10/29/optimized/7451b6f5f2f099a59dc10d82016ba721_545x305-q-85.jpg",
-        "date": date(2026, 2, 27),
+        "date": date(2026, 4, 27),
         "start_time": dtime(22, 0),
         "duration": 120,
         "artist": "Гаухар Саттарова & STEPS",
@@ -821,7 +821,7 @@ EVENTS_DATA = [
     {
         "id": 19,
         "image": "https://sxodim.com/uploads/posts/2026/01/30/optimized/861895f89773b9af3a8deed08e0f092f_545x305-q-85.jpg",
-        "date": date(2026, 2, 28),
+        "date": date(2026, 4, 28),
         "start_time": dtime(19, 0),
         "duration": 120,
         "artist": "Tribute to Wes Montgomery",
@@ -834,7 +834,7 @@ EVENTS_DATA = [
     {
         "id": 20,
         "image": "https://sxodim.com/uploads/posts/2026/02/02/optimized/ca95740af6b538fb97bdb421fb789a3b_545x305-q-85.jpg",
-        "date": date(2026, 2, 28),
+        "date": date(2026, 4, 28),
         "start_time": dtime(22, 0),
         "duration": 120,
         "artist": "Ирэна Аравина & Jazz House",
@@ -847,7 +847,7 @@ EVENTS_DATA = [
     {
         "id": 21,
         "image": "https://sxodim.com/uploads/posts/2026/02/02/optimized/55457a38a37be8dac37a81b8ae32572c_545x305-q-85.jpg",
-        "date": date(2026, 3, 1),
+        "date": date(2026, 4, 15),
         "start_time": dtime(13, 0),
         "duration": 120,
         "artist": "Гульнара Бертисбаева & Friends",
@@ -860,7 +860,7 @@ EVENTS_DATA = [
     {
         "id": 22,
         "image": "https://sxodim.com/uploads/posts/2026/01/30/optimized/0273ec078d00ee460ce8504788f2328d_545x305-q-85.jpg",
-        "date": date(2026, 3, 1),
+        "date": date(2026, 4, 15),
         "start_time": dtime(18, 0),
         "duration": 120,
         "artist": "Игорь Ананьев & Akko band",
@@ -873,7 +873,7 @@ EVENTS_DATA = [
     {
         "id": 23,
         "image": "https://sxodim.com/uploads/posts/2026/01/29/optimized/3ed0615fd9d19f142265f9eeb03d1bd9_545x305-q-85.jpg",
-        "date": date(2026, 3, 6),
+        "date": date(2026, 4, 16),
         "start_time": dtime(19, 0),
         "duration": 120,
         "artist": "Айқын Төлепберген",
@@ -886,7 +886,7 @@ EVENTS_DATA = [
     {
         "id": 24,
         "image": "https://sxodim.com/uploads/posts/2026/02/13/optimized/28e7b62c91c42d441409c1bcff5576eb_545x305-q-85.jpg",
-        "date": date(2026, 3, 7),
+        "date": date(2026, 4, 17),
         "start_time": dtime(20, 0),
         "duration": 120,
         "artist": "Нұрболат Абдуллин",
@@ -899,7 +899,7 @@ EVENTS_DATA = [
     {
         "id": 25,
         "image": "https://sxodim.com/uploads/posts/2026/02/11/optimized/4272d273d97fde3f188216a8c23b1d5d_545x305-q-85.jpg",
-        "date": date(2026, 3, 8),
+        "date": date(2026, 4, 25),
         "start_time": dtime(16, 0),
         "duration": 120,
         "artist": "Мақпал Жүнісова",
@@ -912,7 +912,7 @@ EVENTS_DATA = [
     {
         "id": 26,
         "image": "https://sxodim.com/uploads/posts/2026/02/11/optimized/e7197e2ac187d71a8bc2963012e7472a_545x305-q-85.jpg",
-        "date": date(2026, 3, 8),
+        "date": date(2026, 4, 17),  
         "start_time": dtime(20, 0),
         "duration": 120,
         "artist": "Мақпал Жүнісова",
@@ -925,7 +925,7 @@ EVENTS_DATA = [
     {
         "id": 27,
         "image": "https://sxodim.com/uploads/posts/2026/01/08/optimized/63905982bded619034f7d6cceec49020_545x305-q-85.jpg",
-        "date": date(2026, 3, 10),
+        "date": date(2026, 4, 26),
         "start_time": dtime(19, 0),
         "duration": 120,
         "artist": "«Жігіттер»",
@@ -938,7 +938,7 @@ EVENTS_DATA = [
     {
         "id": 28,
         "image": "https://sxodim.com/uploads/posts/2026/02/11/optimized/458a06c995a62a85e83892428cce5824_545x305-q-85.jpg",
-        "date": date(2026, 3, 11),
+        "date": date(2026, 4, 27),
         "start_time": dtime(19, 30),
         "duration": 120,
         "artist": "Nauryz Fest (сборный концерт)",
@@ -951,7 +951,7 @@ EVENTS_DATA = [
     {
         "id": 29,
         "image": "https://sxodim.com/uploads/posts/2025/12/11/optimized/0e56967cc4902fa018850a0c5d06b6fd_545x305-q-85.jpg",
-        "date": date(2026, 3, 17),
+        "date": date(2026, 4, 15),
         "start_time": dtime(20, 0),
         "duration": 120,
         "artist": "Anton Belyaev & Therr Maitz",
@@ -964,7 +964,7 @@ EVENTS_DATA = [
     {
         "id": 30,
         "image": "https://sxodim.com/uploads/posts/2026/02/11/optimized/26dcccf30b8614fc1ced38ef819265c2_545x305-q-85.jpg",
-        "date": date(2026, 3, 18),
+        "date": date(2026, 4, 16),
         "start_time": dtime(19, 0),
         "duration": 120,
         "artist": "«Ән мен әнші»",
@@ -977,7 +977,7 @@ EVENTS_DATA = [
     {
         "id": 31,
         "image": "https://sxodim.com/uploads/posts/2026/02/11/optimized/26dcccf30b8614fc1ced38ef819265c2_545x305-q-85.jpg",
-        "date": date(2026, 3, 21),
+        "date": date(2026, 4, 18),
         "start_time": dtime(20, 0),
         "duration": 120,
         "artist": "Концерт Антоха МС в Алматы",
@@ -990,7 +990,7 @@ EVENTS_DATA = [
     {
         "id": 32,
         "image": "https://sxodim.com/uploads/posts/2026/02/11/optimized/ff236953535e6d55993ee3dbe5d35127_1522x570-q-85.jpg",
-        "date": date(2026, 3, 20),
+        "date": date(2026, 4, 20),
         "start_time": dtime(19, 0),
         "duration": 120,
         "artist": "Конкурс Mrs Kazakhstan",
@@ -1003,11 +1003,11 @@ EVENTS_DATA = [
     {
         "id": 33,
         "image": "https://ticketon.kz/media/upload/54864u57013_afisha-2.jpg",
-        "date": date(2026, 2, 28),          # первый день выставки (28.02–01.03)
+        "date": date(2026, 4, 28),      
         "start_time": dtime(12, 0),         
         "duration": 480, 
         "artist": "Wedding Fair 2026 в Алматы",
-        "cost": 9990,                       # от 9 990 ₸ на сайте
+        "cost": 9990,                     
         "currency": "KZT",
         "category": 2,              
         "address": "The Ritz-Carlton Almaty, Esentai Towers, пр. Аль-Фараби, 77/7",
