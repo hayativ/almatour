@@ -1,0 +1,106 @@
+.emergency-page {
+    padding: 2rem 1.5rem;
+}
+
+.emergency-page .back-link {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    color: var(--accent-light);
+    font-weight: 600;
+}
+
+.emergency-page h1 {
+    margin-bottom: 2rem;
+}
+
+/* Sections */
+.emergency-section {
+    margin-bottom: 2.5rem;
+}
+
+.emergency-section h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+
+/* Main numbers — text list */
+.emergency-numbers-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.emergency-numbers-list li {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-dim);
+}
+
+.emergency-numbers-list .emergency-number {
+    font-weight: 700;
+    color: var(--accent-light);
+    text-decoration: none;
+    font-size: 1.05rem;
+}
+
+.emergency-numbers-list .emergency-number:hover {
+    color: var(--accent);
+}
+
+.emergency-dash {
+    color: var(--text-muted);
+}
+
+/* Additional info list */
+.emergency-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.emergency-list li {
+    position: relative;
+    padding-left: 1.25rem;
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.emergency-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.emergency-free-note {
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+    color: var(--accent-light);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* Warning section */
+.emergency-warning {
+    padding: 1.25rem 0 0 0;
+    border-left: 3px solid var(--warning);
+    padding-left: 1rem;
+}
+
+.emergency-warning h2 {
+    font-size: 1.2rem;
+    color: var(--warning);
+    margin-bottom: 0.5rem;
+}
+
+.emergency-warning p {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}

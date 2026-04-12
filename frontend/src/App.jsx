@@ -7,6 +7,7 @@ import PrivateRoute from './components/PrivateRoute'
 import Info from './pages/Info'
 import Souvenirs from './pages/Souvenirs'
 import Apps from './pages/Apps'
+import EmergencyNumbers from './pages/EmergencyNumbers'
 import Places from './pages/Places'
 import PlaceDetail from './pages/PlaceDetail'
 import Events from './pages/Events'
@@ -35,6 +36,7 @@ export default function App() {
                         <Route path="/info" element={<PrivateRoute><Info /></PrivateRoute>} />
                         <Route path="/souvenirs" element={<PrivateRoute><Souvenirs /></PrivateRoute>} />
                         <Route path="/apps" element={<PrivateRoute><Apps /></PrivateRoute>} />
+                        <Route path="/emergency" element={<PrivateRoute><EmergencyNumbers /></PrivateRoute>} />
                         <Route path="/places" element={<PrivateRoute><Places /></PrivateRoute>} />
                         <Route path="/places/:id" element={<PrivateRoute><PlaceDetail /></PrivateRoute>} />
                         <Route path="/events" element={<PrivateRoute><Events /></PrivateRoute>} />
