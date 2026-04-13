@@ -96,7 +96,7 @@
 }
 
 .day-cell:not(.empty):hover {
-    background: rgba(76, 175, 80, 0.15);
+    background: var(--accent-glow);
 }
 
 .day-cell.empty {
@@ -104,12 +104,12 @@
 }
 
 .day-cell.today {
-    border: 2px solid var(--primary, #4caf50);
+    border: 2px solid var(--accent);
     font-weight: 700;
 }
 
 .day-cell.selected {
-    background: var(--primary, #4caf50);
+    background: var(--accent);
     color: #fff;
 }
 
@@ -134,7 +134,7 @@
     width: 5px;
     height: 5px;
     border-radius: 50%;
-    background: var(--primary, #4caf50);
+    background: var(--accent);
 }
 
 .day-cell.selected .dot {
@@ -180,7 +180,7 @@
 }
 
 .day-event-info a:hover h4 {
-    color: var(--primary, #4caf50);
+    color: var(--accent);
 }
 
 .event-time {
@@ -275,7 +275,7 @@
 }
 
 .modal-search:focus {
-    border-color: var(--primary, #4caf50);
+    border-color: var(--accent);
 }
 
 .modal-body {
@@ -296,7 +296,7 @@
 }
 
 .add-event-row:hover {
-    background: rgba(76, 175, 80, 0.15);
+    background: var(--accent-glow);
 }
 
 .add-event-row div {
@@ -313,13 +313,13 @@
 .add-btn-icon {
     font-size: 1.3rem;
     font-weight: 700;
-    color: var(--primary, #4caf50);
+    color: var(--accent);
     width: 28px;
     height: 28px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: rgba(76, 175, 80, 0.15);
+    background: var(--accent-glow);
     flex-shrink: 0;
 }

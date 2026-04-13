@@ -1,5 +1,3 @@
-.home {}
-
 /* Hero */
 .hero {
     position: relative;
@@ -7,13 +5,7 @@
     display: flex;
     align-items: center;
     overflow: hidden;
-}
-
-.hero-bg {
-    position: absolute;
-    inset: 0;
     background: var(--bg-dark);
-    z-index: 0;
 }
 
 .hero-content {
@@ -28,7 +20,7 @@
     font-size: 4rem;
     font-weight: 800;
     margin-bottom: 1rem;
-    color: #fff;
+    color: var(--text);
 }
 
 .hero-sub {
@@ -63,7 +55,7 @@
 }
 
 .view-all {
-    color: var(--accent-light);
+    color: var(--accent);
     font-weight: 600;
     font-size: 0.95rem;
 }
@@ -167,7 +159,7 @@
 
 .ad-info h4 {
     margin-bottom: 0.3rem;
-    color: var(--accent-light);
+    color: var(--accent);
 }
 
 .ad-info p {
