@@ -167,7 +167,7 @@ export default function Calendar() {
             <div className="calendar-header">
                 <h1>{t.calendar.title}</h1>
                 <div className="calendar-actions">
-                    <button className="btn btn-sm btn-secondary" onClick={goToday}>📍 {t.calendar.today}</button>
+                    <button className="btn btn-sm btn-secondary" onClick={goToday}>{t.calendar.today}</button>
                     <button className="btn btn-sm btn-primary" onClick={openAddModal}>+ {t.calendar.addEvent || 'Add Event'}</button>
                 </div>
             </div>

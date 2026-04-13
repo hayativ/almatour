@@ -107,7 +107,7 @@ export default function Places() {
             </div>
 
             <div className="map-info">
-                <p className="map-label">📍 Almaty, Kazakhstan</p>
+                <p className="map-label">Almaty, Kazakhstan</p>
                 <p className="map-coords">43.2380° N, 76.9286° E</p>
                 <p className="map-count">{places.length} {t.places.title?.toLowerCase?.() || 'places'}</p>
             </div>

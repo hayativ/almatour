@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { getApps } from '../api/client'
 import { useLang } from '../i18n/translations'
+import { getImageUrl, handleImageError } from '../utils/imageUrl'
 import './Apps.css'
 
 export default function Apps() {
@@ -29,7 +30,12 @@ export default function Apps() {
                 <div className="apps-grid">
                     {apps.map((item) => (
                         <div key={item.id} className="app-card card fade-in">
-                            {item.image && <img src={item.image} alt={item.name} className="app-img" />}
+                            <img
+                                src={getImageUrl(item.image)}
+                                alt={item.name}
+                                className="app-img"
+                                onError={handleImageError}
+                            />
                             <div className="app-body">
                                 <h3>{item.name}</h3>
                                 {item.description && <p className="app-desc">{item.description}</p>}
@@ -41,3 +47,4 @@ export default function Apps() {
         </div>
     )
 }
+

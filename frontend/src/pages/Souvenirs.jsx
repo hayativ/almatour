@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { getSouvenirs } from '../api/client'
 import { useLang } from '../i18n/translations'
+import { getImageUrl, handleImageError } from '../utils/imageUrl'
 import './Souvenirs.css'
 
 export default function Souvenirs() {
@@ -29,7 +30,12 @@ export default function Souvenirs() {
                 <div className="souvenirs-grid">
                     {souvenirs.map((item) => (
                         <div key={item.id} className="souvenir-card card fade-in">
-                            {item.image && <img src={item.image} alt={item.name} className="souvenir-img" />}
+                            <img
+                                src={getImageUrl(item.image)}
+                                alt={item.name}
+                                className="souvenir-img"
+                                onError={handleImageError}
+                            />
                             <div className="souvenir-body">
                                 <h3>{item.name}</h3>
                                 {item.address && <p className="souvenir-addr">📍 {item.address}</p>}
@@ -46,3 +52,4 @@ export default function Souvenirs() {
         </div>
     )
 }
+
