@@ -10,6 +10,14 @@ export default function Info() {
             <h1>{t.info.title}</h1>
 
             <div className="info-categories">
+                <Link to="/emergency" className="info-category-card card fade-in">
+                    <div className="category-content">
+                        <h2>{t.info.emergencyCategory}</h2>
+                        <p>{t.info.emergencyDesc}</p>
+                    </div>
+                    <span className="category-arrow">→</span>
+                </Link>
+
                 <Link to="/souvenirs" className="info-category-card card fade-in">
                     <div className="category-content">
                         <h2>{t.info.souvenirsCategory}</h2>

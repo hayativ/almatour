@@ -18,12 +18,14 @@ export default function Navbar() {
                     <span className="brand-text">{t.nav.title}</span>
                 </Link>
 
-                <div className="nav-links">
-                    <Link to="/" className={isActive('/')}>{t.nav.info}</Link>
-                    <Link to="/places" className={isActive('/places')}>{t.nav.places}</Link>
-                    <Link to="/events" className={isActive('/events')}>{t.nav.events}</Link>
-                    <Link to="/calendar" className={isActive('/calendar')}>{t.nav.calendar}</Link>
-                </div>
+                {user && (
+                    <div className="nav-links">
+                        <Link to="/info" className={isActive('/info')}>{t.nav.info}</Link>
+                        <Link to="/places" className={isActive('/places')}>{t.nav.places}</Link>
+                        <Link to="/events" className={isActive('/events')}>{t.nav.events}</Link>
+                        <Link to="/calendar" className={isActive('/calendar')}>{t.nav.calendar}</Link>
+                    </div>
+                )}
 
                 <div className="nav-right">
                     <div className="lang-switcher">

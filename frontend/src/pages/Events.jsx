@@ -22,7 +22,7 @@ export default function Events() {
             .then((res) => {
                 setEvents(res.data.results || [])
                 const count = res.data.count || 0
-                setTotalPages(Math.max(1, Math.ceil(count / 25)))
+                setTotalPages(Math.max(1, Math.ceil(count / 24)))
             })
             .catch(() => setEvents([]))
             .finally(() => setLoading(false))

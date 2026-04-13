@@ -21,7 +21,7 @@ export default function Register() {
         setLoading(true)
         try {
             await registerUser(email, username, phone, password)
-            navigate('/profile')
+            navigate('/events')
         } catch (err) {
             const data = err.response?.data
             const msg = data ? Object.values(data).flat().join('. ') : t.common.error
