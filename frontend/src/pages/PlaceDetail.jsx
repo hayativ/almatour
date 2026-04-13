@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { getPlace } from '../api/client'
 import { useLang } from '../i18n/translations'
+import { getImageUrl, handleImageError } from '../utils/imageUrl'
 import './PlaceDetail.css'
 
 /* Map lang code to DB language_id: en=1, ru=2, kz=3 */
@@ -48,22 +49,16 @@ export default function PlaceDetail() {
         place.translations?.find(t => t.language_id === langId) ||
         place.translations?.[0]
 
-    const imageUrl = place.image?.startsWith('http')
-        ? place.image
-        : place.image
-            ? `/media/${place.image}`
-            : null
+    const imageUrl = getImageUrl(place.image)
 
     return (
         <div className="place-detail container fade-in">
             <Link to="/places" className="back-link">{t.common.back}</Link>
 
-            {imageUrl && (
-                <div className="detail-hero">
-                    <img src={imageUrl} alt={tr?.name} className="detail-hero-img" />
-                    <div className="detail-hero-overlay" />
-                </div>
-            )}
+            <div className="detail-hero">
+                <img src={imageUrl} alt={tr?.name} className="detail-hero-img" onError={handleImageError} />
+                <div className="detail-hero-overlay" />
+            </div>
 
             <div className="detail-body">
                 <h1>{tr?.name || `Place #${place.id}`}</h1>
@@ -91,7 +86,7 @@ export default function PlaceDetail() {
                         onClick={copyAddress}
                         title={t.places.copyAddress || 'Copy address'}
                     >
-                        {copied ? '✓' : '📋'}
+                        {copied ? '✓' : '🔗'}
                     </button>
                 </div>
 

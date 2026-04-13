@@ -1,11 +1,13 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { useLang } from '../i18n/translations'
+import { useTheme } from '../theme/ThemeContext'
 import './Navbar.css'
 
 export default function Navbar() {
     const { user } = useAuth()
     const { lang, t, setLanguage } = useLang()
+    const { isDark, toggleTheme } = useTheme()
     const location = useLocation()
 
     const isActive = (path) => location.pathname === path ? 'nav-link active' : 'nav-link'
@@ -14,7 +16,7 @@ export default function Navbar() {
         <nav className="navbar">
             <div className="nav-container">
                 <Link to="/" className="nav-brand">
-                    <img src="/Logo.jpg" alt="Almatour" className="brand-icon-img" />
+                    <img src="/Logo.png" alt="Almatour" className="brand-icon-img" />
                     <span className="brand-text">{t.nav.title}</span>
                 </Link>
 
@@ -28,6 +30,9 @@ export default function Navbar() {
                 )}
 
                 <div className="nav-right">
+                    <button className="theme-toggle" onClick={toggleTheme} title="Toggle theme">
+                        {isDark ? '☀️' : '🌙'}
+                    </button>
                     <div className="lang-switcher">
                         {['en', 'ru', 'kz'].map((l) => (
                             <button

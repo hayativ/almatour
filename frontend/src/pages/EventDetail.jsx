@@ -58,19 +58,15 @@ export default function EventDetail() {
 
                 <div className="event-detail-meta">
                     <div className="meta-card">
-                        <span className="meta-icon">📅</span>
                         <div><strong>{t.events.date}</strong><p>{event.date}</p></div>
                     </div>
                     <div className="meta-card">
-                        <span className="meta-icon">🕐</span>
                         <div><strong>{t.events.time}</strong><p>{event.start_time?.slice(0, 5)}</p></div>
                     </div>
                     <div className="meta-card">
-                        <span className="meta-icon">⏱️</span>
                         <div><strong>{t.events.duration}</strong><p>{event.duration} {t.events.mins}</p></div>
                     </div>
                     <div className="meta-card">
-                        <span className="meta-icon">💰</span>
                         <div><strong>{t.events.cost}</strong><p>{event.cost > 0 ? `${event.cost} ${event.currency}` : t.events.free}</p></div>
                     </div>
                 </div>
@@ -83,7 +79,7 @@ export default function EventDetail() {
                 )}
 
                 <div className="detail-section">
-                    <p className="detail-addr">📍 {event.address}</p>
+                    <p className="detail-addr">{event.address}</p>
                     {event.link && <a href={event.link} target="_blank" rel="noreferrer" className="meta-link">🔗 Website</a>}
                 </div>
 

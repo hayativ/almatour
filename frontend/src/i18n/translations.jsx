@@ -131,7 +131,7 @@ const translations = {
         common: { loading: 'Loading...', error: 'An error occurred', back: '← Back' },
     },
     ru: {
-        nav: { info: 'Инфо', places: 'Места', events: 'События', calendar: 'Календарь', login: 'Войти', profile: 'Профиль', title: 'Алматур' },
+        nav: { info: 'Инфо', places: 'Места', events: 'События', calendar: 'Календарь', login: 'Войти', profile: 'Профиль', title: 'Almatour' },
         home: {
             hero: 'Откройте Алматы',
             heroSub: 'Ваш главный гид по сердцу Казахстана',
@@ -258,7 +258,7 @@ const translations = {
         common: { loading: 'Загрузка...', error: 'Произошла ошибка', back: '← Назад' },
     },
     kz: {
-        nav: { info: 'Ақпарат', places: 'Орындар', events: 'Оқиғалар', calendar: 'Күнтізбе', login: 'Кіру', profile: 'Профиль', title: 'Алматур' },
+        nav: { info: 'Ақпарат', places: 'Орындар', events: 'Оқиғалар', calendar: 'Күнтізбе', login: 'Кіру', profile: 'Профиль', title: 'Almatour' },
         home: {
             hero: 'Алматыны ашыңыз',
             heroSub: 'Қазақстан жүрегіне саяхат нұсқаулығы',

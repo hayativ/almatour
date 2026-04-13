@@ -25,28 +25,26 @@ function RootRedirect() {
 
 export default function App() {
     return (
-        <LangProvider>
-            <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-                <Navbar />
-                <main style={{ flex: 1 }}>
-                    <Routes>
-                        <Route path="/" element={<RootRedirect />} />
-                        <Route path="/login" element={<Login />} />
-                        <Route path="/register" element={<Register />} />
-                        <Route path="/info" element={<PrivateRoute><Info /></PrivateRoute>} />
-                        <Route path="/souvenirs" element={<PrivateRoute><Souvenirs /></PrivateRoute>} />
-                        <Route path="/apps" element={<PrivateRoute><Apps /></PrivateRoute>} />
-                        <Route path="/emergency" element={<PrivateRoute><EmergencyNumbers /></PrivateRoute>} />
-                        <Route path="/places" element={<PrivateRoute><Places /></PrivateRoute>} />
-                        <Route path="/places/:id" element={<PrivateRoute><PlaceDetail /></PrivateRoute>} />
-                        <Route path="/events" element={<PrivateRoute><Events /></PrivateRoute>} />
-                        <Route path="/calendar" element={<PrivateRoute><Calendar /></PrivateRoute>} />
-                        <Route path="/events/:id" element={<PrivateRoute><EventDetail /></PrivateRoute>} />
-                        <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
-                    </Routes>
-                </main>
-                <Footer />
-            </div>
-        </LangProvider>
+        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+            <Navbar />
+            <main style={{ flex: 1 }}>
+                <Routes>
+                    <Route path="/" element={<RootRedirect />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/register" element={<Register />} />
+                    <Route path="/info" element={<PrivateRoute><Info /></PrivateRoute>} />
+                    <Route path="/souvenirs" element={<PrivateRoute><Souvenirs /></PrivateRoute>} />
+                    <Route path="/apps" element={<PrivateRoute><Apps /></PrivateRoute>} />
+                    <Route path="/emergency" element={<PrivateRoute><EmergencyNumbers /></PrivateRoute>} />
+                    <Route path="/places" element={<PrivateRoute><Places /></PrivateRoute>} />
+                    <Route path="/places/:id" element={<PrivateRoute><PlaceDetail /></PrivateRoute>} />
+                    <Route path="/events" element={<PrivateRoute><Events /></PrivateRoute>} />
+                    <Route path="/calendar" element={<PrivateRoute><Calendar /></PrivateRoute>} />
+                    <Route path="/events/:id" element={<PrivateRoute><EventDetail /></PrivateRoute>} />
+                    <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
+                </Routes>
+            </main>
+            <Footer />
+        </div>
     )
 }

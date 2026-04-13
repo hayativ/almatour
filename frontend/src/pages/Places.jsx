@@ -4,6 +4,7 @@ import { MapContainer, TileLayer, CircleMarker, Popup } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import { getPlaces } from '../api/client'
 import { useLang } from '../i18n/translations'
+import { useTheme } from '../theme/ThemeContext'
 import './Places.css'
 
 const ALMATY_CENTER = [43.238, 76.9286]
@@ -14,6 +15,7 @@ const LANG_ID_MAP = { en: 1, ru: 2, kz: 3 }
 
 export default function Places() {
     const { t, lang } = useLang()
+    const { isDark } = useTheme()
     const navigate = useNavigate()
     const [places, setPlaces] = useState([])
     const [loading, setLoading] = useState(true)
@@ -43,8 +45,8 @@ export default function Places() {
                         center={[p.lat, p.lng]}
                         radius={9}
                         pathOptions={{
-                            color: '#22c55e',
-                            fillColor: '#22c55e',
+                            color: '#3b82f6',
+                            fillColor: '#3b82f6',
                             fillOpacity: 0.85,
                             weight: 3,
                             opacity: 1,
@@ -99,7 +101,10 @@ export default function Places() {
                     >
                         <TileLayer
                             attribution='&copy; <a href="https://carto.com/">CARTO</a>'
-                            url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+                            url={isDark
+                                ? "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+                                : "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
+                            }
                         />
                         {markers}
                     </MapContainer>
@@ -107,7 +112,7 @@ export default function Places() {
             </div>
 
             <div className="map-info">
-                <p className="map-label">📍 Almaty, Kazakhstan</p>
+                <p className="map-label">Almaty, Kazakhstan</p>
                 <p className="map-coords">43.2380° N, 76.9286° E</p>
                 <p className="map-count">{places.length} {t.places.title?.toLowerCase?.() || 'places'}</p>
             </div>
