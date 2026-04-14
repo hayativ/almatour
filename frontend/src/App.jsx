@@ -20,7 +20,7 @@ import Profile from './pages/Profile'
 function RootRedirect() {
     const { user, loading } = useAuth()
     if (loading) return <div className="loading-container"><div className="spinner"></div></div>
-    return user ? <Navigate to="/events" replace /> : <Navigate to="/login" replace />
+    return user ? <Navigate to="/places" replace /> : <Navigate to="/login" replace />
 }
 
 export default function App() {
