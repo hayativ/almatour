@@ -64,6 +64,7 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 a {
@@ -152,6 +153,13 @@ h3 {
   font-weight: 600;
   font-size: 0.95rem;
   transition: all var(--transition);
+  min-height: 44px;
+}
+
+.back-link {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
 }
 
 .btn-primary {
@@ -187,6 +195,7 @@ h3 {
 .btn-sm {
   padding: 0.5rem 1rem;
   font-size: 0.85rem;
+  min-height: 40px;
 }
 
 .card {
@@ -264,6 +273,23 @@ h3 {
   color: #fff;
 }
 
+/* ===== Pagination ===== */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding: 1rem 0;
+}
+
+.page-info {
+  font-weight: 600;
+  color: var(--text-dim);
+  font-size: 0.95rem;
+}
+
+/* ===== Tablet (768px) ===== */
 @media (max-width: 768px) {
   h1 {
     font-size: 1.8rem;
@@ -275,5 +301,42 @@ h3 {
 
   .container {
     padding: 0 1rem;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+}
+
+/* ===== Small Mobile (480px) ===== */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  .btn {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  .btn-sm {
+    padding: 0.45rem 0.85rem;
+    font-size: 0.8rem;
+  }
+
+  .loading-container {
+    min-height: 200px;
   }
 }

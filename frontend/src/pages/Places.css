@@ -63,6 +63,9 @@
     display: inline-block;
     transition: all 0.2s ease;
     box-shadow: 0 2px 8px var(--accent-glow);
+    min-height: 44px;
+    line-height: 44px;
+    padding: 0 1.1rem;
 }
 
 .map-popup-btn:hover {
@@ -96,10 +99,44 @@
     font-weight: 500;
 }
 
-/* ===== Responsive ===== */
+/* ===== Tablet ===== */
 @media (max-width: 768px) {
+    .places-page {
+        padding: 1.5rem 1rem;
+    }
+
     .leaflet-map {
         height: 55vh;
         min-height: 350px;
+    }
+
+    .map-wrapper {
+        border-radius: var(--radius);
+        box-shadow: 0 0 15px var(--accent-glow), var(--shadow);
+    }
+}
+
+/* ===== Small Mobile ===== */
+@media (max-width: 480px) {
+    .places-page {
+        padding: 1rem 0.75rem;
+    }
+
+    .leaflet-map {
+        height: 50vh;
+        min-height: 280px;
+    }
+
+    .map-wrapper {
+        border-radius: var(--radius-sm);
+        padding: 2px;
+    }
+
+    .map-label {
+        font-size: 1.05rem;
+    }
+
+    .map-popup-content {
+        min-width: 150px;
     }
 }

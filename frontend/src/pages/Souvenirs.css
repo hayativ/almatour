@@ -3,10 +3,12 @@
 }
 
 .souvenirs-page .back-link {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     margin-bottom: 1.5rem;
     color: var(--accent-light);
     font-weight: 600;
+    min-height: 44px;
 }
 
 .souvenirs-page h1 {
@@ -15,7 +17,7 @@
 
 .souvenirs-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: 1.5rem;
 }
 
@@ -60,8 +62,29 @@
     font-size: 1.1rem;
 }
 
+/* ===== Tablet ===== */
 @media (max-width: 768px) {
+    .souvenirs-page {
+        padding: 1.5rem 1rem;
+    }
+
+    .souvenirs-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+}
+
+/* ===== Small Mobile ===== */
+@media (max-width: 480px) {
+    .souvenirs-page {
+        padding: 1rem 0.75rem;
+    }
+
     .souvenirs-grid {
         grid-template-columns: 1fr;
+    }
+
+    .souvenir-body {
+        padding: 1rem;
     }
 }

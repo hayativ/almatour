@@ -69,7 +69,7 @@
 /* Places Grid */
 .places-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1.5rem;
 }
 
@@ -167,7 +167,16 @@
     color: var(--text-dim);
 }
 
+/* ===== Tablet ===== */
 @media (max-width: 768px) {
+    .hero {
+        min-height: 55vh;
+    }
+
+    .hero-content {
+        padding: 3rem 1rem;
+    }
+
     .hero-title {
         font-size: 2.5rem;
     }
@@ -176,9 +185,72 @@
         font-size: 1rem;
     }
 
+    .section {
+        padding: 2rem 0;
+    }
+
     .places-grid,
     .events-grid,
     .ads-row {
         grid-template-columns: 1fr;
+    }
+}
+
+/* ===== Small Mobile ===== */
+@media (max-width: 480px) {
+    .hero {
+        min-height: 45vh;
+    }
+
+    .hero-content {
+        padding: 2rem 0.75rem;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-sub {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .section {
+        padding: 1.5rem 0;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+    }
+
+    .place-img,
+    .event-img {
+        height: 160px;
+    }
+
+    .ad-img {
+        height: 140px;
+    }
+
+    .place-info,
+    .event-info,
+    .ad-info {
+        padding: 0.85rem 1rem;
     }
 }

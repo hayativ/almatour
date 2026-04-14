@@ -64,6 +64,7 @@
     padding: 0.85rem;
     font-size: 1rem;
     margin-top: 0.5rem;
+    min-height: 48px;
 }
 
 .auth-switch {
@@ -76,4 +77,38 @@
 .auth-switch a {
     color: var(--accent-light);
     font-weight: 600;
+}
+
+/* ===== Tablet ===== */
+@media (max-width: 768px) {
+    .auth-page {
+        padding: 1.5rem 1rem;
+        min-height: calc(100vh - 150px);
+    }
+}
+
+/* ===== Small Mobile ===== */
+@media (max-width: 480px) {
+    .auth-page {
+        padding: 1rem 0.75rem;
+        align-items: flex-start;
+        padding-top: 2rem;
+    }
+
+    .auth-card {
+        padding: 1.5rem 1.25rem;
+        border-radius: var(--radius);
+    }
+
+    .auth-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .auth-header {
+        margin-bottom: 1.5rem;
+    }
+
+    .auth-form {
+        gap: 1rem;
+    }
 }
