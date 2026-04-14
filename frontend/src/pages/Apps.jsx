@@ -19,7 +19,7 @@ export default function Apps() {
 
     return (
         <div className="apps-page container">
-            <Link to="/" className="back-link">{t.common.back}</Link>
+            <Link to="/info" className="back-link">{t.common.back}</Link>
             <h1>{t.info.appsTitle}</h1>
 
             {loading ? (

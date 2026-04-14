@@ -19,7 +19,7 @@ export default function Souvenirs() {
 
     return (
         <div className="souvenirs-page container">
-            <Link to="/" className="back-link">{t.common.back}</Link>
+            <Link to="/info" className="back-link">{t.common.back}</Link>
             <h1>{t.info.souvenirsTitle}</h1>
 
             {loading ? (

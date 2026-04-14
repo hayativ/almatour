@@ -5,8 +5,8 @@ const ThemeContext = createContext(null)
 export function ThemeProvider({ children }) {
     const [isDark, setIsDark] = useState(() => {
         const stored = localStorage.getItem('almatour_theme')
-        // Default to dark mode (true)
-        return stored === null ? true : stored === 'dark'
+        // Default to light mode (false)
+        return stored === null ? false : stored === 'dark'
     })
 
     useEffect(() => {
