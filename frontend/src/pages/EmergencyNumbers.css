@@ -3,10 +3,12 @@
 }
 
 .emergency-page .back-link {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     margin-bottom: 1.5rem;
     color: var(--accent-light);
     font-weight: 600;
+    min-height: 44px;
 }
 
 .emergency-page h1 {
@@ -43,6 +45,9 @@
     color: var(--accent-light);
     text-decoration: none;
     font-size: 1.05rem;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
 }
 
 .emergency-numbers-list .emergency-number:hover {
@@ -103,4 +108,34 @@
     color: var(--text-dim);
     font-size: 0.95rem;
     line-height: 1.7;
+}
+
+/* ===== Tablet ===== */
+@media (max-width: 768px) {
+    .emergency-page {
+        padding: 1.5rem 1rem;
+    }
+}
+
+/* ===== Small Mobile ===== */
+@media (max-width: 480px) {
+    .emergency-page {
+        padding: 1rem 0.75rem;
+    }
+
+    .emergency-section {
+        margin-bottom: 2rem;
+    }
+
+    .emergency-section h2 {
+        font-size: 1.2rem;
+    }
+
+    .emergency-numbers-list li {
+        font-size: 0.9rem;
+    }
+
+    .emergency-warning {
+        padding-left: 0.75rem;
+    }
 }

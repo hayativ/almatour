@@ -52,13 +52,23 @@ export default function Places() {
                             opacity: 1,
                         }}
                         eventHandlers={{
-                            click: () => navigate(`/places/${p.id}`),
+                            click: (e) => {
+                                if (window.innerWidth <= 768) {
+                                    e.target.openPopup()
+                                } else {
+                                    navigate(`/places/${p.id}`)
+                                }
+                            },
                             mouseover: (e) => {
-                                e.target.setStyle({ radius: 12, fillOpacity: 1 })
-                                e.target.openPopup()
+                                if (window.innerWidth > 768) {
+                                    e.target.setStyle({ radius: 12, fillOpacity: 1 })
+                                    e.target.openPopup()
+                                }
                             },
                             mouseout: (e) => {
-                                e.target.setStyle({ radius: 9, fillOpacity: 0.85 })
+                                if (window.innerWidth > 768) {
+                                    e.target.setStyle({ radius: 9, fillOpacity: 0.85 })
+                                }
                             },
                         }}
                     >

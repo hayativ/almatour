@@ -3,10 +3,12 @@
 }
 
 .apps-page .back-link {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     margin-bottom: 1.5rem;
     color: var(--accent-light);
     font-weight: 600;
+    min-height: 44px;
 }
 
 .apps-page h1 {
@@ -15,7 +17,7 @@
 
 .apps-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: 1.5rem;
 }
 
@@ -56,8 +58,29 @@
     font-size: 1.1rem;
 }
 
+/* ===== Tablet ===== */
 @media (max-width: 768px) {
+    .apps-page {
+        padding: 1.5rem 1rem;
+    }
+
+    .apps-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+}
+
+/* ===== Small Mobile ===== */
+@media (max-width: 480px) {
+    .apps-page {
+        padding: 1rem 0.75rem;
+    }
+
     .apps-grid {
         grid-template-columns: 1fr;
+    }
+
+    .app-body {
+        padding: 1rem;
     }
 }

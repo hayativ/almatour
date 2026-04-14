@@ -59,6 +59,7 @@
     border: 1px solid var(--border);
     cursor: pointer;
     transition: all var(--transition);
+    min-height: 44px;
 }
 
 .filter-btn:hover {
@@ -85,8 +86,50 @@
     color: #fff;
 }
 
+/* ===== Tablet ===== */
 @media (max-width: 768px) {
+    .events-page {
+        padding: 1.5rem 1rem;
+    }
+
     .events-list-grid {
         grid-template-columns: 1fr;
+    }
+
+    .category-filters {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-bottom: 0.25rem;
+    }
+
+    .category-filters::-webkit-scrollbar {
+        display: none;
+    }
+
+    .filter-btn {
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+}
+
+/* ===== Small Mobile ===== */
+@media (max-width: 480px) {
+    .events-page {
+        padding: 1rem 0.75rem;
+    }
+
+    .ev-img {
+        height: 160px;
+    }
+
+    .ev-body {
+        padding: 0.85rem 1rem;
+    }
+
+    .filter-btn {
+        padding: 0.45rem 1rem;
+        font-size: 0.8rem;
     }
 }

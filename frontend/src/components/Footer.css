@@ -27,7 +27,7 @@
 .footer-name {
     font-size: 1.25rem;
     font-weight: 700;
-    color: var(--accent);
+    color: var(--success);
 }
 
 .footer-tagline {
@@ -39,4 +39,36 @@
 .footer-copy {
     color: var(--text-muted);
     font-size: 0.8rem;
+}
+
+/* ===== Tablet ===== */
+@media (max-width: 768px) {
+    .footer {
+        padding: 1.5rem 0;
+        margin-top: 2rem;
+    }
+
+    .footer-container {
+        padding: 0 1rem;
+    }
+}
+
+/* ===== Small Mobile ===== */
+@media (max-width: 480px) {
+    .footer {
+        padding: 1.25rem 0;
+        margin-top: 1.5rem;
+    }
+
+    .footer-name {
+        font-size: 1.1rem;
+    }
+
+    .footer-tagline {
+        font-size: 0.8rem;
+    }
+
+    .footer-copy {
+        font-size: 0.75rem;
+    }
 }

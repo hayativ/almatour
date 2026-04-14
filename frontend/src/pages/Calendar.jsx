@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { getCalendarEvents, addCalendarEvent, removeCalendarEvent, getEvents, getEvent } from '../api/client'
 import { useLang } from '../i18n/translations'
@@ -22,6 +22,7 @@ export default function Calendar() {
     const [enrichedEvents, setEnrichedEvents] = useState({})
     const [selectedDay, setSelectedDay] = useState(null)
     const [loading, setLoading] = useState(true)
+    const detailPanelRef = useRef(null)
 
     // Add-event modal state
     const [showAddModal, setShowAddModal] = useState(false)
@@ -61,6 +62,13 @@ export default function Calendar() {
     useEffect(() => {
         fetchCalendar()
     }, [fetchCalendar])
+
+    // Scroll to details on mobile when day selected
+    useEffect(() => {
+        if (selectedDay && window.innerWidth <= 768 && detailPanelRef.current) {
+            detailPanelRef.current.scrollIntoView({ behavior: 'smooth' })
+        }
+    }, [selectedDay])
 
     // Navigation
     const prevMonth = () => {
@@ -218,7 +226,7 @@ export default function Calendar() {
                     </div>
                 </div>
 
-                <div className="day-detail-panel">
+                <div className="day-detail-panel" ref={detailPanelRef}>
                     {selectedDay ? (
                         <>
                             <h3>
