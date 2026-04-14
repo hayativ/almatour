@@ -1,0 +1,1384 @@
+openapi: 3.0.3
+info:
+  title: Almatour API
+  version: 1.0.0
+  description: |-
+    Almatour — interactive tourism guide for Almaty, Kazakhstan.
+
+    ## Overview
+    This API provides endpoints for discovering places, events, souvenirs, useful apps, and advertisements in Almaty. Authenticated users can manage their profile and personal calendar of events.
+
+    ## Authentication
+    Most read-only endpoints are public. User-specific endpoints (profile, calendar) require a **JWT Bearer token**.
+
+    1. Obtain a token pair via `POST /api/v1/users/token/`
+    2. Include the access token in the `Authorization` header: `Bearer <access_token>`
+    3. Refresh expired tokens via `POST /api/v1/users/token/refresh/`
+paths:
+  /api/v1/events/calendar/:
+    get:
+      operationId: events_calendar_list
+      description: Returns all events the authenticated user has saved to their personal
+        calendar.
+      summary: List saved calendar events
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      tags:
+      - Calendar
+      security:
+      - jwtAuth: []
+      - BearerAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedCalendarEventList'
+          description: ''
+        '401':
+          description: Authentication credentials were not provided or are invalid.
+    post:
+      operationId: events_calendar_create
+      description: Save an event to the authenticated user's personal calendar.
+      summary: Add event to calendar
+      tags:
+      - Calendar
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CalendarEventRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CalendarEventRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CalendarEventRequest'
+        required: true
+      security:
+      - jwtAuth: []
+      - BearerAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CalendarEvent'
+          description: ''
+        '400':
+          description: Validation error (e.g. duplicate entry).
+        '401':
+          description: Authentication credentials were not provided or are invalid.
+  /api/v1/events/calendar/{id}/:
+    get:
+      operationId: events_calendar_retrieve
+      description: Returns a single calendar entry for the authenticated user.
+      summary: Get a calendar entry
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - Calendar
+      security:
+      - jwtAuth: []
+      - BearerAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CalendarEvent'
+          description: ''
+        '401':
+          description: Authentication credentials were not provided or are invalid.
+        '404':
+          description: Calendar entry not found.
+    put:
+      operationId: events_calendar_update
+      description: Fully update a calendar entry (e.g. change status).
+      summary: Update calendar entry
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - Calendar
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CalendarEventRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CalendarEventRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CalendarEventRequest'
+        required: true
+      security:
+      - jwtAuth: []
+      - BearerAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CalendarEvent'
+          description: ''
+        '401':
+          description: Authentication credentials were not provided or are invalid.
+        '404':
+          description: Calendar entry not found.
+    patch:
+      operationId: events_calendar_partial_update
+      description: Patch one or more fields of a calendar entry (e.g. change status).
+      summary: Partially update calendar entry
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - Calendar
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedCalendarEventRequest'
+            examples:
+              StatusUpdateExample:
+                value:
+                  status: 1
+                summary: Change status to "attending"
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedCalendarEventRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedCalendarEventRequest'
+      security:
+      - jwtAuth: []
+      - BearerAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CalendarEvent'
+          description: ''
+        '401':
+          description: Authentication credentials were not provided or are invalid.
+        '404':
+          description: Calendar entry not found.
+    delete:
+      operationId: events_calendar_destroy
+      description: Delete a saved calendar entry for the authenticated user.
+      summary: Remove event from calendar
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+      tags:
+      - Calendar
+      security:
+      - jwtAuth: []
+      - BearerAuth: []
+      responses:
+        '204':
+          description: Calendar entry deleted.
+        '401':
+          description: Authentication credentials were not provided or are invalid.
+        '404':
+          description: Calendar entry not found.
+  /api/v1/events/events/:
+    get:
+      operationId: events_events_list
+      description: Returns a paginated list of upcoming events in Almaty (date ≥ today,
+        not soft-deleted), ordered chronologically. Supports filtering by `category`
+        query parameter.
+      summary: List upcoming events
+      parameters:
+      - in: query
+        name: category
+        schema:
+          type: integer
+        description: Filter by event category (0–3).
+      - in: query
+        name: page
+        schema:
+          type: integer
+        description: Page number for pagination (24 items per page).
+      tags:
+      - Events
+      security:
+      - jwtAuth: []
+      - BearerAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedEventList'
+          description: ''
+  /api/v1/events/events/{id}/:
+    get:
+      operationId: events_events_retrieve
+      description: Returns full details of a single event, including all translations.
+      summary: Get event details
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Event.
+        required: true
+      tags:
+      - Events
+      security:
+      - jwtAuth: []
+      - BearerAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Event'
+          description: ''
+  /api/v1/info/advertisements/:
+    get:
+      operationId: info_advertisements_list
+      description: Returns all active advertisements/banners, ordered by priority
+        (highest first).
+      summary: List active advertisements
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      tags:
+      - Advertisements
+      security:
+      - jwtAuth: []
+      - BearerAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedAdvertisementList'
+          description: ''
+  /api/v1/info/advertisements/{id}/:
+    get:
+      operationId: info_advertisements_retrieve
+      description: Returns full details of a single advertisement, including translations.
+      summary: Get advertisement details
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Advertisement.
+        required: true
+      tags:
+      - Advertisements
+      security:
+      - jwtAuth: []
+      - BearerAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Advertisement'
+          description: ''
+  /api/v1/info/apps/:
+    get:
+      operationId: info_apps_list
+      description: Returns all useful mobile apps and services recommended for tourists.
+      summary: List useful apps
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      tags:
+      - Apps
+      security:
+      - jwtAuth: []
+      - BearerAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedAppList'
+          description: ''
+  /api/v1/info/apps/{id}/:
+    get:
+      operationId: info_apps_retrieve
+      description: Returns full details of a single app/service listing.
+      summary: Get app details
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this App.
+        required: true
+      tags:
+      - Apps
+      security:
+      - jwtAuth: []
+      - BearerAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/App'
+          description: ''
+  /api/v1/info/souvenirs/:
+    get:
+      operationId: info_souvenirs_list
+      description: Returns all souvenir shops/items available in Almaty.
+      summary: List souvenir shops
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      tags:
+      - Souvenirs
+      security:
+      - jwtAuth: []
+      - BearerAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedSouvenirList'
+          description: ''
+  /api/v1/info/souvenirs/{id}/:
+    get:
+      operationId: info_souvenirs_retrieve
+      description: Returns full details of a single souvenir entry.
+      summary: Get souvenir details
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Souvenir.
+        required: true
+      tags:
+      - Souvenirs
+      security:
+      - jwtAuth: []
+      - BearerAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Souvenir'
+          description: ''
+  /api/v1/places/:
+    get:
+      operationId: places_list
+      description: Returns all places/attractions in Almaty (excluding soft-deleted).
+        Supports filtering by `category` query parameter.
+      summary: List places and attractions
+      parameters:
+      - in: query
+        name: category
+        schema:
+          type: integer
+        description: Filter by place category (0–3).
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      tags:
+      - Places
+      security:
+      - jwtAuth: []
+      - BearerAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedPlaceList'
+          description: ''
+  /api/v1/places/{id}/:
+    get:
+      operationId: places_retrieve
+      description: Returns full details of a single place, including translations
+        and coordinates.
+      summary: Get place details
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Place.
+        required: true
+      tags:
+      - Places
+      security:
+      - jwtAuth: []
+      - BearerAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Place'
+          description: ''
+  /api/v1/users/profile/:
+    get:
+      operationId: users_profile_retrieve
+      description: Get or update the authenticated user's profile.
+      tags:
+      - users
+      security:
+      - jwtAuth: []
+      - BearerAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+          description: ''
+    put:
+      operationId: users_profile_update
+      description: Get or update the authenticated user's profile.
+      tags:
+      - users
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/UserRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/UserRequest'
+        required: true
+      security:
+      - jwtAuth: []
+      - BearerAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+          description: ''
+    patch:
+      operationId: users_profile_partial_update
+      description: Get or update the authenticated user's profile.
+      tags:
+      - users
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedUserRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedUserRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedUserRequest'
+      security:
+      - jwtAuth: []
+      - BearerAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+          description: ''
+  /api/v1/users/register/:
+    post:
+      operationId: users_register_create
+      description: |-
+        Register a new user account.
+
+        Creates a new user with the provided email, username, phone, and
+        password.  Returns the created user profile on success.
+      tags:
+      - users
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/RegisterRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/RegisterRequest'
+        required: true
+      security:
+      - jwtAuth: []
+      - BearerAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Register'
+          description: ''
+  /api/v1/users/token/:
+    post:
+      operationId: users_token_create
+      description: 'Authenticate with email + password and receive an access/refresh
+        token pair.  Use the access token in the `Authorization: Bearer <token>` header
+        for protected endpoints.'
+      summary: Obtain JWT token pair
+      tags:
+      - Authentication
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenObtainPairRequest'
+            examples:
+              LoginExample:
+                value:
+                  email: user@example.com
+                  password: strongpassword123
+                summary: Valid credentials
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TokenObtainPairRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TokenObtainPairRequest'
+        required: true
+      security:
+      - BearerAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenObtainPair'
+          description: ''
+  /api/v1/users/token/refresh/:
+    post:
+      operationId: users_token_refresh_create
+      description: Submit a valid refresh token to obtain a new access token without
+        re-authenticating.
+      summary: Refresh JWT access token
+      tags:
+      - Authentication
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenRefreshRequest'
+            examples:
+              RefreshExample:
+                value:
+                  refresh: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+                summary: Valid refresh token
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TokenRefreshRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TokenRefreshRequest'
+        required: true
+      security:
+      - BearerAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenRefresh'
+          description: ''
+components:
+  schemas:
+    Advertisement:
+      type: object
+      description: Serializer for advertisements with nested translations.
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        image:
+          type: string
+          description: Banner image URL or path.
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        is_active:
+          type: boolean
+          description: Whether the advertisement is currently active.
+        priority:
+          type: integer
+          maximum: 9223372036854775807
+          minimum: 0
+          format: int64
+          description: Display priority (higher = shown first).
+        translations:
+          type: array
+          items:
+            $ref: '#/components/schemas/AdvertisementTranslation'
+          readOnly: true
+      required:
+      - created_at
+      - id
+      - image
+      - translations
+      - updated_at
+    AdvertisementTranslation:
+      type: object
+      description: Nested serializer for advertisement translations.
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        language_id:
+          allOf:
+          - $ref: '#/components/schemas/LanguageEnum'
+          description: |-
+            Language identifier (0=en, 1=ru, 2=kz, 3=tr).
+
+            * `0` - Language 0
+            * `1` - Language 1
+            * `2` - Language 2
+            * `3` - Language 3
+          minimum: -9223372036854775808
+          maximum: 9223372036854775807
+        name:
+          type: string
+          description: Translated advertisement title.
+        description:
+          type: string
+          description: Translated advertisement body text.
+      required:
+      - description
+      - id
+      - language_id
+      - name
+    App:
+      type: object
+      description: Serializer for useful mobile apps and services.
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          description: Application name.
+        image:
+          type: string
+          description: App icon/image URL or path.
+        description:
+          type: string
+          description: Short description of the app.
+      required:
+      - description
+      - id
+      - image
+      - name
+    CalendarEvent:
+      type: object
+      description: Serializer for user calendar entries.
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        user:
+          type: integer
+          readOnly: true
+          description: Owner user ID (auto-set from token, read-only).
+        event:
+          type: integer
+          description: ID of the saved event.
+        status:
+          allOf:
+          - $ref: '#/components/schemas/CalendarStatusEnum'
+          description: |-
+            Calendar status (0=saved, 1=attending).
+
+            * `0` - Status 0
+            * `1` - Status 1
+          minimum: -9223372036854775808
+          maximum: 9223372036854775807
+      required:
+      - event
+      - id
+      - status
+      - user
+    CalendarEventRequest:
+      type: object
+      description: Serializer for user calendar entries.
+      properties:
+        event:
+          type: integer
+          description: ID of the saved event.
+        status:
+          allOf:
+          - $ref: '#/components/schemas/CalendarStatusEnum'
+          description: |-
+            Calendar status (0=saved, 1=attending).
+
+            * `0` - Status 0
+            * `1` - Status 1
+          minimum: -9223372036854775808
+          maximum: 9223372036854775807
+      required:
+      - event
+      - status
+    CalendarStatusEnum:
+      enum:
+      - 0
+      - 1
+      type: integer
+      description: |-
+        * `0` - Status 0
+        * `1` - Status 1
+    Event:
+      type: object
+      description: Serializer for Event with nested translations.
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        image:
+          type: string
+          description: URL or path to the event poster image.
+        date:
+          type: string
+          format: date
+          description: Event date (YYYY-MM-DD).
+        start_time:
+          type: string
+          format: time
+          description: Event start time (HH:MM:SS).
+        duration:
+          type: integer
+          maximum: 9223372036854775807
+          minimum: 1
+          format: int64
+          description: Duration in minutes (≥ 1).
+        artist:
+          type: string
+          description: Performing artist or organiser name.
+        cost:
+          type: integer
+          maximum: 9223372036854775807
+          minimum: 0
+          format: int64
+          description: Ticket price (0 = free).
+        currency:
+          type: string
+          description: Price currency code, e.g. KZT.
+        category:
+          allOf:
+          - $ref: '#/components/schemas/PlaceCategoryEnum'
+          description: |-
+            Event category (0=Concerts, 1=Exhibitions, 2=Sport, 3=Festivals).
+
+            * `0` - Category 0
+            * `1` - Category 1
+            * `2` - Category 2
+            * `3` - Category 3
+          minimum: -9223372036854775808
+          maximum: 9223372036854775807
+        address:
+          type: string
+          description: Venue address.
+        link:
+          type: string
+          description: External link for tickets or details.
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        translations:
+          type: array
+          items:
+            $ref: '#/components/schemas/EventTranslation'
+          readOnly: true
+      required:
+      - address
+      - artist
+      - category
+      - created_at
+      - date
+      - duration
+      - id
+      - image
+      - link
+      - start_time
+      - translations
+      - updated_at
+    EventTranslation:
+      type: object
+      description: Nested serializer for event translations (name + description per
+        language).
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        language_id:
+          allOf:
+          - $ref: '#/components/schemas/LanguageEnum'
+          description: |-
+            Language identifier (0=en, 1=ru, 2=kz, 3=tr).
+
+            * `0` - Language 0
+            * `1` - Language 1
+            * `2` - Language 2
+            * `3` - Language 3
+          minimum: -9223372036854775808
+          maximum: 9223372036854775807
+        name:
+          type: string
+          description: Translated event name.
+        description:
+          type: string
+          description: Translated event description.
+      required:
+      - description
+      - id
+      - language_id
+      - name
+    LanguageEnum:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      type: integer
+      description: |-
+        * `0` - Language 0
+        * `1` - Language 1
+        * `2` - Language 2
+        * `3` - Language 3
+    PaginatedAdvertisementList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Advertisement'
+    PaginatedAppList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/App'
+    PaginatedCalendarEventList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/CalendarEvent'
+    PaginatedEventList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Event'
+    PaginatedPlaceList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Place'
+    PaginatedSouvenirList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Souvenir'
+    PatchedCalendarEventRequest:
+      type: object
+      description: Serializer for user calendar entries.
+      properties:
+        event:
+          type: integer
+          description: ID of the saved event.
+        status:
+          allOf:
+          - $ref: '#/components/schemas/CalendarStatusEnum'
+          description: |-
+            Calendar status (0=saved, 1=attending).
+
+            * `0` - Status 0
+            * `1` - Status 1
+          minimum: -9223372036854775808
+          maximum: 9223372036854775807
+    PatchedUserRequest:
+      type: object
+      description: Serializer for reading/updating the authenticated user profile.
+      properties:
+        username:
+          type: string
+          minLength: 1
+          description: Display name visible to other users.
+          pattern: ^[\w.@+-]+$
+          maxLength: 150
+        phone:
+          type: string
+          minLength: 1
+          description: Contact phone number in international format, e.g. +77001234567.
+          maxLength: 20
+    Place:
+      type: object
+      description: Serializer for Place with nested translations and geo-coordinates.
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        image:
+          type: string
+          description: URL or path to the place image.
+        category:
+          allOf:
+          - $ref: '#/components/schemas/PlaceCategoryEnum'
+          description: |-
+            Place category (0–3).
+
+            * `0` - Category 0
+            * `1` - Category 1
+            * `2` - Category 2
+            * `3` - Category 3
+          minimum: -9223372036854775808
+          maximum: 9223372036854775807
+        address:
+          type: string
+          description: Street address.
+        link:
+          type: string
+          description: External link for more info.
+        lat:
+          type: number
+          format: double
+          nullable: true
+          description: Latitude (WGS 84).
+        lng:
+          type: number
+          format: double
+          nullable: true
+          description: Longitude (WGS 84).
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        translations:
+          type: array
+          items:
+            $ref: '#/components/schemas/PlaceTranslation'
+          readOnly: true
+      required:
+      - address
+      - category
+      - created_at
+      - id
+      - image
+      - link
+      - translations
+      - updated_at
+    PlaceCategoryEnum:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      type: integer
+      description: |-
+        * `0` - Category 0
+        * `1` - Category 1
+        * `2` - Category 2
+        * `3` - Category 3
+    PlaceTranslation:
+      type: object
+      description: Nested serializer for place translations.
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        language_id:
+          allOf:
+          - $ref: '#/components/schemas/LanguageEnum'
+          description: |-
+            Language identifier (0=en, 1=ru, 2=kz, 3=tr).
+
+            * `0` - Language 0
+            * `1` - Language 1
+            * `2` - Language 2
+            * `3` - Language 3
+          minimum: -9223372036854775808
+          maximum: 9223372036854775807
+        name:
+          type: string
+          description: Translated place name.
+        timetable:
+          type: string
+          description: Translated opening-hours / timetable text.
+        description:
+          type: string
+          description: Translated place description.
+      required:
+      - description
+      - id
+      - language_id
+      - name
+      - timetable
+    Register:
+      type: object
+      description: Serializer for creating a new user account.
+      properties:
+        email:
+          type: string
+          format: email
+          description: Unique email address used for login.
+          maxLength: 254
+        username:
+          type: string
+          description: Display name.
+          pattern: ^[\w.@+-]+$
+          maxLength: 150
+        phone:
+          type: string
+          description: Unique phone number, e.g. +77001234567.
+          maxLength: 20
+      required:
+      - email
+      - phone
+      - username
+    RegisterRequest:
+      type: object
+      description: Serializer for creating a new user account.
+      properties:
+        email:
+          type: string
+          format: email
+          minLength: 1
+          description: Unique email address used for login.
+          maxLength: 254
+        username:
+          type: string
+          minLength: 1
+          description: Display name.
+          pattern: ^[\w.@+-]+$
+          maxLength: 150
+        phone:
+          type: string
+          minLength: 1
+          description: Unique phone number, e.g. +77001234567.
+          maxLength: 20
+        password:
+          type: string
+          writeOnly: true
+          minLength: 8
+          description: Account password (min 8 characters). Write-only — never returned
+            in responses.
+      required:
+      - email
+      - password
+      - phone
+      - username
+    Souvenir:
+      type: object
+      description: Serializer for souvenir shops/items.
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          description: Souvenir shop or item name.
+        address:
+          type: string
+          description: Shop address.
+        link:
+          type: string
+          description: External link to the shop.
+        image:
+          type: string
+          nullable: true
+          description: Image URL or path.
+      required:
+      - address
+      - id
+      - link
+      - name
+    TokenObtainPair:
+      type: object
+      properties:
+        access:
+          type: string
+          readOnly: true
+        refresh:
+          type: string
+          readOnly: true
+      required:
+      - access
+      - refresh
+    TokenObtainPairRequest:
+      type: object
+      properties:
+        email:
+          type: string
+          writeOnly: true
+          minLength: 1
+        password:
+          type: string
+          writeOnly: true
+          minLength: 1
+      required:
+      - email
+      - password
+    TokenRefresh:
+      type: object
+      properties:
+        access:
+          type: string
+          readOnly: true
+      required:
+      - access
+    TokenRefreshRequest:
+      type: object
+      properties:
+        refresh:
+          type: string
+          writeOnly: true
+          minLength: 1
+      required:
+      - refresh
+    User:
+      type: object
+      description: Serializer for reading/updating the authenticated user profile.
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        email:
+          type: string
+          format: email
+          readOnly: true
+          description: Unique email address (read-only after registration).
+        username:
+          type: string
+          description: Display name visible to other users.
+          pattern: ^[\w.@+-]+$
+          maxLength: 150
+        phone:
+          type: string
+          description: Contact phone number in international format, e.g. +77001234567.
+          maxLength: 20
+      required:
+      - email
+      - id
+      - phone
+      - username
+    UserRequest:
+      type: object
+      description: Serializer for reading/updating the authenticated user profile.
+      properties:
+        username:
+          type: string
+          minLength: 1
+          description: Display name visible to other users.
+          pattern: ^[\w.@+-]+$
+          maxLength: 150
+        phone:
+          type: string
+          minLength: 1
+          description: Contact phone number in international format, e.g. +77001234567.
+          maxLength: 20
+      required:
+      - phone
+      - username
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: JWT access token obtained from /api/v1/users/token/. Enter the
+        token WITHOUT the "Bearer " prefix.
+    jwtAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+tags:
+- name: Authentication
+  description: Register, obtain and refresh JWT tokens.
+- name: Users
+  description: View and update the authenticated user profile.
+- name: Events
+  description: Browse upcoming events in Almaty. Filterable by category. Paginated
+    (24 per page).
+- name: Calendar
+  description: Personal event calendar for authenticated users. Add, update status,
+    or remove saved events.
+- name: Places
+  description: Discover attractions and landmarks in Almaty. Filterable by category.
+- name: Souvenirs
+  description: Browse souvenir shops and items.
+- name: Apps
+  description: Useful mobile apps and services for tourists.
+- name: Advertisements
+  description: Active promotional banners and announcements.

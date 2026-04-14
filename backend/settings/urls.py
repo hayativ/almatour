@@ -12,18 +12,36 @@ from drf_spectacular.views import (
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    # ---------- OpenAPI schema ----------
     path('api/v1/schema/', SpectacularAPIView.as_view(), name='schema'),
+    path('api/schema/', SpectacularAPIView.as_view(), name='schema-alt'),
+
+    # ---------- Swagger UI ----------
     path(
         'api/v1/schema/swagger-ui/',
         SpectacularSwaggerView.as_view(url_name='schema'),
         name='swagger-ui'
     ),
     path(
+        'api/docs/swagger/',
+        SpectacularSwaggerView.as_view(url_name='schema'),
+        name='swagger-ui-alt'
+    ),
+
+    # ---------- ReDoc ----------
+    path(
         'api/v1/schema/redoc/',
         SpectacularRedocView.as_view(url_name='schema'),
         name='redoc'
     ),
-    # API endpoints
+    path(
+        'api/docs/redoc/',
+        SpectacularRedocView.as_view(url_name='schema'),
+        name='redoc-alt'
+    ),
+
+    # ---------- API endpoints ----------
     path('api/v1/places/', include('apps.places.urls')),
     path('api/v1/events/', include('apps.events.urls')),
     path('api/v1/info/', include('apps.info.urls')),
