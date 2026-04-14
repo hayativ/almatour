@@ -41,7 +41,7 @@ body.light-mode .navbar {
 }
 
 .brand-text {
-    color: var(--accent);
+    color: var(--success);
     font-weight: 800;
 }
 
@@ -90,9 +90,8 @@ body.light-mode .navbar {
 }
 
 .theme-toggle:hover {
-    border-color: var(--accent);
     background: var(--bg-card-hover);
-    transform: scale(1.05);
+    transform: scale(1.15);
 }
 
 .lang-switcher {

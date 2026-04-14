@@ -67,8 +67,8 @@ export default function Events() {
                                 <div className="ev-body">
                                     <h3>{getName(ev)}</h3>
                                     <div className="ev-meta">
-                                        <span>📅 {ev.date}</span>
-                                        <span>🕐 {ev.start_time?.slice(0, 5)}</span>
+                                        <span>{ev.date}</span>
+                                        <span>{ev.start_time?.slice(0, 5)}</span>
                                     </div>
                                     <div className="ev-cost">
                                         {ev.cost > 0 ? `${ev.cost} ${ev.currency}` : t.events.free}

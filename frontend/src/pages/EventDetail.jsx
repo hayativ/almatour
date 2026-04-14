@@ -73,14 +73,14 @@ export default function EventDetail() {
 
                 {event.artist && (
                     <div className="detail-section">
-                        <h3>🎤 {t.events.artist}</h3>
+                        <h3>{t.events.artist}</h3>
                         <p>{event.artist}</p>
                     </div>
                 )}
 
                 <div className="detail-section">
-                    <p className="detail-addr">{event.address}</p>
-                    {event.link && <a href={event.link} target="_blank" rel="noreferrer" className="meta-link">🔗 Website</a>}
+                    <p className="detail-addr">📍 {event.address}</p>
+                    {event.link && <a href={event.link} target="_blank" rel="noreferrer" className="meta-link">Website</a>}
                 </div>
 
                 {tr?.description && (

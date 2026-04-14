@@ -57,7 +57,6 @@ export default function PlaceDetail() {
 
             <div className="detail-hero">
                 <img src={imageUrl} alt={tr?.name} className="detail-hero-img" onError={handleImageError} />
-                <div className="detail-hero-overlay" />
             </div>
 
             <div className="detail-body">
@@ -66,7 +65,6 @@ export default function PlaceDetail() {
                 {/* Timetable */}
                 {tr?.timetable && (
                     <div className="detail-card">
-                        <div className="detail-card-icon">🕐</div>
                         <div className="detail-card-content">
                             <span className="detail-card-label">{t.places.schedule || 'Schedule'}</span>
                             <span className="detail-card-value">{tr.timetable}</span>
@@ -76,7 +74,6 @@ export default function PlaceDetail() {
 
                 {/* Address with copy */}
                 <div className="detail-card">
-                    <div className="detail-card-icon">📍</div>
                     <div className="detail-card-content">
                         <span className="detail-card-label">{t.places.addressLabel || 'Address'}</span>
                         <span className="detail-card-value">{place.address}</span>
@@ -93,7 +90,6 @@ export default function PlaceDetail() {
                 {/* Website link */}
                 {place.link && (
                     <div className="detail-card">
-                        <div className="detail-card-icon">🔗</div>
                         <div className="detail-card-content">
                             <span className="detail-card-label">{t.places.website || 'Website'}</span>
                             <a
