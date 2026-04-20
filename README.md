@@ -71,11 +71,6 @@ Open `.env` and set every value:
 | `SECRET_KEY` | Long random Django secret key |
 | `DEBUG` | `False` in production |
 | `ALLOWED_HOSTS` | Comma-separated list of domains/IPs, e.g. `example.com,www.example.com` |
-| `POSTGRES_DB` | PostgreSQL database name |
-| `POSTGRES_USER` | PostgreSQL user |
-| `POSTGRES_PASSWORD` | Strong PostgreSQL password |
-| `POSTGRES_HOST` | `db` (the compose service name) |
-| `POSTGRES_PORT` | `5432` |
 
 Generate a secure `SECRET_KEY`:
 
@@ -90,11 +85,10 @@ docker compose up -d --build
 ```
 
 This will:
-1. Pull the PostgreSQL image and start the database.
-2. Build the backend image — installs Python dependencies, then the entrypoint runs `migrate`, `collectstatic`, and starts Gunicorn.
-3. Build the frontend image — compiles the React app with Vite, then serves it via nginx.
+1. Build the backend image — installs Python dependencies, then the entrypoint runs `migrate`, `collectstatic`, and starts Gunicorn. Data is stored in an SQLite database persisted via a Docker volume.
+2. Build the frontend image — compiles the React app with Vite, then serves it via nginx.
 
-Check that all three containers are healthy:
+Check that both containers are healthy:
 
 ```bash
 docker compose ps
@@ -140,6 +134,28 @@ docker compose down -v
 
 ---
 
+### CI/CD
+
+The project uses GitHub Actions for automated deployment. On every push to `main`, the workflow in `.github/workflows/deploy.yml`:
+
+1. SSHs into the production server.
+2. Pulls the latest code from `main`.
+3. Verifies the `.env` file exists.
+4. Rebuilds and restarts the Docker containers.
+5. Prunes unused Docker images.
+
+Required GitHub secrets:
+
+| Secret | Description |
+|---|---|
+| `SERVER_HOST` | IP or hostname of the production server |
+| `SERVER_USER` | SSH username |
+| `SSH_PRIVATE_KEY` | Private key for SSH authentication |
+| `SERVER_PORT` | SSH port (defaults to 22) |
+| `DEPLOY_PATH` | Absolute path to the project on the server |
+
+---
+
 ### Architecture
 
 ```
@@ -154,13 +170,11 @@ nginx (frontend container)
     └── /*         ──► React SPA (index.html)
 
 backend container
-    └── Gunicorn → Django (settings.env.prod)
-
-db container
-    └── PostgreSQL 16
+    ├── Gunicorn → Django (settings.env.prod)
+    └── SQLite database (persisted via sqlite_data volume)
 ```
 
-Static and media files are shared between `backend` and `frontend` via named Docker volumes (`static_data`, `media_data`), so nginx serves them directly without going through Gunicorn.
+Static and media files are shared between `backend` and `frontend` via named Docker volumes (`static_data`, `media_data`), so nginx serves them directly without going through Gunicorn. The SQLite database is persisted in a separate `sqlite_data` volume mounted at `/app/data/`.
 
 ---
 
