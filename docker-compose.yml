@@ -1,20 +1,5 @@
 services:
 
-  db:
-    image: postgres:16-alpine
-    restart: unless-stopped
-    environment:
-      POSTGRES_DB: ${POSTGRES_DB:-almatour}
-      POSTGRES_USER: ${POSTGRES_USER:-almatour}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-almatour} -d ${POSTGRES_DB:-almatour}"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-
   backend:
     build:
       context: ./backend
@@ -27,9 +12,7 @@ services:
     volumes:
       - static_data:/app/static
       - media_data:/app/media
-    depends_on:
-      db:
-        condition: service_healthy
+      - sqlite_data:/app/data
     expose:
       - "8000"
 
@@ -47,6 +30,6 @@ services:
       - backend
 
 volumes:
-  postgres_data:
   static_data:
   media_data:
+  sqlite_data:

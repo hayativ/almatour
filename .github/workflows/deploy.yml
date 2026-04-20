@@ -32,8 +32,10 @@ jobs:
             echo "Pulling latest code..."
             git pull origin main
 
+            echo "Checking required .env file..."
+            test -f .env || { echo "ERROR: .env file is missing on server"; exit 1; }
+
             echo "Building and restarting containers..."
-            docker compose pull db   # keep postgres image up to date
             docker compose up -d --build --remove-orphans
 
             echo "Pruning unused Docker images..."
