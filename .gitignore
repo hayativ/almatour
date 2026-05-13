@@ -181,3 +181,8 @@ media/
 
 local.sh
 db.sqlite3
+
+node_modules/
+frontend/node_modules/
+.vite/
+frontend/node_modules/.vite/
