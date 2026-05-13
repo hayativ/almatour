@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useLang } from '../i18n/translations'
+import TranslatorCard from './TranslatorCard'
 import './Info.css'
 
 export default function Info() {
@@ -8,6 +9,8 @@ export default function Info() {
     return (
         <div className="info-page container">
             <h1>{t.info.title}</h1>
+
+            <TranslatorCard />
 
             <div className="info-categories">
                 <Link to="/emergency" className="info-category-card card fade-in">

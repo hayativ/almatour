@@ -1,0 +1,177 @@
+/* ===== Translator Card ===== */
+.translator-card {
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+}
+
+.translator-card:hover {
+    transform: none;
+}
+
+.translator-header h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.25rem;
+    color: var(--text);
+}
+
+.translator-desc {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+/* ---- Body ---- */
+.translator-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.translator-input {
+    resize: vertical;
+    min-height: 70px;
+    max-height: 200px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.translator-char-count {
+    text-align: right;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: -0.5rem;
+}
+
+/* ---- Controls ---- */
+.translator-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.translator-selects {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+    min-width: 0;
+}
+
+.translator-select {
+    flex: 1;
+    min-width: 100px;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+}
+
+.translator-swap {
+    flex-shrink: 0;
+    padding: 0.4rem 0.6rem;
+    font-size: 1.1rem;
+    line-height: 1;
+    min-height: 36px;
+}
+
+.translator-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+/* ---- Result ---- */
+.translator-result {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 1rem;
+    position: relative;
+}
+
+.translator-result p {
+    color: var(--text);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.translator-detected {
+    display: inline-block;
+    font-size: 0.7rem;
+    color: var(--accent-light);
+    background: var(--accent2);
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+/* ---- Error ---- */
+.translator-error {
+    color: var(--danger);
+    font-size: 0.85rem;
+    padding: 0.5rem 0.75rem;
+    background: rgba(239, 68, 68, 0.08);
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+/* ===== Tablet ===== */
+@media (max-width: 768px) {
+    .translator-card {
+        padding: 1.25rem;
+    }
+
+    .translator-header h2 {
+        font-size: 1.15rem;
+    }
+
+    .translator-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .translator-selects {
+        width: 100%;
+    }
+
+    .translator-actions {
+        justify-content: flex-end;
+    }
+}
+
+/* ===== Small Mobile ===== */
+@media (max-width: 480px) {
+    .translator-card {
+        padding: 1rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .translator-header h2 {
+        font-size: 1.05rem;
+    }
+
+    .translator-desc {
+        font-size: 0.8rem;
+    }
+
+    .translator-selects {
+        flex-direction: column;
+    }
+
+    .translator-select {
+        width: 100%;
+    }
+
+    .translator-swap {
+        align-self: center;
+        transform: rotate(90deg);
+    }
+
+    .translator-input {
+        font-size: 0.9rem;
+    }
+}

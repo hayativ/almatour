@@ -97,6 +97,10 @@ SPECTACULAR_SETTINGS = {
             'name': 'Advertisements',
             'description': 'Active promotional banners and announcements.',
         },
+        {
+            'name': 'Translator',
+            'description': 'Translate short text via Google Cloud Translation API.',
+        },
     ],
 
     # ---- Enum naming ----

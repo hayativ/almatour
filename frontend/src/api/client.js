@@ -56,6 +56,7 @@ export const removeCalendarEvent = (id) => client.delete(`/events/calendar/${id}
 export const getSouvenirs = () => client.get('/info/souvenirs/')
 export const getApps = () => client.get('/info/apps/')
 export const getAdvertisements = () => client.get('/info/advertisements/')
+export const translateText = (data) => client.post('/info/translate/', data)
 
 // Auth
 export const login = (data) => axios.post(`${API_BASE}/users/token/`, data)
