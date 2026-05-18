@@ -13,6 +13,8 @@ const DEFAULT_ZOOM = 13
 /* Map lang code to DB language_id: en=1, ru=2, kz=3 */
 const LANG_ID_MAP = { en: 1, ru: 2, kz: 3 }
 
+const CATEGORIES = [1, 2, 3]
+
 export default function Places() {
     const { t, lang } = useLang()
     const { isDark } = useTheme()
@@ -20,9 +22,11 @@ export default function Places() {
     const [places, setPlaces] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(false)
+    const [category, setCategory] = useState(1)
 
     useEffect(() => {
-        getPlaces()
+        setLoading(true)
+        getPlaces({ category })
             .then((res) => {
                 const data = res.data.results || res.data
                 const withCoords = data.filter(p => p.lat && p.lng)
@@ -30,7 +34,7 @@ export default function Places() {
             })
             .catch(() => setError(true))
             .finally(() => setLoading(false))
-    }, [])
+    }, [category])
 
     const markers = useMemo(
         () =>
@@ -100,6 +104,18 @@ export default function Places() {
     return (
         <div className="places-page container fade-in">
             <h1>{t.places.mapTitle}</h1>
+
+            <div className="category-filters">
+                {CATEGORIES.map((cat) => (
+                    <button
+                        key={cat}
+                        className={`filter-btn ${category === cat ? 'active' : ''}`}
+                        onClick={() => setCategory(cat)}
+                    >
+                        {t.places[`category${cat}`]}
+                    </button>
+                ))}
+            </div>
 
             <div className="map-wrapper">
                 <div className="map-container">

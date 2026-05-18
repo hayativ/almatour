@@ -37,7 +37,7 @@ USERS_DATA = [
 PLACES_DATA = [
     {
         "id": 1,
-        "image": "places/images/tselinny-center.jpg",
+        "image": "images/places/tselinny-center.jpg",
         "category": 1,
         "address": "Улица Масанчи, 59",
         "link": "https://www.tselinny.org/en",
@@ -46,8 +46,8 @@ PLACES_DATA = [
     },
     {
         "id": 2,
-        "image": "places/images/ascension-cathedral.jpg",
-        "category": 0,
+        "image": "images/places/ascension-cathedral.jpg",
+        "category": 1,
         "address": "​Парк им. 28 гвардейцев-панфиловцев​Улица Гоголя, 40в",
         "link": "https://cathedral.kz/en",
         'lat': 43.258742,
@@ -55,7 +55,7 @@ PLACES_DATA = [
     },
     {
         "id": 3,
-        "image": "places/images/almaty-museum-of-arts.jpg",
+        "image": "images/places/almaty-museum-of-arts.jpg",
         "category": 1,
         "address": "Проспект Аль-Фараби, 28",
         "link": "https://www.almaty.art/museum",
@@ -64,7 +64,7 @@ PLACES_DATA = [
     },
     {
         "id": 4,
-        "image": "places/images/kazakhstan-hotel.jpg",
+        "image": "images/places/kazakhstan-hotel.jpg",
         "category": 2,
         "address": "Проспект Достык, 52",
         "link": "https://kazakhstanhotel.kz/en/",
@@ -73,7 +73,7 @@ PLACES_DATA = [
     },
     {
         "id": 5,
-        "image": "places/images/almaty-hotel.jpg",
+        "image": "images/places/almaty-hotel.jpg",
         "category": 2,
         "address": "Улица Кабанбай батыра, 85",
         "link": "https://hotelalmaty.kz/en/",
@@ -82,7 +82,7 @@ PLACES_DATA = [
     },
     {
         "id": 6,
-        "image": "places/images/lermontov-drama-theater.jpg",
+        "image": "images/places/lermontov-drama-theater.jpg",
         "category": 1,
         "address": "​Улица Байсеитовой, 43",
         "link": "https://www.tl.kz/content/",
@@ -91,7 +91,7 @@ PLACES_DATA = [
     },
     {
         "id": 7,
-        "image": "places/images/kasteev-museum.jpg",
+        "image": "images/places/kasteev-museum.jpg",
         "category": 1,
         "address": "Микрорайон Коктем-3, 22/1",
         "link": "https://www.gmirk.kz/en/",
@@ -100,8 +100,8 @@ PLACES_DATA = [
     },
     {
         "id": 8,
-        "image": "places/images/green-bazaar.jpg",
-        "category": 0,
+        "image": "images/places/green-bazaar.jpg",
+        "category": 1,
         "address": "​Проспект Жибек Жолы, 53",
         "link": "",
         'lat': 43.262771,
@@ -109,8 +109,8 @@ PLACES_DATA = [
     },
     {
         "id": 9,
-        "image": "places/images/botanical-garden.jpg",
-        "category": 0,
+        "image": "images/places/botanical-garden.jpg",
+        "category": 1,
         "address": "Улица Тимирязева, 36д",
         "link": "",
         'lat': 43.226243,
@@ -118,8 +118,8 @@ PLACES_DATA = [
     },
     {
         "id": 10,
-        "image": "places/images/terrenkur.jpg",
-        "category": 0,
+        "image": "images/places/terrenkur.jpg",
+        "category": 1,
         "address": "Терренкур",
         "link": "",
         'lat': 43.193935,
@@ -127,8 +127,8 @@ PLACES_DATA = [
     },
     {
         "id": 11,
-        "image": "places/images/republic-square.jpg",
-        "category": 0,
+        "image": "images/places/republic-square.jpg",
+        "category": 1,
         "address": "Площадь Республики",
         "link": "",
         'lat': 43.237902,
@@ -136,8 +136,8 @@ PLACES_DATA = [
     },
     {
         "id": 12,
-        "image": "places/images/kbtu.jpg",
-        "category": 0,
+        "image": "images/places/kbtu.jpg",
+        "category": 1,
         "address": "​Улица Толе би, 59",
         "link": "https://kbtu.edu.kz/en/",
         'lat': 43.255102,
@@ -145,8 +145,8 @@ PLACES_DATA = [
     },
     {
         "id": 13,
-        "image": "places/images/arasan-spa.jpg",
-        "category": 0,
+        "image": "images/places/arasan-spa.jpg",
+        "category": 1,
         "address": "​Улица Тулебаева, 78",
         "link": "https://arasan-spa.kz/",
         'lat': 43.258649,
@@ -154,7 +154,7 @@ PLACES_DATA = [
     },
     {
         "id": 14,
-        "image": "places/images/abai-opera-ballet.jpg",
+        "image": "images/places/abai-opera-ballet.jpg",
         "category": 1,
         "address": "Улица Кабанбай батыра, 110",
         "link": "https://abaykazntob.kz/en/home-page/",
@@ -163,8 +163,8 @@ PLACES_DATA = [
     },
     {
         "id": 15,
-        "image": "places/images/central-mosque.jpg",
-        "category": 0,
+        "image": "images/places/central-mosque.jpg",
+        "category": 1,
         "address": "​Улица Пушкина, 16",
         "link": "",
         'lat': 43.268385,
@@ -172,8 +172,8 @@ PLACES_DATA = [
     },
     {
         "id": 16,
-        "image": "places/images/central-recreation-park.jpg",
-        "category": 0,
+        "image": "images/places/central-recreation-park.jpg",
+        "category": 1,
         "address": "Улица Гоголя, 1",
         "link": "https://almatycentralpark.kz/",
         'lat': 43.261331,
@@ -181,7 +181,7 @@ PLACES_DATA = [
     },
         {
         "id": 17,
-        "image": "places/images/ritz-carlton-almaty.jpg",
+        "image": "images/places/ritz-carlton-almaty.jpg",
         "category": 2,
         "address": "Проспект Аль-Фараби, 77/7",
         "link": "https://www.ritzcarlton.com/en/hotels/alarz-the-ritz-carlton-almaty/overview/",
@@ -190,7 +190,7 @@ PLACES_DATA = [
     },
     {
         "id": 18,
-        "image": "places/images/rixos-almaty.jpg",
+        "image": "images/places/rixos-almaty.jpg",
         "category": 2,
         "address": "Проспект Сейфуллина, 506/99",
         "link": "https://all.accor.com/hotel/B1N9/index.en.shtml",
@@ -199,7 +199,7 @@ PLACES_DATA = [
     },
     {
         "id": 19,
-        "image": "places/images/intercontinental-almaty.jpg",
+        "image": "images/places/intercontinental-almaty.jpg",
         "category": 2,
         "address": "Улица Желтоксан, 181",
         "link": "https://www.ihg.com/intercontinental/hotels/us/en/almaty/alaha/hoteldetail",
@@ -208,7 +208,7 @@ PLACES_DATA = [
     },
     {
         "id": 20,
-        "image": "places/images/rahat-palace-hotel.jpg",
+        "image": "images/places/rahat-palace-hotel.jpg",
         "category": 2,
         "address": "Улица Сатпаева, 29/6",
         "link": "https://rahatpalace.com/",
@@ -217,7 +217,7 @@ PLACES_DATA = [
     },
     {
         "id": 21,
-        "image": "places/images/swissotel-wellness-resort-alatau-almaty.jpg",
+        "image": "images/places/swissotel-wellness-resort-alatau-almaty.jpg",
         "category": 2,
         "address": "Микрорайон Таусамалы, 50А",
         "link": "https://all.accor.com/hotel/B967/index.en.shtml",
@@ -226,7 +226,7 @@ PLACES_DATA = [
     },
     {
         "id": 22,
-        "image": "places/images/dostyk-hotel.jpg",
+        "image": "images/places/dostyk-hotel.jpg",
         "category": 2,
         "address": "Улица Курмангазы, 36",
         "link": "https://dostyk.kz/en",
@@ -235,7 +235,7 @@ PLACES_DATA = [
     },
     {
         "id": 23,
-        "image": "places/images/grand-hotel-tien-shan.jpg",
+        "image": "images/places/grand-hotel-tien-shan.jpg",
         "category": 2,
         "address": "Улица Богенбай батыра, 115",
         "link": "https://ts-hotels.kz/en/",
@@ -244,7 +244,7 @@ PLACES_DATA = [
     },
     {
         "id": 24,
-        "image": "places/images/mercure-almaty-city-center.jpg",
+        "image": "images/places/mercure-almaty-city-center.jpg",
         "category": 2,
         "address": "Проспект Абылай хана, 53",
         "link": "https://all.accor.com/hotel/B0P4/index.en.shtml",
@@ -253,7 +253,7 @@ PLACES_DATA = [
     },
     {
         "id": 25,
-        "image": "places/images/novotel-almaty-city-center.jpg",
+        "image": "images/places/novotel-almaty-city-center.jpg",
         "category": 2,
         "address": "Проспект Достык, 104А",
         "link": "https://www.novotelalmaty.com/",
@@ -262,7 +262,7 @@ PLACES_DATA = [
     },
     {
         "id": 26,
-        "image": "places/images/doubletree-by-hilton-almaty.jpg",
+        "image": "images/places/doubletree-by-hilton-almaty.jpg",
         "category": 2,
         "address": "Улица Досмухамедова, 115",
         "link": "https://www.hilton.com/en/hotels/aladtdi-doubletree-almaty/",
@@ -271,7 +271,7 @@ PLACES_DATA = [
     },
     {
         "id": 27,
-        "image": "places/images/holiday-inn-express-almaty.jpg",
+        "image": "images/places/holiday-inn-express-almaty.jpg",
         "category": 2,
         "address": "Проспект Сейфуллина, 597/5",
         "link": "https://www.ihg.com/holidayinnexpress/hotels/us/en/almaty/alamt/hoteldetail",
@@ -280,7 +280,7 @@ PLACES_DATA = [
     },
     {
         "id": 28,
-        "image": "places/images/kazzhol-park-hotel-almaty.jpg",
+        "image": "images/places/kazzhol-park-hotel-almaty.jpg",
         "category": 2,
         "address": "Улица Наурызбай батыра, 108",
         "link": "https://kazzhol.com/",
@@ -289,7 +289,7 @@ PLACES_DATA = [
     },
     {
         "id": 29,
-        "image": "places/images/renion-park-hotel.jpg",
+        "image": "images/places/renion-park-hotel.jpg",
         "category": 2,
         "address": "Улица Кунаева, 66",
         "link": "https://renion.kz/en/renion-park-almaty-2/",
@@ -298,7 +298,7 @@ PLACES_DATA = [
     },
     {
         "id": 30,
-        "image": "places/images/resident-city-hotel.jpg",
+        "image": "images/places/resident-city-hotel.jpg",
         "category": 2,
         "address": "Улица Желтоксан, 23",
         "link": "https://resident-hotels.com/resident-hotel-city/",
@@ -307,7 +307,7 @@ PLACES_DATA = [
     },
     {
         "id": 31,
-        "image": "places/images/pharma.jpg",
+        "image": "images/places/pharma.jpg",
         "category": 3,
         "address": "Проспект Абая, 139",
         "link": "",
@@ -316,7 +316,7 @@ PLACES_DATA = [
     },
     {
         "id": 32,
-        "image": "places/images/pharma.jpg",
+        "image": "images/places/pharma.jpg",
         "category": 3,
         "address": "Микрорайон Мамыр-2, 3",
         "link": "",
@@ -325,7 +325,7 @@ PLACES_DATA = [
     },
     {
         "id": 33,
-        "image": "places/images/pharma.jpg",
+        "image": "images/places/pharma.jpg",
         "category": 3,
         "address": "Улица Толе би, 214а",
         "link": "",
@@ -334,7 +334,7 @@ PLACES_DATA = [
     },
     {
         "id": 34,
-        "image": "places/images/pharma.jpg",
+        "image": "images/places/pharma.jpg",
         "category": 3,
         "address": "Улица Чайковского, 22А",
         "link": "",
@@ -343,7 +343,7 @@ PLACES_DATA = [
     },
     {
         "id": 35,
-        "image": "places/images/pharma.jpg",
+        "image": "images/places/pharma.jpg",
         "category": 3,
         "address": "Улица Ади Шарипова, 145 к2",
         "link": "",
@@ -352,7 +352,7 @@ PLACES_DATA = [
     },
     {
         "id": 36,
-        "image": "places/images/pharma.jpg",
+        "image": "images/places/pharma.jpg",
         "category": 3,
         "address": "Проспект Достык, 42",
         "link": "",
@@ -361,7 +361,7 @@ PLACES_DATA = [
     },
     {
         "id": 37,
-        "image": "places/images/pharma.jpg",
+        "image": "images/places/pharma.jpg",
         "category": 3,
         "address": "Проспект Назарбаева, 91/97",
         "link": "",
@@ -370,7 +370,7 @@ PLACES_DATA = [
     },
     {
         "id": 38,
-        "image": "places/images/pharma.jpg",
+        "image": "images/places/pharma.jpg",
         "category": 3,
         "address": "Улица Тимирязева, 107",
         "link": "",
@@ -379,7 +379,7 @@ PLACES_DATA = [
     },
     {
         "id": 39,
-        "image": "places/images/pharma.jpg",
+        "image": "images/places/pharma.jpg",
         "category": 3,
         "address": "Улица Абиша Кекилбайулы, 38г",
         "link": "",
@@ -388,7 +388,7 @@ PLACES_DATA = [
     },
     {
         "id": 40,
-        "image": "places/images/pharma.jpg",
+        "image": "images/places/pharma.jpg",
         "category": 3,
         "address": "1-й микрорайон, 68/4",
         "link": "",
@@ -397,7 +397,7 @@ PLACES_DATA = [
     },
     {
         "id": 41,
-        "image": "places/images/pharma.jpg",
+        "image": "images/places/pharma.jpg",
         "category": 3,
         "address": "Проспект Сейфуллина, 420",
         "link": "",
@@ -406,7 +406,7 @@ PLACES_DATA = [
     },
     {
         "id": 42,
-        "image": "places/images/pharma.jpg",
+        "image": "images/places/pharma.jpg",
         "category": 3,
         "address": "Улица Калдаякова, 79",
         "link": "",
@@ -415,7 +415,7 @@ PLACES_DATA = [
     },
     {
         "id": 43,
-        "image": "places/images/pharma.jpg",
+        "image": "images/places/pharma.jpg",
         "category": 3,
         "address": "Проспект Гагарина, 310/1",
         "link": "",
@@ -424,7 +424,7 @@ PLACES_DATA = [
     },
     {
         "id": 44,
-        "image": "places/images/pharma.jpg",
+        "image": "images/places/pharma.jpg",
         "category": 3,
         "address": "11-й микрорайон, 3",
         "link": "",
@@ -433,7 +433,7 @@ PLACES_DATA = [
     },
     {
         "id": 45,
-        "image": "places/images/pharma.jpg",
+        "image": "images/places/pharma.jpg",
         "category": 3,
         "address": "Проспект Сейфуллина, 469/2 к4",
         "link": "",
