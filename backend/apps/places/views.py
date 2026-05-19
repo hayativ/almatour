@@ -38,6 +38,7 @@ class PlaceViewSet(viewsets.ReadOnlyModelViewSet):
     permission_classes = [AllowAny]
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['category']
+    pagination_class = None
 
     def get_queryset(self):
         return Place.objects.filter(deleted_at__isnull=True).prefetch_related('translations')

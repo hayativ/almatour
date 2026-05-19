@@ -7,6 +7,41 @@
     text-align: center;
 }
 
+/* ===== Category Filter Buttons ===== */
+.category-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.filter-btn {
+    padding: 0.5rem 1.25rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    background: var(--bg-card);
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: all var(--transition);
+    min-height: 44px;
+}
+
+.filter-btn:hover {
+    color: var(--text);
+    border-color: var(--accent);
+    background: var(--bg-card-hover);
+}
+
+.filter-btn.active {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+    box-shadow: 0 4px 16px var(--accent-glow);
+}
+
 /* ===== Map Wrapper with glow ===== */
 .map-wrapper {
     position: relative;
@@ -114,6 +149,24 @@
         border-radius: var(--radius);
         box-shadow: 0 0 15px var(--accent-glow), var(--shadow);
     }
+
+    .category-filters {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-bottom: 0.25rem;
+    }
+
+    .category-filters::-webkit-scrollbar {
+        display: none;
+    }
+
+    .filter-btn {
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
 }
 
 /* ===== Small Mobile ===== */
@@ -138,5 +191,10 @@
 
     .map-popup-content {
         min-width: 150px;
+    }
+
+    .filter-btn {
+        padding: 0.45rem 1rem;
+        font-size: 0.8rem;
     }
 }
