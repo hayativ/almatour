@@ -31,14 +31,14 @@ const translations = {
             emergencyDesc: 'Important phone numbers for emergencies',
             translator: {
                 title: 'Translator',
-                desc: 'Translate short phrases while exploring Almaty.',
+                desc: 'Instant translations during your trip',
                 placeholder: 'Enter text to translate...',
                 translateBtn: 'Translate',
                 clearBtn: 'Clear',
                 swapBtn: 'Swap',
                 autoDetect: 'Auto-detect',
                 loading: 'Translating...',
-                errorGeneric: 'Translation failed. Please try again.',
+                errorGeneric: 'Translation failed. Please try again',
                 charLimit: 'characters',
                 langs: {
                     en: 'English',
@@ -56,7 +56,7 @@ const translations = {
             },
             weather: {
                 title: 'Weather Forecast',
-                desc: 'Current weather and 7-day forecast for Almaty',
+                desc: '8-Day Forecast for Almaty',
                 yesterday: 'Yesterday',
                 today: 'Today',
                 tomorrow: 'Tomorrow',
@@ -211,14 +211,14 @@ const translations = {
             emergencyDesc: 'Важные телефоны для экстренных ситуаций',
             translator: {
                 title: 'Переводчик',
-                desc: 'Переведите короткие фразы во время прогулки по Алматы.',
+                desc: 'Мгновенный перевод во время поездки',
                 placeholder: 'Введите текст для перевода...',
                 translateBtn: 'Перевести',
                 clearBtn: 'Очистить',
                 swapBtn: 'Поменять',
                 autoDetect: 'Автоопределение',
                 loading: 'Перевод...',
-                errorGeneric: 'Ошибка перевода. Попробуйте ещё раз.',
+                errorGeneric: 'Ошибка перевода. Попробуйте ещё раз',
                 charLimit: 'символов',
                 langs: {
                     en: 'Английский',
@@ -236,7 +236,7 @@ const translations = {
             },
             weather: {
                 title: 'Прогноз погоды',
-                desc: 'Текущая погода и прогноз на 7 дней для Алматы',
+                desc: 'Погода в Алматы на 8 дней',
                 yesterday: 'Вчера',
                 today: 'Сегодня',
                 tomorrow: 'Завтра',
@@ -391,14 +391,14 @@ const translations = {
             emergencyDesc: 'Төтенше жағдайлар үшін маңызды телефондар',
             translator: {
                 title: 'Аудармашы',
-                desc: 'Алматыны аралау кезінде қысқа сөз тіркестерін аударыңыз.',
+                desc: 'Саяхат кезінде жедел аударымдар',
                 placeholder: 'Аударылатын мәтінді енгізіңіз...',
                 translateBtn: 'Аудару',
                 clearBtn: 'Тазалау',
                 swapBtn: 'Ауыстыру',
                 autoDetect: 'Автоанықтау',
                 loading: 'Аудару...',
-                errorGeneric: 'Аудару қатесі. Қайталап көріңіз.',
+                errorGeneric: 'Аудару қатесі. Қайталап көріңіз',
                 charLimit: 'таңба',
                 langs: {
                     en: 'Ағылшын',
@@ -416,7 +416,7 @@ const translations = {
             },
             weather: {
                 title: 'Ауа райы болжамы',
-                desc: 'Алматы үшін ағымдағы ауа райы және 7 күндік болжам',
+                desc: 'Алматыдағы 8 күндік ауа райы',
                 yesterday: 'Кеше',
                 today: 'Бүгін',
                 tomorrow: 'Ертең',

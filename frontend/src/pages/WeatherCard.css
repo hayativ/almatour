@@ -87,8 +87,10 @@
     cursor: default;
 }
 
+
+
 .weather-day:hover {
-    border-color: var(--accent);
+
     background: var(--bg-card-hover);
     transform: translateY(-2px);
     box-shadow: var(--shadow);

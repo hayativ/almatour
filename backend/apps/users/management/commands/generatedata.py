@@ -848,7 +848,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 1,
         "name": "The Ritz-Carlton, Almaty",
         "timetable": "Open 24/7",
-        "description": "The Ritz-Carlton, Almaty is a luxury hotel located in one of the city’s modern business districts. It is known for its elegant design, high level of service, panoramic mountain views, and premium facilities for accommodation, dining, meetings, and leisure. The hotel is suitable for business travelers, tourists, and guests seeking a refined stay in Almaty.",
+        "description": "The Ritz-Carlton, Almaty is one of the city’s well-known luxury hotels, located in a modern business district near the foothills. It is recognized for its elegant atmosphere, panoramic mountain views, restaurants, meeting spaces, and high level of service. The hotel is a suitable place for business travel, leisure, and comfortable accommodation in Almaty.",
     },
     {
         "id": 50,
@@ -856,7 +856,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 2,
         "name": "The Ritz-Carlton, Almaty",
         "timetable": "Круглосуточно",
-        "description": "The Ritz-Carlton, Almaty — роскошный отель, расположенный в одном из современных деловых районов города. Он известен элегантным дизайном, высоким уровнем сервиса, панорамными видами на горы и премиальными условиями для проживания, питания, встреч и отдыха. Отель подходит для деловых путешественников, туристов и гостей, предпочитающих комфортное размещение в Алматы.",
+        "description": "Один из известных отелей премиального уровня в Алматы, расположенный в современном деловом районе у подножия гор. Он известен элегантной атмосферой, панорамными видами на горы, ресторанами, пространствами для встреч и высоким уровнем сервиса. Отель подходит для деловых поездок, отдыха и комфортного проживания в городе.",
     },
     {
         "id": 51,
@@ -864,7 +864,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 3,
         "name": "The Ritz-Carlton, Almaty",
         "timetable": "Тәулік бойы",
-        "description": "The Ritz-Carlton, Almaty — қаланың заманауи іскерлік аудандарының бірінде орналасқан люкс санатындағы қонақ үй. Ол әсем дизайнымен, жоғары деңгейлі қызмет көрсетуімен, тауға ашылатын панорамалық көріністерімен және тұруға, тамақтануға, кездесулер мен демалысқа арналған премиум жағдайларымен танымал. Бұл қонақ үй іскер саяхатшыларға, туристерге және Алматыда жайлы демалыс іздейтін қонақтарға қолайлы.",
+        "description": "Алматыдағы танымал премиум қонақ үйлердің бірі, тауға жақын заманауи іскерлік ауданда орналасқан. Ол әсем атмосферасымен, тауға ашылатын панорамалық көріністерімен, мейрамханаларымен, кездесуге арналған кеңістіктерімен және жоғары қызмет көрсету деңгейімен ерекшеленеді. Қонақ үй іскерлік сапарға, демалысқа және қалада жайлы тұруға қолайлы.",
     },
 
     {
@@ -873,7 +873,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 1,
         "name": "Rixos Almaty",
         "timetable": "Open 24/7",
-        "description": "Rixos Almaty is a well-known upscale hotel located near the city center. It combines comfortable accommodation, spacious interiors, restaurants, wellness facilities, and conference services. The hotel is popular among business visitors and tourists who want convenient access to central streets, cultural places, and urban infrastructure.",
+        "description": "Rixos Almaty is a prominent upscale hotel located close to the central part of the city. It is known for its spacious interiors, restaurants, wellness facilities, event areas, and convenient access to business and cultural locations. The hotel is popular among visitors who need both comfort and proximity to Almaty’s main urban routes.",
     },
     {
         "id": 53,
@@ -881,7 +881,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 2,
         "name": "Rixos Almaty",
         "timetable": "Круглосуточно",
-        "description": "Rixos Almaty — известный отель высокого класса, расположенный недалеко от центра города. Он сочетает комфортное размещение, просторные интерьеры, рестораны, оздоровительные зоны и услуги для проведения деловых мероприятий. Отель популярен среди деловых гостей и туристов, которым важен удобный доступ к центральным улицам, культурным объектам и городской инфраструктуре.",
+        "description": "Известный отель высокого класса, расположенный недалеко от центральной части Алматы. Он известен просторными интерьерами, ресторанами, оздоровительными зонами, площадками для мероприятий и удобным доступом к деловым и культурным локациям. Отель популярен среди гостей, которым важны комфорт и близость к основным городским маршрутам.",
     },
     {
         "id": 54,
@@ -889,7 +889,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 3,
         "name": "Rixos Almaty",
         "timetable": "Тәулік бойы",
-        "description": "Rixos Almaty — қала орталығына жақын орналасқан жоғары санаттағы танымал қонақ үй. Ол жайлы нөмірлерді, кең интерьерлерді, мейрамханаларды, сауықтыру аймақтарын және іскерлік іс-шараларға арналған қызметтерді біріктіреді. Қонақ үй орталық көшелерге, мәдени нысандарға және қалалық инфрақұрылымға ыңғайлы қолжетімділікті қалайтын туристер мен іскер қонақтар арасында танымал.",
+        "description": "Алматының орталық бөлігіне жақын орналасқан жоғары санаттағы танымал қонақ үй. Ол кең интерьерлерімен, мейрамханаларымен, сауықтыру аймақтарымен, іс-шара алаңдарымен және іскерлік әрі мәдени орындарға қолайлы қатынасымен белгілі. Қонақ үй жайлылық пен қаланың негізгі бағыттарына жақындықты қалайтын қонақтар арасында сұранысқа ие.",
     },
 
     {
@@ -898,7 +898,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 1,
         "name": "InterContinental Almaty",
         "timetable": "Open 24/7",
-        "description": "InterContinental Almaty is an international-class hotel located near important administrative, business, and cultural areas of the city. It offers comfortable rooms, restaurants, event spaces, and services for both leisure and business travel. The hotel is valued for its central location, reliable service, and suitability for international guests.",
+        "description": "InterContinental Almaty is an international hotel located near important administrative, business, and cultural areas of the city. It offers accommodation, restaurants, event spaces, and services for both business and leisure visitors. The hotel is valued for its central location, reliable service, and suitability for international guests.",
     },
     {
         "id": 56,
@@ -906,7 +906,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 2,
         "name": "InterContinental Almaty",
         "timetable": "Круглосуточно",
-        "description": "InterContinental Almaty — отель международного уровня, расположенный рядом с важными административными, деловыми и культурными районами города. Он предлагает комфортные номера, рестораны, пространства для мероприятий и услуги как для отдыха, так и для деловых поездок. Отель ценится за центральное расположение, стабильный сервис и удобство для иностранных гостей.",
+        "description": "Отель международного уровня, расположенный рядом с важными административными, деловыми и культурными районами города. Он предлагает проживание, рестораны, пространства для мероприятий и услуги для деловых и туристических гостей. Отель ценится за центральное расположение, стабильный сервис и удобство для иностранных посетителей.",
     },
     {
         "id": 57,
@@ -914,7 +914,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 3,
         "name": "InterContinental Almaty",
         "timetable": "Тәулік бойы",
-        "description": "InterContinental Almaty — қаланың маңызды әкімшілік, іскерлік және мәдени аймақтарына жақын орналасқан халықаралық деңгейдегі қонақ үй. Мұнда жайлы нөмірлер, мейрамханалар, іс-шараларға арналған кеңістіктер және демалыс пен іскерлік сапарларға арналған қызметтер ұсынылады. Қонақ үй орталық орналасуымен, тұрақты сервисімен және шетелдік қонақтарға қолайлылығымен ерекшеленеді.",
+        "description": "Қаланың маңызды әкімшілік, іскерлік және мәдени аймақтарына жақын орналасқан халықаралық деңгейдегі қонақ үй. Мұнда тұруға арналған нөмірлер, мейрамханалар, іс-шара кеңістіктері және іскерлік пен туристік сапарларға арналған қызметтер ұсынылады. Қонақ үй орталық орналасуымен, тұрақты сервисімен және шетелдік қонақтарға қолайлылығымен бағаланады.",
     },
 
     {
@@ -923,7 +923,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 1,
         "name": "Rahat Palace Hotel",
         "timetable": "Open 24/7",
-        "description": "Rahat Palace Hotel is a well-established hotel in Almaty located close to business, exhibition, and transport areas. It offers accommodation, dining, meeting facilities, and leisure services. The hotel is suitable for guests who need convenient access to the city center, business locations, and major urban routes.",
+        "description": "Rahat Palace Hotel is a long-established hotel located near business, exhibition, and transport areas of Almaty. It provides accommodation, dining, meeting spaces, and leisure facilities for different types of visitors. The hotel is convenient for guests who need access to the city center and major urban routes.",
     },
     {
         "id": 59,
@@ -931,7 +931,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 2,
         "name": "Rahat Palace Hotel",
         "timetable": "Круглосуточно",
-        "description": "Rahat Palace Hotel — известный отель Алматы, расположенный рядом с деловыми, выставочными и транспортными зонами города. Он предлагает размещение, питание, помещения для встреч и услуги для отдыха. Отель подходит гостям, которым важен удобный доступ к центру города, деловым локациям и основным городским маршрутам.",
+        "description": "Известный отель Алматы, расположенный рядом с деловыми, выставочными и транспортными зонами города. Он предоставляет проживание, питание, пространства для встреч и условия для отдыха для разных категорий гостей. Отель удобен тем, кому нужен доступ к центру города и основным городским маршрутам.",
     },
     {
         "id": 60,
@@ -939,7 +939,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 3,
         "name": "Rahat Palace Hotel",
         "timetable": "Тәулік бойы",
-        "description": "Rahat Palace Hotel — Алматыдағы іскерлік, көрме және көлік аймақтарына жақын орналасқан танымал қонақ үй. Ол тұруға, тамақтануға, кездесулер өткізуге және демалуға арналған қызметтер ұсынады. Қонақ үй қала орталығына, іскерлік орындарға және негізгі қалалық бағыттарға ыңғайлы жетуді қалайтын қонақтарға қолайлы.",
+        "description": "Алматыдағы танымал қонақ үйлердің бірі, қаланың іскерлік, көрме және көлік аймақтарына жақын орналасқан. Мұнда түрлі қонақтарға арналған тұру, тамақтану, кездесуге арналған кеңістіктер және демалыс жағдайлары ұсынылады. Қонақ үй қала орталығына және негізгі қалалық бағыттарға ыңғайлы жетуді қалайтындарға қолайлы.",
     },
 
     {
@@ -948,7 +948,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 1,
         "name": "Swissôtel Wellness Resort Alatau Almaty",
         "timetable": "Open 24/7",
-        "description": "Swissôtel Wellness Resort Alatau Almaty is a resort-style hotel located in a quieter area of the city, close to natural surroundings. It is known for its wellness facilities, spacious territory, comfortable accommodation, and relaxing atmosphere. The hotel is suitable for visitors who want to combine city access with recreation and health-oriented leisure.",
+        "description": "Swissôtel Wellness Resort Alatau Almaty is a resort-style hotel located in a quieter part of the city close to natural surroundings. It is known for its spacious territory, wellness facilities, comfortable rooms, and calm atmosphere. The hotel is suitable for visitors who want to combine access to Almaty with relaxation and outdoor leisure.",
     },
     {
         "id": 62,
@@ -956,7 +956,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 2,
         "name": "Swissôtel Wellness Resort Alatau Almaty",
         "timetable": "Круглосуточно",
-        "description": "Swissôtel Wellness Resort Alatau Almaty — отель курортного формата, расположенный в более спокойной части города рядом с природной средой. Он известен оздоровительной инфраструктурой, просторной территорией, комфортным размещением и расслабляющей атмосферой. Отель подходит гостям, которые хотят совместить доступ к городу с отдыхом и wellness-направлением.",
+        "description": "Отель курортного формата, расположенный в более спокойной части города рядом с природной средой. Он известен просторной территорией, оздоровительной инфраструктурой, комфортными номерами и спокойной атмосферой. Отель подходит гостям, которые хотят совместить доступ к Алматы с отдыхом и пребыванием на природе.",
     },
     {
         "id": 63,
@@ -964,7 +964,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 3,
         "name": "Swissôtel Wellness Resort Alatau Almaty",
         "timetable": "Тәулік бойы",
-        "description": "Swissôtel Wellness Resort Alatau Almaty — табиғи ортаға жақын, қаланың тыныш бөлігінде орналасқан курорттық форматтағы қонақ үй. Ол сауықтыру инфрақұрылымымен, кең аумағымен, жайлы орналасуымен және тыныш атмосферасымен танымал. Қонақ үй қалаға қолжетімділікті демалыспен және денсаулыққа бағытталған қызметтермен біріктіргісі келетін қонақтарға қолайлы.",
+        "description": "Қаланың тыныш бөлігінде, табиғи ортаға жақын орналасқан курорттық форматтағы қонақ үй. Ол кең аумағымен, сауықтыру инфрақұрылымымен, жайлы нөмірлерімен және тыныш атмосферасымен танымал. Қонақ үй Алматыға қолжетімділікті демалыспен және табиғат аясындағы бос уақытпен ұштастырғысы келетін қонақтарға қолайлы.",
     },
 
     {
@@ -973,7 +973,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 1,
         "name": "Dostyk Hotel",
         "timetable": "Open 24/7",
-        "description": "Dostyk Hotel is a classic hotel located in the central part of Almaty. It is known for its refined atmosphere, convenient location, hospitality services, and proximity to cultural, administrative, and business areas. The hotel is suitable for guests who prefer a central stay with a traditional and elegant character.",
+        "description": "Dostyk Hotel is a classic hotel located in the central part of Almaty. It is known for its elegant atmosphere, convenient location, hospitality services, and proximity to cultural, administrative, and business areas. The hotel is a suitable place for guests who prefer a central stay with a traditional character.",
     },
     {
         "id": 65,
@@ -981,7 +981,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 2,
         "name": "Dostyk Hotel",
         "timetable": "Круглосуточно",
-        "description": "Dostyk Hotel — классический отель, расположенный в центральной части Алматы. Он известен утончённой атмосферой, удобным расположением, гостиничными услугами и близостью к культурным, административным и деловым районам. Отель подходит гостям, которые предпочитают центральное размещение с традиционным и элегантным характером.",
+        "description": "Классический отель, расположенный в центральной части Алматы. Он известен элегантной атмосферой, удобным расположением, гостиничными услугами и близостью к культурным, административным и деловым районам. Отель подходит гостям, которые предпочитают центральное размещение с традиционным характером.",
     },
     {
         "id": 66,
@@ -989,7 +989,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 3,
         "name": "Dostyk Hotel",
         "timetable": "Тәулік бойы",
-        "description": "Dostyk Hotel — Алматының орталық бөлігінде орналасқан классикалық қонақ үй. Ол әсем атмосферасымен, ыңғайлы орналасуымен, қонақжай қызметтерімен және мәдени, әкімшілік әрі іскерлік аймақтарға жақындығымен белгілі. Қонақ үй дәстүрлі және талғампаз сипаттағы орталық орналасуды қалайтын қонақтарға қолайлы.",
+        "description": "Алматының орталық бөлігінде орналасқан классикалық қонақ үй. Ол әсем атмосферасымен, ыңғайлы орналасуымен, қонақжай қызметтерімен және мәдени, әкімшілік әрі іскерлік аймақтарға жақындығымен белгілі. Қонақ үй дәстүрлі сипаттағы орталық орналасуды қалайтын қонақтарға қолайлы.",
     },
 
     {
@@ -998,7 +998,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 1,
         "name": "Grand Hotel Tien-Shan",
         "timetable": "Open 24/7",
-        "description": "Grand Hotel Tien-Shan is a centrally located hotel with a calm and elegant atmosphere. It offers accommodation, dining, wellness services, and convenient access to Almaty’s main streets, parks, and cultural places. The hotel is suitable for tourists and business guests who want to stay in the historic center of the city.",
+        "description": "Grand Hotel Tien-Shan is a centrally located hotel with a calm and elegant atmosphere. It offers accommodation, dining, wellness services, and convenient access to Almaty’s main streets, parks, and cultural places. The hotel is suitable for tourists and business guests who want to stay near the historic center of the city.",
     },
     {
         "id": 68,
@@ -1006,7 +1006,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 2,
         "name": "Grand Hotel Tien-Shan",
         "timetable": "Круглосуточно",
-        "description": "Grand Hotel Tien-Shan — отель в центре города со спокойной и элегантной атмосферой. Он предлагает размещение, питание, оздоровительные услуги и удобный доступ к главным улицам, паркам и культурным объектам Алматы. Отель подходит туристам и деловым гостям, которые хотят остановиться в историческом центре города.",
+        "description": "Отель в центре города со спокойной и элегантной атмосферой. Он предлагает проживание, питание, оздоровительные услуги и удобный доступ к главным улицам, паркам и культурным объектам Алматы. Отель подходит туристам и деловым гостям, которые хотят остановиться рядом с историческим центром города.",
     },
     {
         "id": 69,
@@ -1014,7 +1014,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 3,
         "name": "Grand Hotel Tien-Shan",
         "timetable": "Тәулік бойы",
-        "description": "Grand Hotel Tien-Shan — қала орталығында орналасқан, тыныш әрі әсем атмосферасы бар қонақ үй. Ол тұру, тамақтану, сауықтыру қызметтерін және Алматының басты көшелеріне, саябақтарына, мәдени орындарына ыңғайлы қолжетімділікті ұсынады. Қонақ үй қаланың тарихи орталығында тоқтағысы келетін туристер мен іскер қонақтарға қолайлы.",
+        "description": "Қала орталығында орналасқан, тыныш әрі әсем атмосферасы бар қонақ үй. Мұнда тұру, тамақтану, сауықтыру қызметтері және Алматының басты көшелеріне, саябақтарына, мәдени орындарына ыңғайлы қатынас ұсынылады. Қонақ үй қаланың тарихи орталығына жақын тоқтағысы келетін туристер мен іскер қонақтарға қолайлы.",
     },
 
     {
@@ -1023,7 +1023,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 1,
         "name": "Mercure Almaty City Center",
         "timetable": "Open 24/7",
-        "description": "Mercure Almaty City Center is a modern hotel located near transport links, business streets, and central attractions. It offers comfortable rooms, restaurant services, meeting facilities, and a practical urban atmosphere. The hotel is convenient for tourists and business travelers who need easy movement around the city.",
+        "description": "Mercure Almaty City Center is a modern city hotel located near transport links, business streets, and central attractions. It is known for comfortable rooms, restaurant services, meeting facilities, and a practical atmosphere for short or extended stays. The hotel is convenient for tourists and business travelers who need easy movement around Almaty.",
     },
     {
         "id": 71,
@@ -1031,7 +1031,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 2,
         "name": "Mercure Almaty City Center",
         "timetable": "Круглосуточно",
-        "description": "Mercure Almaty City Center — современный отель, расположенный рядом с транспортными связями, деловыми улицами и центральными достопримечательностями. Он предлагает комфортные номера, ресторанные услуги, помещения для встреч и практичную городскую атмосферу. Отель удобен для туристов и деловых путешественников, которым важно легко передвигаться по городу.",
+        "description": "Современный отель, расположенный рядом с транспортными связями, деловыми улицами и центральными достопримечательностями. Он предлагает комфортные номера, ресторанные услуги, помещения для встреч и практичную городскую атмосферу. Отель удобен для туристов и деловых путешественников, которым важно легко передвигаться по городу.",
     },
     {
         "id": 72,
@@ -1039,7 +1039,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 3,
         "name": "Mercure Almaty City Center",
         "timetable": "Тәулік бойы",
-        "description": "Mercure Almaty City Center — көлік байланыстарына, іскерлік көшелерге және орталық көрікті орындарға жақын орналасқан заманауи қонақ үй. Ол жайлы нөмірлерді, мейрамхана қызметтерін, кездесулерге арналған кеңістіктерді және ыңғайлы қалалық атмосфераны ұсынады. Қонақ үй қала ішінде оңай қозғалуды қалайтын туристер мен іскер саяхатшыларға қолайлы.",
+        "description": "Көлік байланыстарына, іскерлік көшелерге және орталық көрікті орындарға жақын орналасқан заманауи қонақ үй. Ол жайлы нөмірлерді, мейрамхана қызметтерін, кездесуге арналған кеңістіктерді және ыңғайлы қалалық атмосфераны ұсынады. Қонақ үй қала ішінде оңай қозғалуды қалайтын туристер мен іскер саяхатшыларға қолайлы.",
     },
 
     {
@@ -1048,7 +1048,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 1,
         "name": "Novotel Almaty City Center",
         "timetable": "Open 24/7",
-        "description": "Novotel Almaty City Center is a contemporary hotel located near central cultural, business, and leisure areas. It offers comfortable accommodation, dining options, meeting spaces, and services for different types of travelers. The hotel is suitable for guests who want a modern stay with convenient access to the city center.",
+        "description": "Novotel Almaty City Center is a contemporary hotel located near central cultural, business, and leisure areas. It provides comfortable accommodation, dining options, meeting spaces, and services for different types of travelers. The hotel is suitable for guests who want a modern stay with convenient access to the city center.",
     },
     {
         "id": 74,
@@ -1056,7 +1056,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 2,
         "name": "Novotel Almaty City Center",
         "timetable": "Круглосуточно",
-        "description": "Novotel Almaty City Center — современный отель, расположенный рядом с центральными культурными, деловыми и досуговыми зонами. Он предлагает комфортное размещение, варианты питания, помещения для встреч и услуги для разных категорий путешественников. Отель подходит гостям, которые хотят современное размещение с удобным доступом к центру города.",
+        "description": "Современный отель, расположенный рядом с центральными культурными, деловыми и досуговыми зонами. Он предлагает комфортное размещение, варианты питания, помещения для встреч и услуги для разных категорий путешественников. Отель подходит гостям, которым нужно современное проживание с удобным доступом к центру города.",
     },
     {
         "id": 75,
@@ -1064,7 +1064,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 3,
         "name": "Novotel Almaty City Center",
         "timetable": "Тәулік бойы",
-        "description": "Novotel Almaty City Center — орталық мәдени, іскерлік және демалыс аймақтарына жақын орналасқан заманауи қонақ үй. Ол жайлы тұруды, тамақтану нұсқаларын, кездесулерге арналған орындарды және әртүрлі саяхатшыларға арналған қызметтерді ұсынады. Қонақ үй қала орталығына ыңғайлы қолжетімділігі бар заманауи орналасуды қалайтын қонақтарға қолайлы.",
+        "description": "Орталық мәдени, іскерлік және демалыс аймақтарына жақын орналасқан заманауи қонақ үй. Ол жайлы тұруды, тамақтану нұсқаларын, кездесуге арналған орындарды және әртүрлі саяхатшыларға арналған қызметтерді ұсынады. Қонақ үй қала орталығына ыңғайлы қатынасы бар заманауи орналасуды қалайтын қонақтарға қолайлы.",
     },
 
     {
@@ -1073,7 +1073,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 1,
         "name": "DoubleTree by Hilton Almaty",
         "timetable": "Open 24/7",
-        "description": "DoubleTree by Hilton Almaty is a modern hotel offering international hospitality standards, comfortable rooms, dining services, and event facilities. It is located in a convenient urban area with access to business and leisure destinations. The hotel is suitable for business trips, short stays, and city travel.",
+        "description": "DoubleTree by Hilton Almaty is a modern hotel offering international hospitality standards in a convenient urban area. It is known for comfortable rooms, dining services, event facilities, and access to business and leisure destinations. The hotel is suitable for business trips, short stays, and city travel.",
     },
     {
         "id": 77,
@@ -1081,7 +1081,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 2,
         "name": "DoubleTree by Hilton Almaty",
         "timetable": "Круглосуточно",
-        "description": "DoubleTree by Hilton Almaty — современный отель, предлагающий международные стандарты гостеприимства, комфортные номера, ресторанные услуги и площадки для мероприятий. Он расположен в удобной городской зоне с доступом к деловым и досуговым направлениям. Отель подходит для деловых поездок, коротких остановок и городского туризма.",
+        "description": "Современный отель, предлагающий международные стандарты гостеприимства в удобной городской зоне. Он известен комфортными номерами, ресторанными услугами, площадками для мероприятий и доступом к деловым и досуговым направлениям. Отель подходит для деловых поездок, коротких остановок и городского туризма.",
     },
     {
         "id": 78,
@@ -1089,7 +1089,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 3,
         "name": "DoubleTree by Hilton Almaty",
         "timetable": "Тәулік бойы",
-        "description": "DoubleTree by Hilton Almaty — халықаралық қонақжайлық стандарттарын, жайлы нөмірлерді, мейрамхана қызметтерін және іс-шараларға арналған алаңдарды ұсынатын заманауи қонақ үй. Ол іскерлік және демалыс бағыттарына қолжетімді ыңғайлы қалалық аймақта орналасқан. Қонақ үй іскерлік сапарларға, қысқа аялдауға және қала ішіндегі саяхатқа қолайлы.",
+        "description": "Ыңғайлы қалалық аймақта халықаралық қонақжайлық стандарттарын ұсынатын заманауи қонақ үй. Ол жайлы нөмірлерімен, мейрамхана қызметтерімен, іс-шара алаңдарымен және іскерлік әрі демалыс бағыттарына қолжетімділігімен белгілі. Қонақ үй іскерлік сапарларға, қысқа аялдауға және қала ішіндегі саяхатқа қолайлы.",
     },
 
     {
@@ -1098,7 +1098,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 1,
         "name": "Holiday Inn Express Almaty",
         "timetable": "Open 24/7",
-        "description": "Holiday Inn Express Almaty is a practical hotel designed for comfortable and efficient stays. It offers modern rooms, essential services, and convenient access to business areas and city routes. The hotel is suitable for travelers who prefer simple, reliable, and well-located accommodation.",
+        "description": "Holiday Inn Express Almaty is a practical hotel focused on comfortable and efficient stays. It is known for modern rooms, essential services, and convenient access to business areas and city routes. The hotel is suitable for travelers who prefer simple, reliable, and well-located accommodation.",
     },
     {
         "id": 80,
@@ -1106,7 +1106,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 2,
         "name": "Holiday Inn Express Almaty",
         "timetable": "Круглосуточно",
-        "description": "Holiday Inn Express Almaty — практичный отель, рассчитанный на комфортное и удобное пребывание. Он предлагает современные номера, основные гостиничные услуги и удобный доступ к деловым районам и городским маршрутам. Отель подходит путешественникам, которые предпочитают простое, надёжное и хорошо расположенное размещение.",
+        "description": "Практичный отель, рассчитанный на комфортное и удобное пребывание. Он предлагает современные номера, основные гостиничные услуги и доступ к деловым районам и городским маршрутам. Отель подходит путешественникам, которые предпочитают простое, надёжное и хорошо расположенное размещение.",
     },
     {
         "id": 81,
@@ -1114,7 +1114,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 3,
         "name": "Holiday Inn Express Almaty",
         "timetable": "Тәулік бойы",
-        "description": "Holiday Inn Express Almaty — жайлы әрі тиімді тұруға арналған практикалық қонақ үй. Ол заманауи нөмірлерді, негізгі қонақүй қызметтерін және іскерлік аудандар мен қалалық бағыттарға ыңғайлы қолжетімділікті ұсынады. Қонақ үй қарапайым, сенімді және ыңғайлы орналасқан тұрғын орынды қалайтын саяхатшыларға қолайлы.",
+        "description": "Жайлы әрі тиімді тұруға арналған практикалық қонақ үй. Ол заманауи нөмірлерді, негізгі қонақүй қызметтерін және іскерлік аудандар мен қалалық бағыттарға ыңғайлы қатынасты ұсынады. Қонақ үй қарапайым, сенімді және ыңғайлы орналасқан тұрғын орынды қалайтын саяхатшыларға қолайлы.",
     },
 
     {
@@ -1123,7 +1123,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 1,
         "name": "Kazzhol Park Hotel Almaty",
         "timetable": "Open 24/7",
-        "description": "Kazzhol Park Hotel Almaty is a comfortable city hotel located near central streets and public spaces. It offers accommodation, dining, and services for tourists and business visitors. The hotel is convenient for guests who want to explore Almaty while staying close to transport, restaurants, and urban attractions.",
+        "description": "Kazzhol Park Hotel Almaty is a comfortable city hotel located near central streets and public spaces. It provides accommodation, dining, and services for tourists and business visitors. The hotel is convenient for guests who want to explore Almaty while staying close to transport, restaurants, and urban attractions.",
     },
     {
         "id": 83,
@@ -1131,7 +1131,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 2,
         "name": "Kazzhol Park Hotel Almaty",
         "timetable": "Круглосуточно",
-        "description": "Kazzhol Park Hotel Almaty — комфортный городской отель, расположенный рядом с центральными улицами и общественными пространствами. Он предлагает размещение, питание и услуги для туристов и деловых гостей. Отель удобен для тех, кто хочет исследовать Алматы, оставаясь рядом с транспортом, ресторанами и городскими достопримечательностями.",
+        "description": "Комфортный городской отель, расположенный рядом с центральными улицами и общественными пространствами. Он предлагает проживание, питание и услуги для туристов и деловых гостей. Отель удобен тем, кто хочет исследовать Алматы, оставаясь рядом с транспортом, ресторанами и городскими достопримечательностями.",
     },
     {
         "id": 84,
@@ -1139,7 +1139,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 3,
         "name": "Kazzhol Park Hotel Almaty",
         "timetable": "Тәулік бойы",
-        "description": "Kazzhol Park Hotel Almaty — орталық көшелер мен қоғамдық кеңістіктерге жақын орналасқан жайлы қалалық қонақ үй. Ол туристер мен іскер қонақтарға тұру, тамақтану және түрлі қызметтер ұсынады. Қонақ үй көлікке, мейрамханаларға және қалалық көрікті орындарға жақын болып, Алматыны аралағысы келетін қонақтарға ыңғайлы.",
+        "description": "Орталық көшелер мен қоғамдық кеңістіктерге жақын орналасқан жайлы қалалық қонақ үй. Ол туристер мен іскер қонақтарға тұру, тамақтану және түрлі қызметтер ұсынады. Қонақ үй көлікке, мейрамханаларға және қалалық көрікті орындарға жақын болып, Алматыны аралағысы келетін қонақтарға ыңғайлы.",
     },
 
     {
@@ -1148,7 +1148,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 1,
         "name": "Renion Park Hotel",
         "timetable": "Open 24/7",
-        "description": "Renion Park Hotel is a city hotel located close to central streets, markets, parks, and cultural places. It offers comfortable accommodation and convenient access to everyday urban infrastructure. The hotel is suitable for visitors who want to stay near the active central part of Almaty.",
+        "description": "Renion Park Hotel is a city hotel located close to central streets, markets, parks, and cultural places. It is known for comfortable accommodation and convenient access to everyday urban infrastructure. The hotel is suitable for visitors who want to stay near the active central part of Almaty.",
     },
     {
         "id": 86,
@@ -1156,7 +1156,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 2,
         "name": "Renion Park Hotel",
         "timetable": "Круглосуточно",
-        "description": "Renion Park Hotel — городской отель, расположенный рядом с центральными улицами, рынками, парками и культурными объектами. Он предлагает комфортное размещение и удобный доступ к повседневной городской инфраструктуре. Отель подходит гостям, которые хотят остановиться рядом с активной центральной частью Алматы.",
+        "description": "Городской отель, расположенный рядом с центральными улицами, рынками, парками и культурными объектами. Он предлагает комфортное проживание и удобный доступ к повседневной городской инфраструктуре. Отель подходит гостям, которые хотят остановиться рядом с активной центральной частью Алматы.",
     },
     {
         "id": 87,
@@ -1164,7 +1164,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 3,
         "name": "Renion Park Hotel",
         "timetable": "Тәулік бойы",
-        "description": "Renion Park Hotel — орталық көшелерге, базарларға, саябақтарға және мәдени орындарға жақын орналасқан қалалық қонақ үй. Ол жайлы тұруды және күнделікті қалалық инфрақұрылымға ыңғайлы қолжетімділікті ұсынады. Қонақ үй Алматының белсенді орталық бөлігіне жақын тоқтағысы келетін қонақтарға қолайлы.",
+        "description": "Орталық көшелерге, базарларға, саябақтарға және мәдени орындарға жақын орналасқан қалалық қонақ үй. Ол жайлы тұруды және күнделікті қалалық инфрақұрылымға ыңғайлы қатынасты ұсынады. Қонақ үй Алматының белсенді орталық бөлігіне жақын тоқтағысы келетін қонақтарға қолайлы.",
     },
 
     {
@@ -1173,7 +1173,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 1,
         "name": "Resident City Hotel",
         "timetable": "Open 24/7",
-        "description": "Resident City Hotel is a modern city hotel offering comfortable accommodation and practical services for travelers. It is located in an accessible urban area with convenient connections to central streets, transport routes, and city facilities. The hotel is suitable for tourists and business guests who need a functional stay in Almaty.",
+        "description": "Resident City Hotel is a modern city hotel offering comfortable accommodation and practical services for travelers. It is located in an accessible urban area with connections to central streets, transport routes, and city facilities. The hotel is suitable for tourists and business guests who need a functional stay in Almaty.",
     },
     {
         "id": 89,
@@ -1181,7 +1181,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 2,
         "name": "Resident City Hotel",
         "timetable": "Круглосуточно",
-        "description": "Resident City Hotel — современный городской отель, предлагающий комфортное размещение и практичные услуги для путешественников. Он расположен в доступной городской зоне с удобными связями с центральными улицами, транспортными маршрутами и городскими объектами. Отель подходит туристам и деловым гостям, которым нужно функциональное размещение в Алматы.",
+        "description": "Современный городской отель, предлагающий комфортное проживание и практичные услуги для путешественников. Он расположен в доступной городской зоне с удобными связями с центральными улицами, транспортными маршрутами и городскими объектами. Отель подходит туристам и деловым гостям, которым нужно функциональное размещение в Алматы.",
     },
     {
         "id": 90,
@@ -1189,7 +1189,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 3,
         "name": "Resident City Hotel",
         "timetable": "Тәулік бойы",
-        "description": "Resident City Hotel — саяхатшыларға жайлы тұруды және практикалық қызметтерді ұсынатын заманауи қалалық қонақ үй. Ол орталық көшелерге, көлік бағыттарына және қалалық нысандарға ыңғайлы байланысы бар қолжетімді аймақта орналасқан. Қонақ үй Алматыда функционалды орналасуды қажет ететін туристер мен іскер қонақтарға қолайлы.",
+        "description": "Саяхатшыларға жайлы тұруды және практикалық қызметтерді ұсынатын заманауи қалалық қонақ үй. Ол орталық көшелерге, көлік бағыттарына және қалалық нысандарға ыңғайлы байланысы бар қолжетімді аймақта орналасқан. Қонақ үй Алматыда функционалды орналасуды қажет ететін туристер мен іскер қонақтарға қолайлы.",
     },
         {
         "id": 91,
@@ -1197,7 +1197,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 1,
         "name": "Europharma",
         "timetable": "Varies by branch",
-        "description": "Europharma is a pharmacy chain in Almaty that provides access to medicines, health products, personal care items, and basic pharmaceutical services. It is useful for residents and visitors who need essential medical supplies during their stay in the city.",
+        "description": "Europharma is one of the pharmacy chains operating in Almaty. It provides access to medicines, health-related products, personal care items, and basic pharmaceutical services. The pharmacy is useful for residents and visitors who may need essential medical goods while staying in the city.",
     },
     {
         "id": 92,
@@ -1205,7 +1205,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 2,
         "name": "Europharma",
         "timetable": "Зависит от филиала",
-        "description": "Europharma — аптечная сеть в Алматы, где можно приобрести лекарства, товары для здоровья, средства личного ухода и получить базовые фармацевтические услуги. Она полезна для жителей и гостей города, которым могут понадобиться необходимые медицинские товары во время пребывания в Алматы.",
+        "description": "Одна из аптечных сетей, работающих в Алматы. Здесь можно найти лекарства, товары для здоровья, средства личного ухода и базовые фармацевтические услуги. Аптека полезна для жителей и гостей города, которым могут понадобиться необходимые медицинские товары во время пребывания в Алматы.",
     },
     {
         "id": 93,
@@ -1213,7 +1213,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 3,
         "name": "Europharma",
         "timetable": "Филиалға байланысты",
-        "description": "Europharma — Алматы қаласындағы дәріхана желісі. Мұнда дәрі-дәрмектерді, денсаулыққа арналған тауарларды, жеке күтім құралдарын және негізгі фармацевтикалық қызметтерді алуға болады. Бұл қала тұрғындары мен Алматыға келген қонақтар үшін қажетті медициналық тауарларды табуға ыңғайлы орын.",
+        "description": "Алматыда жұмыс істейтін дәріхана желілерінің бірі. Мұнда дәрі-дәрмектерді, денсаулыққа арналған тауарларды, жеке күтім құралдарын және негізгі фармацевтикалық қызметтерді алуға болады. Дәріхана қалада жүрген тұрғындар мен қонақтарға қажетті медициналық тауарларды табуға көмектеседі.",
     },
 
     {
@@ -1222,7 +1222,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 1,
         "name": "Sadykhan",
         "timetable": "Varies by branch",
-        "description": "Sadykhan is one of the pharmacy networks operating in Almaty. It offers medicines, wellness products, vitamins, hygiene items, and other health-related goods. The pharmacy can be helpful for tourists and local residents who need quick access to everyday pharmaceutical products.",
+        "description": "Sadykhan is a pharmacy network represented in different parts of Almaty. It offers medicines, wellness products, vitamins, hygiene items, and other health-related goods. The pharmacy is convenient for residents and tourists who need quick access to everyday pharmaceutical products.",
     },
     {
         "id": 95,
@@ -1230,7 +1230,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 2,
         "name": "Садыхан",
         "timetable": "Зависит от филиала",
-        "description": "Садыхан — одна из аптечных сетей, работающих в Алматы. В аптеке представлены лекарства, товары для здоровья, витамины, средства гигиены и другие медицинские товары. Она может быть полезна туристам и местным жителям, которым нужен быстрый доступ к повседневной фармацевтической продукции.",
+        "description": "Аптечная сеть, представленная в разных районах Алматы. В аптеке можно найти лекарства, товары для здоровья, витамины, средства гигиены и другие медицинские товары. Она удобна для жителей и туристов, которым нужен быстрый доступ к повседневной фармацевтической продукции.",
     },
     {
         "id": 96,
@@ -1238,7 +1238,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 3,
         "name": "Садыхан",
         "timetable": "Филиалға байланысты",
-        "description": "Садыхан — Алматыда жұмыс істейтін дәріхана желілерінің бірі. Мұнда дәрі-дәрмектер, денсаулыққа арналған тауарлар, дәрумендер, гигиеналық құралдар және басқа да медициналық өнімдер ұсынылады. Дәріхана туристер мен жергілікті тұрғындарға күнделікті фармацевтикалық тауарларға жылдам қол жеткізуге көмектеседі.",
+        "description": "Алматының әртүрлі аудандарында ұсынылған дәріхана желісі. Мұнда дәрі-дәрмектер, денсаулыққа арналған тауарлар, дәрумендер, гигиеналық құралдар және басқа да медициналық өнімдер бар. Дәріхана күнделікті фармацевтикалық тауарларға жылдам қол жеткізгісі келетін тұрғындар мен туристерге ыңғайлы.",
     },
 
     {
@@ -1247,7 +1247,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 1,
         "name": "Biosfera",
         "timetable": "Varies by branch",
-        "description": "Biosfera is a pharmacy chain that provides a wide range of medicines, healthcare products, cosmetics, and personal care items. It is a convenient place for visitors who need pharmacy support, basic health goods, or travel-related medical supplies in Almaty.",
+        "description": "Biosfera is a pharmacy chain in Almaty offering medicines, healthcare products, cosmetics, and personal care items. It is a convenient place for visitors who need pharmacy support, basic health goods, or travel-related medical supplies. The chain is widely recognized among city residents.",
     },
     {
         "id": 98,
@@ -1255,7 +1255,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 2,
         "name": "Биосфера",
         "timetable": "Зависит от филиала",
-        "description": "Биосфера — аптечная сеть, предлагающая широкий выбор лекарств, товаров для здоровья, косметики и средств личного ухода. Это удобное место для посетителей, которым нужна аптечная помощь, базовые медицинские товары или средства для поездки по Алматы.",
+        "description": "Аптечная сеть в Алматы, предлагающая лекарства, товары для здоровья, косметику и средства личного ухода. Это удобное место для посетителей, которым нужна аптечная помощь, базовые медицинские товары или средства для поездки. Сеть хорошо узнаваема среди жителей города.",
     },
     {
         "id": 99,
@@ -1263,7 +1263,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 3,
         "name": "Биосфера",
         "timetable": "Филиалға байланысты",
-        "description": "Биосфера — дәрі-дәрмектердің, денсаулыққа арналған тауарлардың, косметика мен жеке күтім құралдарының кең таңдауын ұсынатын дәріхана желісі. Бұл Алматыда дәріханалық көмекке, негізгі медициналық тауарларға немесе сапарға қажетті құралдарға мұқтаж келушілер үшін ыңғайлы орын.",
+        "description": "Алматыдағы дәріхана желісі, дәрі-дәрмектерді, денсаулыққа арналған тауарларды, косметиканы және жеке күтім құралдарын ұсынады. Бұл дәріханалық көмекке, негізгі медициналық тауарларға немесе сапарға қажетті құралдарға мұқтаж келушілер үшін ыңғайлы орын. Желі қала тұрғындары арасында жақсы таныс.",
     },
 
     {
@@ -1272,7 +1272,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 1,
         "name": "Rauza-ADE",
         "timetable": "Varies by branch",
-        "description": "Rauza-ADE is a pharmacy in Almaty that offers medicines, healthcare goods, and basic pharmaceutical products. It can be useful for residents and tourists who need quick access to essential health-related items while moving around the city.",
+        "description": "Rauza-ADE is a pharmacy in Almaty that provides medicines, healthcare goods, and basic pharmaceutical products. It is useful for residents and tourists who need quick access to essential health-related items while moving around the city. The pharmacy serves everyday medical needs in an urban setting.",
     },
     {
         "id": 101,
@@ -1280,7 +1280,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 2,
         "name": "Рауза-АДЕ",
         "timetable": "Зависит от филиала",
-        "description": "Рауза-АДЕ — аптека в Алматы, где представлены лекарства, товары для здоровья и базовая фармацевтическая продукция. Она может быть полезна жителям и туристам, которым нужен быстрый доступ к необходимым медицинским товарам во время передвижения по городу.",
+        "description": "Аптека в Алматы, где представлены лекарства, товары для здоровья и базовая фармацевтическая продукция. Она полезна жителям и туристам, которым нужен быстрый доступ к необходимым медицинским товарам во время передвижения по городу. Аптека помогает закрывать повседневные медицинские потребности в городской среде.",
     },
     {
         "id": 102,
@@ -1288,7 +1288,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 3,
         "name": "Рауза-АДЕ",
         "timetable": "Филиалға байланысты",
-        "description": "Рауза-АДЕ — Алматыдағы дәріхана. Мұнда дәрі-дәрмектер, денсаулыққа арналған тауарлар және негізгі фармацевтикалық өнімдер ұсынылады. Бұл қала ішінде жүрген тұрғындар мен туристер үшін қажетті медициналық тауарларға жылдам қол жеткізуге ыңғайлы орын.",
+        "description": "Алматыдағы дәріхана, мұнда дәрі-дәрмектер, денсаулыққа арналған тауарлар және негізгі фармацевтикалық өнімдер ұсынылады. Ол қала ішінде жүрген тұрғындар мен туристерге қажетті медициналық тауарларға жылдам қол жеткізуге көмектеседі. Дәріхана күнделікті медициналық қажеттіліктерге арналған.",
     },
 
     {
@@ -1297,7 +1297,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 1,
         "name": "Zerde",
         "timetable": "Varies by branch",
-        "description": "Zerde is a pharmacy point in Almaty that provides medicines, health supplies, and personal care products. It is suitable for everyday needs and can support visitors who require basic pharmaceutical goods during their trip.",
+        "description": "Zerde is a pharmacy point in Almaty that offers medicines, health supplies, and personal care products. It is suitable for everyday needs and can be useful for visitors who require basic pharmaceutical goods during their trip. The pharmacy provides convenient access to common health-related items.",
     },
     {
         "id": 104,
@@ -1305,7 +1305,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 2,
         "name": "Zerde",
         "timetable": "Зависит от филиала",
-        "description": "Zerde — аптечный пункт в Алматы, где можно найти лекарства, товары для здоровья и средства личного ухода. Он подходит для повседневных потребностей и может быть полезен посетителям, которым нужны базовые фармацевтические товары во время поездки.",
+        "description": "Аптечный пункт в Алматы, где можно найти лекарства, товары для здоровья и средства личного ухода. Он подходит для повседневных потребностей и полезен посетителям, которым нужны базовые фармацевтические товары во время поездки. Аптека обеспечивает удобный доступ к распространённым медицинским товарам.",
     },
     {
         "id": 105,
@@ -1313,7 +1313,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 3,
         "name": "Zerde",
         "timetable": "Филиалға байланысты",
-        "description": "Zerde — Алматыдағы дәріхана пункті. Мұнда дәрі-дәрмектерді, денсаулыққа арналған тауарларды және жеке күтім құралдарын табуға болады. Ол күнделікті қажеттіліктерге жарайды және сапар кезінде негізгі фармацевтикалық тауарлар қажет болған келушілерге көмектеседі.",
+        "description": "Алматыдағы дәріхана пункті, мұнда дәрі-дәрмектерді, денсаулыққа арналған тауарларды және жеке күтім құралдарын табуға болады. Ол күнделікті қажеттіліктерге жарайды және сапар кезінде негізгі фармацевтикалық тауарлар қажет болған келушілерге пайдалы. Дәріхана кең таралған медициналық тауарларға қолайлы қолжетімділік ұсынады.",
     },
 
     {
@@ -1322,7 +1322,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 1,
         "name": "Melissa",
         "timetable": "Varies by branch",
-        "description": "Melissa is a pharmacy in Almaty offering medicines, health-related goods, hygiene products, and personal care items. It is a practical location for visitors who need access to common pharmacy products in the central urban area.",
+        "description": "Melissa is a pharmacy in Almaty offering medicines, health-related goods, hygiene products, and personal care items. It is a practical place for visitors who need access to common pharmacy products in the city. The pharmacy can be useful for everyday health needs during a stay in Almaty.",
     },
     {
         "id": 107,
@@ -1330,7 +1330,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 2,
         "name": "Melissa",
         "timetable": "Зависит от филиала",
-        "description": "Melissa — аптека в Алматы, предлагающая лекарства, товары для здоровья, средства гигиены и личного ухода. Это практичное место для посетителей, которым нужен доступ к распространённым аптечным товарам в городской среде.",
+        "description": "Аптека в Алматы, предлагающая лекарства, товары для здоровья, средства гигиены и личного ухода. Это практичное место для посетителей, которым нужен доступ к распространённым аптечным товарам в городе. Аптека может быть полезна для повседневных медицинских потребностей во время пребывания в Алматы.",
     },
     {
         "id": 108,
@@ -1338,7 +1338,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 3,
         "name": "Melissa",
         "timetable": "Филиалға байланысты",
-        "description": "Melissa — Алматыдағы дәріхана. Мұнда дәрі-дәрмектер, денсаулыққа арналған тауарлар, гигиеналық және жеке күтім құралдары ұсынылады. Бұл қала ішінде кең таралған дәріханалық тауарларға қол жеткізгісі келетін келушілер үшін қолайлы орын.",
+        "description": "Алматыдағы дәріхана, мұнда дәрі-дәрмектер, денсаулыққа арналған тауарлар, гигиеналық және жеке күтім құралдары ұсынылады. Бұл қала ішінде кең таралған дәріханалық тауарларға қол жеткізгісі келетін келушілер үшін қолайлы орын. Дәріхана Алматыда болған кезде күнделікті медициналық қажеттіліктерге пайдалы болуы мүмкін.",
     },
 
     {
@@ -1347,7 +1347,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 1,
         "name": "Central Pharmacy",
         "timetable": "Varies by branch",
-        "description": "Central Pharmacy is a pharmacy location in Almaty that provides access to medicines and everyday healthcare products. Due to its urban location, it can be convenient for tourists and residents who need essential pharmaceutical goods while staying in the city center.",
+        "description": "Central Pharmacy is a pharmacy location in Almaty that provides access to medicines and everyday healthcare products. Due to its urban location, it is convenient for tourists and residents who need essential pharmaceutical goods in the city center. The pharmacy supports basic health-related needs during a visit.",
     },
     {
         "id": 110,
@@ -1355,7 +1355,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 2,
         "name": "Центральная аптека",
         "timetable": "Зависит от филиала",
-        "description": "Центральная аптека — аптечный пункт в Алматы, где можно приобрести лекарства и повседневные товары для здоровья. Благодаря городскому расположению она может быть удобна туристам и жителям, которым нужны необходимые фармацевтические товары в центральной части города.",
+        "description": "Аптечный пункт в Алматы, где можно приобрести лекарства и повседневные товары для здоровья. Благодаря городскому расположению он удобен туристам и жителям, которым нужны необходимые фармацевтические товары в центральной части города. Аптека помогает закрывать базовые медицинские потребности во время визита.",
     },
     {
         "id": 111,
@@ -1363,7 +1363,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 3,
         "name": "Орталық дәріхана",
         "timetable": "Филиалға байланысты",
-        "description": "Орталық дәріхана — Алматыдағы дәріхана пункті. Мұнда дәрі-дәрмектер мен күнделікті денсаулыққа арналған тауарларды сатып алуға болады. Қала ішіндегі орналасуына байланысты ол орталықта жүрген туристер мен тұрғындар үшін ыңғайлы болуы мүмкін.",
+        "description": "Алматыдағы дәріхана пункті, мұнда дәрі-дәрмектер мен күнделікті денсаулыққа арналған тауарларды сатып алуға болады. Қала ішіндегі орналасуына байланысты ол орталықта жүрген туристер мен тұрғындарға ыңғайлы. Дәріхана сапар кезінде негізгі медициналық қажеттіліктерді өтеуге көмектеседі.",
     },
 
     {
@@ -1372,7 +1372,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 1,
         "name": "Apteka so Sklada",
         "timetable": "Varies by branch",
-        "description": "Apteka so Sklada is a pharmacy format focused on providing medicines and health-related products for everyday needs. It can be helpful for residents and visitors looking for accessible pharmaceutical goods in Almaty.",
+        "description": "Apteka so Sklada is a pharmacy format focused on medicines and health-related products for everyday needs. It can be useful for residents and visitors looking for accessible pharmaceutical goods in Almaty. The pharmacy is a practical point for purchasing basic medical supplies.",
     },
     {
         "id": 113,
@@ -1380,7 +1380,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 2,
         "name": "Аптека со склада",
         "timetable": "Зависит от филиала",
-        "description": "Аптека со склада — аптечный формат, ориентированный на предоставление лекарств и товаров для здоровья для повседневных потребностей. Она может быть полезна жителям и гостям Алматы, которые ищут доступные фармацевтические товары.",
+        "description": "Аптечный формат, ориентированный на лекарства и товары для здоровья для повседневных потребностей. Он полезен жителям и гостям Алматы, которые ищут доступные фармацевтические товары. Аптека является практичным пунктом для покупки базовых медицинских средств.",
     },
     {
         "id": 114,
@@ -1388,7 +1388,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 3,
         "name": "Қоймадан дәріхана",
         "timetable": "Филиалға байланысты",
-        "description": "Қоймадан дәріхана — күнделікті қажеттілікке арналған дәрі-дәрмектер мен денсаулыққа қатысты тауарларды ұсынатын дәріхана форматы. Ол Алматыда қолжетімді фармацевтикалық тауарларды іздейтін тұрғындар мен қала қонақтарына пайдалы болуы мүмкін.",
+        "description": "Күнделікті қажеттілікке арналған дәрі-дәрмектер мен денсаулыққа қатысты тауарларға бағытталған дәріхана форматы. Ол Алматыда қолжетімді фармацевтикалық тауарларды іздейтін тұрғындар мен қала қонақтарына пайдалы. Дәріхана негізгі медициналық құралдарды сатып алуға ыңғайлы орын.",
     },
 
     {
@@ -1397,7 +1397,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 1,
         "name": "Mega Pharm",
         "timetable": "Varies by branch",
-        "description": "Mega Pharm is a pharmacy in Almaty that offers medicines, health supplies, and personal care goods. It serves as a practical point for purchasing essential pharmaceutical products and everyday healthcare items.",
+        "description": "Mega Pharm is a pharmacy in Almaty that offers medicines, health supplies, and personal care goods. It serves as a practical point for purchasing essential pharmaceutical products and everyday healthcare items. The pharmacy is useful for visitors who need common medical goods during their stay.",
     },
     {
         "id": 116,
@@ -1405,7 +1405,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 2,
         "name": "Mega Pharm",
         "timetable": "Зависит от филиала",
-        "description": "Mega Pharm — аптека в Алматы, где представлены лекарства, товары для здоровья и средства личного ухода. Она служит практичным пунктом для покупки необходимых фармацевтических товаров и повседневных медицинских средств.",
+        "description": "Аптека в Алматы, где представлены лекарства, товары для здоровья и средства личного ухода. Она служит практичным пунктом для покупки необходимых фармацевтических товаров и повседневных медицинских средств. Аптека полезна посетителям, которым нужны распространённые медицинские товары во время пребывания в городе.",
     },
     {
         "id": 117,
@@ -1413,7 +1413,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 3,
         "name": "Mega Pharm",
         "timetable": "Филиалға байланысты",
-        "description": "Mega Pharm — Алматыдағы дәріхана. Мұнда дәрі-дәрмектер, денсаулыққа арналған тауарлар және жеке күтім құралдары ұсынылады. Бұл қажетті фармацевтикалық өнімдер мен күнделікті медициналық тауарларды сатып алуға ыңғайлы орын.",
+        "description": "Алматыдағы дәріхана, мұнда дәрі-дәрмектер, денсаулыққа арналған тауарлар және жеке күтім құралдары ұсынылады. Бұл қажетті фармацевтикалық өнімдер мен күнделікті медициналық тауарларды сатып алуға ыңғайлы орын. Дәріхана қалада болған кезде кең таралған медициналық тауарлар қажет келушілерге пайдалы.",
     },
 
     {
@@ -1422,7 +1422,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 1,
         "name": "Safo",
         "timetable": "Varies by branch",
-        "description": "Safo is a pharmacy location in Almaty that provides medicines, wellness products, and basic pharmacy goods. It can be useful for visitors who need nearby access to health-related items during their route around the city.",
+        "description": "Safo is a pharmacy location in Almaty that provides medicines, wellness products, and basic pharmacy goods. It is useful for visitors who need nearby access to health-related items while moving around the city. The pharmacy supports everyday medical needs in a convenient urban setting.",
     },
     {
         "id": 119,
@@ -1430,7 +1430,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 2,
         "name": "Safo",
         "timetable": "Зависит от филиала",
-        "description": "Safo — аптечный пункт в Алматы, предлагающий лекарства, товары для здоровья и базовую аптечную продукцию. Он может быть полезен посетителям, которым нужен ближайший доступ к медицинским товарам во время передвижения по городу.",
+        "description": "Аптечный пункт в Алматы, предлагающий лекарства, товары для здоровья и базовую аптечную продукцию. Он полезен посетителям, которым нужен ближайший доступ к медицинским товарам во время передвижения по городу. Аптека помогает закрывать повседневные медицинские потребности в удобной городской среде.",
     },
     {
         "id": 120,
@@ -1438,7 +1438,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 3,
         "name": "Safo",
         "timetable": "Филиалға байланысты",
-        "description": "Safo — Алматыдағы дәріхана пункті. Мұнда дәрі-дәрмектер, денсаулыққа арналған тауарлар және негізгі дәріханалық өнімдер ұсынылады. Бұл қала ішінде қозғалып жүрген келушілерге медициналық тауарларға жақын жерден қол жеткізуге көмектеседі.",
+        "description": "Алматыдағы дәріхана пункті, мұнда дәрі-дәрмектер, денсаулыққа арналған тауарлар және негізгі дәріханалық өнімдер ұсынылады. Ол қала ішінде қозғалып жүрген келушілерге медициналық тауарларға жақын жерден қол жеткізуге көмектеседі. Дәріхана күнделікті медициналық қажеттіліктерді өтеуге ыңғайлы.",
     },
 
     {
@@ -1447,7 +1447,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 1,
         "name": "Lacerta",
         "timetable": "Varies by branch",
-        "description": "Lacerta is a pharmacy in Almaty offering medicines, basic health goods, and personal care products. It supports everyday healthcare needs and can be convenient for tourists who require pharmacy access during their stay.",
+        "description": "Lacerta is a pharmacy in Almaty offering medicines, basic health goods, and personal care products. It supports everyday healthcare needs and can be convenient for tourists who require pharmacy access during their stay. The pharmacy provides a practical option for common medical items.",
     },
     {
         "id": 122,
@@ -1455,7 +1455,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 2,
         "name": "Lacerta",
         "timetable": "Зависит от филиала",
-        "description": "Lacerta — аптека в Алматы, предлагающая лекарства, базовые товары для здоровья и средства личного ухода. Она помогает закрывать повседневные медицинские потребности и может быть удобна туристам, которым нужен доступ к аптеке во время пребывания в городе.",
+        "description": "Аптека в Алматы, предлагающая лекарства, базовые товары для здоровья и средства личного ухода. Она помогает закрывать повседневные медицинские потребности и удобна туристам, которым нужен доступ к аптеке во время пребывания в городе. Аптека является практичным вариантом для покупки распространённых медицинских товаров.",
     },
     {
         "id": 123,
@@ -1463,7 +1463,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 3,
         "name": "Lacerta",
         "timetable": "Филиалға байланысты",
-        "description": "Lacerta — Алматыдағы дәріхана. Мұнда дәрі-дәрмектер, негізгі денсаулық тауарлары және жеке күтім құралдары ұсынылады. Ол күнделікті медициналық қажеттіліктерді өтеуге көмектеседі және қалада жүрген туристер үшін ыңғайлы болуы мүмкін.",
+        "description": "Алматыдағы дәріхана, мұнда дәрі-дәрмектер, негізгі денсаулық тауарлары және жеке күтім құралдары ұсынылады. Ол күнделікті медициналық қажеттіліктерді өтеуге көмектеседі және қалада жүрген туристер үшін ыңғайлы болуы мүмкін. Дәріхана кең таралған медициналық тауарларды алуға практикалық орын болып табылады.",
     },
 
     {
@@ -1472,7 +1472,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 1,
         "name": "TA Pharm",
         "timetable": "Varies by branch",
-        "description": "TA Pharm is a pharmacy point in Almaty that provides medicines, health products, and everyday pharmaceutical goods. It is suitable for residents and guests who need a reliable place to purchase basic medical supplies.",
+        "description": "TA Pharm is a pharmacy point in Almaty that provides medicines, health products, and everyday pharmaceutical goods. It is suitable for residents and guests who need a reliable place to purchase basic medical supplies. The pharmacy supports common health needs in the city.",
     },
     {
         "id": 125,
@@ -1480,7 +1480,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 2,
         "name": "ТА Фарм",
         "timetable": "Зависит от филиала",
-        "description": "ТА Фарм — аптечный пункт в Алматы, где представлены лекарства, товары для здоровья и повседневная фармацевтическая продукция. Он подходит жителям и гостям города, которым нужно надёжное место для покупки базовых медицинских товаров.",
+        "description": "Аптечный пункт в Алматы, где представлены лекарства, товары для здоровья и повседневная фармацевтическая продукция. Он подходит жителям и гостям города, которым нужно надёжное место для покупки базовых медицинских товаров. Аптека помогает закрывать распространённые медицинские потребности в городе.",
     },
     {
         "id": 126,
@@ -1488,7 +1488,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 3,
         "name": "ТА Фарм",
         "timetable": "Филиалға байланысты",
-        "description": "ТА Фарм — Алматыдағы дәріхана пункті. Мұнда дәрі-дәрмектер, денсаулыққа арналған тауарлар және күнделікті фармацевтикалық өнімдер бар. Бұл негізгі медициналық тауарларды сатып алуға сенімді орын іздейтін тұрғындар мен қала қонақтарына қолайлы.",
+        "description": "Алматыдағы дәріхана пункті, мұнда дәрі-дәрмектер, денсаулыққа арналған тауарлар және күнделікті фармацевтикалық өнімдер бар. Бұл негізгі медициналық тауарларды сатып алуға сенімді орын іздейтін тұрғындар мен қала қонақтарына қолайлы. Дәріхана қаладағы кең таралған денсаулық қажеттіліктерін өтеуге көмектеседі.",
     },
 
     {
@@ -1497,7 +1497,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 1,
         "name": "Mir Pharma",
         "timetable": "Varies by branch",
-        "description": "Mir Pharma is a pharmacy in Almaty that offers medicines and healthcare-related products for everyday use. It can be helpful for travelers and local residents who need accessible pharmaceutical goods in the city.",
+        "description": "Mir Pharma is a pharmacy in Almaty that offers medicines and healthcare-related products for everyday use. It can be useful for travelers and local residents who need accessible pharmaceutical goods in the city. The pharmacy provides a practical option for basic medical needs.",
     },
     {
         "id": 128,
@@ -1505,7 +1505,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 2,
         "name": "Мир Фарма",
         "timetable": "Зависит от филиала",
-        "description": "Мир Фарма — аптека в Алматы, предлагающая лекарства и товары для здоровья для повседневного использования. Она может быть полезна путешественникам и местным жителям, которым нужны доступные фармацевтические товары в городе.",
+        "description": "Аптека в Алматы, предлагающая лекарства и товары для здоровья для повседневного использования. Она полезна путешественникам и местным жителям, которым нужны доступные фармацевтические товары в городе. Аптека является практичным вариантом для базовых медицинских потребностей.",
     },
     {
         "id": 129,
@@ -1513,7 +1513,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 3,
         "name": "Мир Фарма",
         "timetable": "Филиалға байланысты",
-        "description": "Мир Фарма — Алматыдағы дәріхана. Мұнда күнделікті қолдануға арналған дәрі-дәрмектер мен денсаулыққа қатысты тауарлар ұсынылады. Бұл қалада қолжетімді фармацевтикалық өнімдер қажет болған саяхатшылар мен жергілікті тұрғындарға пайдалы болуы мүмкін.",
+        "description": "Алматыдағы дәріхана, мұнда күнделікті қолдануға арналған дәрі-дәрмектер мен денсаулыққа қатысты тауарлар ұсынылады. Бұл қалада қолжетімді фармацевтикалық өнімдер қажет болған саяхатшылар мен жергілікті тұрғындарға пайдалы. Дәріхана негізгі медициналық қажеттіліктер үшін практикалық орын болып табылады.",
     },
 
     {
@@ -1522,7 +1522,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 1,
         "name": "SanMedS",
         "timetable": "Varies by branch",
-        "description": "SanMedS is a pharmacy location in Almaty providing medicines, health goods, and basic pharmaceutical products. It is a practical option for visitors who need everyday medical supplies or personal care items during their stay.",
+        "description": "SanMedS is a pharmacy location in Almaty providing medicines, health goods, and basic pharmaceutical products. It is a practical option for visitors who need everyday medical supplies or personal care items during their stay. The pharmacy supports common health-related needs in the city.",
     },
     {
         "id": 131,
@@ -1530,7 +1530,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 2,
         "name": "SanMedS",
         "timetable": "Зависит от филиала",
-        "description": "SanMedS — аптечный пункт в Алматы, предоставляющий лекарства, товары для здоровья и базовую фармацевтическую продукцию. Это практичный вариант для посетителей, которым нужны повседневные медицинские товары или средства личного ухода во время пребывания в городе.",
+        "description": "Аптечный пункт в Алматы, где представлены лекарства, товары для здоровья и базовая фармацевтическая продукция. Это практичный вариант для посетителей, которым нужны повседневные медицинские средства или товары личного ухода во время пребывания в городе. Аптека помогает закрывать распространённые потребности, связанные со здоровьем.",
     },
     {
         "id": 132,
@@ -1538,7 +1538,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 3,
         "name": "SanMedS",
         "timetable": "Филиалға байланысты",
-        "description": "SanMedS — Алматыдағы дәріхана пункті. Мұнда дәрі-дәрмектер, денсаулыққа арналған тауарлар және негізгі фармацевтикалық өнімдер ұсынылады. Бұл қалада жүрген келушілерге күнделікті медициналық тауарлар немесе жеке күтім құралдары қажет болғанда ыңғайлы нұсқа.",
+        "description": "Алматыдағы дәріхана пункті, мұнда дәрі-дәрмектер, денсаулыққа арналған тауарлар және негізгі фармацевтикалық өнімдер ұсынылады. Бұл қалада болған кезде күнделікті медициналық құралдар немесе жеке күтім тауарлары қажет келушілер үшін практикалық нұсқа. Дәріхана денсаулыққа байланысты кең таралған қажеттіліктерді өтеуге көмектеседі.",
     },
 
     {
@@ -1547,7 +1547,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 1,
         "name": "Aisana",
         "timetable": "Varies by branch",
-        "description": "Aisana is a pharmacy in Almaty that offers medicines, wellness goods, and basic personal care products. It can support visitors and residents who need nearby pharmacy access and essential health-related items.",
+        "description": "Aisana is a pharmacy in Almaty that offers medicines, wellness goods, and basic personal care products. It can support visitors and residents who need nearby pharmacy access and essential health-related items. The pharmacy is suitable for everyday medical needs in the city.",
     },
     {
         "id": 134,
@@ -1555,7 +1555,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 2,
         "name": "Aisana",
         "timetable": "Зависит от филиала",
-        "description": "Aisana — аптека в Алматы, предлагающая лекарства, товары для здоровья и базовые средства личного ухода. Она может быть полезна посетителям и жителям, которым нужен ближайший доступ к аптеке и необходимым медицинским товарам.",
+        "description": "Аптека в Алматы, предлагающая лекарства, товары для здоровья и базовые средства личного ухода. Она полезна посетителям и жителям, которым нужен ближайший доступ к аптеке и необходимым медицинским товарам. Аптека подходит для повседневных медицинских потребностей в городе.",
     },
     {
         "id": 135,
@@ -1563,7 +1563,7 @@ PLACE_TRANSLATIONS_DATA = [
         "language_id": 3,
         "name": "Aisana",
         "timetable": "Филиалға байланысты",
-        "description": "Aisana — Алматыдағы дәріхана. Мұнда дәрі-дәрмектер, денсаулыққа арналған тауарлар және негізгі жеке күтім құралдары ұсынылады. Бұл дәріханаға жақын жерден қол жеткізгісі келетін келушілер мен тұрғындарға пайдалы болуы мүмкін.",
+        "description": "Алматыдағы дәріхана, мұнда дәрі-дәрмектер, денсаулыққа арналған тауарлар және негізгі жеке күтім құралдары ұсынылады. Ол дәріханаға жақын жерден қол жеткізгісі келетін келушілер мен тұрғындарға пайдалы. Дәріхана қаладағы күнделікті медициналық қажеттіліктерге қолайлы.",
     },
 ]
 
