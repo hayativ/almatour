@@ -336,9 +336,9 @@ const translations = {
         },
         auth: {
             loginTitle: 'Вход',
-            loginSub: 'Войдите в аккаунт Алматур',
+            loginSub: 'Войдите в аккаунт Almatour',
             registerTitle: 'Регистрация',
-            registerSub: 'Присоединяйтесь к Алматур',
+            registerSub: 'Присоединяйтесь к Almatour',
             email: 'Эл. почта',
             password: 'Пароль',
             username: 'Имя пользователя',
@@ -360,7 +360,7 @@ const translations = {
             noCalendar: 'Нет событий в календаре',
         },
         footer: {
-            copy: '© 2026 Алматур. Все права защищены.',
+            copy: '© 2026 Almatour. Все права защищены.',
             tagline: 'Ваш гид по Алматы',
         },
         common: { loading: 'Загрузка...', error: 'Произошла ошибка', back: '← Назад' },
@@ -517,9 +517,9 @@ const translations = {
         },
         auth: {
             loginTitle: 'Кіру',
-            loginSub: 'Алматур аккаунтына кіріңіз',
+            loginSub: 'Almatour аккаунтына кіріңіз',
             registerTitle: 'Тіркелу',
-            registerSub: 'Алматур қауымдастығына қосылыңыз',
+            registerSub: 'Almatour қауымдастығына қосылыңыз',
             email: 'Эл. пошта',
             password: 'Құпия сөз',
             username: 'Пайдаланушы аты',
@@ -541,7 +541,7 @@ const translations = {
             noCalendar: 'Календарда оқиғалар жоқ',
         },
         footer: {
-            copy: '© 2026 Алматур. Барлық құқықтар қорғалған.',
+            copy: '© 2026 Almatour. Барлық құқықтар қорғалған.',
             tagline: 'Алматы бойынша нұсқаулық',
         },
         common: { loading: 'Жүктелуде...', error: 'Қате орын алды', back: '← Артқа' },
