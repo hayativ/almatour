@@ -6,7 +6,7 @@ import { useLang } from '../i18n/translations'
 import './EventDetail.css'
 
 export default function EventDetail() {
-    const { t } = useLang()
+    const { t, lang } = useLang()
     const { user } = useAuth()
     const { id } = useParams()
     const [event, setEvent] = useState(null)
@@ -47,7 +47,9 @@ export default function EventDetail() {
     if (loading) return <div className="loading-container"><div className="spinner"></div></div>
     if (!event) return <div className="detail-empty container"><p>{t.common.error}</p><Link to="/events">{t.common.back}</Link></div>
 
-    const tr = event.translations?.[0]
+    const LANG_ID_MAP = { en: 0, ru: 1, kz: 2, tr: 3, zh: 4, hi: 5, ko: 6 }
+    const langId = LANG_ID_MAP[lang] ?? 0
+    const tr = event.translations?.find(x => x.language_id === langId) || event.translations?.[0]
 
     return (
         <div className="event-detail container fade-in">

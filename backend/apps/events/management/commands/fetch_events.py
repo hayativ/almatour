@@ -66,9 +66,13 @@ HEADERS = {
     "Accept-Language": "ru-RU,ru;q=0.9,en;q=0.8",
 }
 
-LANG_EN = 1
-LANG_RU = 2
-LANG_KZ = 3
+LANG_EN = 0
+LANG_RU = 1
+LANG_KZ = 2
+LANG_TR = 3
+LANG_ZH = 4
+LANG_HI = 5
+LANG_KO = 6
 
 
 class Command(BaseCommand):
@@ -535,6 +539,26 @@ class Command(BaseCommand):
             },
             {
                 "language_id": LANG_KZ,
+                "name": name_ru,
+                "description": desc_ru,
+            },
+            {
+                "language_id": LANG_TR,
+                "name": name_ru,
+                "description": desc_ru,
+            },
+            {
+                "language_id": LANG_ZH,
+                "name": name_ru,
+                "description": desc_ru,
+            },
+            {
+                "language_id": LANG_HI,
+                "name": name_ru,
+                "description": desc_ru,
+            },
+            {
+                "language_id": LANG_KO,
                 "name": name_ru,
                 "description": desc_ru,
             },

@@ -11,7 +11,7 @@ const ALMATY_CENTER = [43.238, 76.9286]
 const DEFAULT_ZOOM = 13
 
 /* Map lang code to DB language_id: en=1, ru=2, kz=3 */
-const LANG_ID_MAP = { en: 1, ru: 2, kz: 3 }
+const LANG_ID_MAP = { en: 0, ru: 1, kz: 2, tr: 3, zh: 4, hi: 5, ko: 6 }
 
 const CATEGORIES = [1, 2, 3]
 

@@ -3,7 +3,7 @@ import { useLang } from '../i18n/translations'
 import { translateText } from '../api/client'
 import './TranslatorCard.css'
 
-const LANG_CODES = ['en', 'ru', 'kk', 'zh', 'tr', 'fr', 'de', 'es', 'ar', 'ja', 'ko']
+const LANG_CODES = ['en', 'ru', 'kk', 'zh', 'tr', 'hi', 'fr', 'de', 'es', 'ar', 'ja', 'ko']
 const MAX_CHARS = 2000
 
 export default function TranslatorCard() {

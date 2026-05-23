@@ -37,7 +37,7 @@ class AdvertisementTranslationSerializer(serializers.ModelSerializer):
         model = AdvertisementTranslation
         fields = ['id', 'language_id', 'name', 'description']
         extra_kwargs = {
-            'language_id': {'help_text': 'Language identifier (0=en, 1=ru, 2=kz, 3=tr).'},
+            'language_id': {'help_text': 'Language identifier (0=en, 1=ru, 2=kz, 3=tr, 4=zh, 5=hi, 6=ko).'},
             'name': {'help_text': 'Translated advertisement title.'},
             'description': {'help_text': 'Translated advertisement body text.'},
         }

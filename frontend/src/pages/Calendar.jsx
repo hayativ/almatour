@@ -14,7 +14,7 @@ function getFirstDayOfWeek(year, month) {
 }
 
 export default function Calendar() {
-    const { t } = useLang()
+    const { t, lang } = useLang()
     const now = new Date()
     const [currentYear, setCurrentYear] = useState(now.getFullYear())
     const [currentMonth, setCurrentMonth] = useState(now.getMonth())
@@ -155,7 +155,12 @@ export default function Calendar() {
         } catch { /* ignore */ }
     }
 
-    const getName = (item) => item?.translations?.[0]?.name || `Event #${item?.id}`
+    const LANG_ID_MAP = { en: 0, ru: 1, kz: 2, tr: 3, zh: 4, hi: 5, ko: 6 }
+    const getName = (item) => {
+        const langId = LANG_ID_MAP[lang] ?? 0
+        const tr = item?.translations?.find(x => x.language_id === langId) || item?.translations?.[0]
+        return tr?.name || `Event #${item?.id}`
+    }
 
     const filteredAvailable = availableEvents.filter((ev) => {
         if (!searchQuery) return true

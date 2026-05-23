@@ -51,7 +51,7 @@ export default function Navbar() {
                         {isDark ? '☀️' : '🌙'}
                     </button>
                     <div className="lang-switcher">
-                        {['en', 'ru', 'kz'].map((l) => (
+                        {['en', 'ru', 'kz', 'zh', 'tr', 'hi', 'ko'].map((l) => (
                             <button
                                 key={l}
                                 className={`lang-btn ${lang === l ? 'active' : ''}`}

@@ -904,12 +904,18 @@ components:
       - 1
       - 2
       - 3
+      - 4
+      - 5
+      - 6
       type: integer
       description: |-
-        * `0` - Language 0
-        * `1` - Language 1
-        * `2` - Language 2
-        * `3` - Language 3
+        * `0` - English (en)
+        * `1` - Russian (ru)
+        * `2` - Kazakh (kz)
+        * `3` - Turkish (tr)
+        * `4` - Chinese (zh)
+        * `5` - Hindi (hi)
+        * `6` - Korean (ko)
     PaginatedAdvertisementList:
       type: object
       required:
