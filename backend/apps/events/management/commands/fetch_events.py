@@ -66,9 +66,13 @@ HEADERS = {
     "Accept-Language": "ru-RU,ru;q=0.9,en;q=0.8",
 }
 
-LANG_EN = 1
-LANG_RU = 2
-LANG_KZ = 3
+LANG_EN = 0
+LANG_RU = 1
+LANG_KZ = 2
+LANG_TR = 3
+LANG_ZH = 4
+LANG_HI = 5
+LANG_KO = 6
 
 
 class Command(BaseCommand):
@@ -294,6 +298,18 @@ class Command(BaseCommand):
             self.stderr.write(f"    No title found for {event_url}")
             return None
 
+        # Split only by the first dash occurrence (hyphen -, en-dash –, em-dash —) and trim spaces. If none are present, keep original title.
+        cleaned_title = title
+        first_dash_idx = -1
+        for dash in ["-", "–", "—"]:
+            idx = title.find(dash)
+            if idx != -1:
+                if first_dash_idx == -1 or idx < first_dash_idx:
+                    first_dash_idx = idx
+
+        if first_dash_idx != -1:
+            cleaned_title = title[:first_dash_idx].strip()
+
         image = self._extract_image(soup)
         event_date = self._extract_date(soup)
         start_time = self._extract_time(soup)
@@ -306,13 +322,13 @@ class Command(BaseCommand):
             "date": event_date,  # important: do not auto-substitute today's date
             "start_time": start_time or dtime(19, 0),
             "duration": 120,
-            "artist": title,
+            "artist": cleaned_title,
             "cost": cost,
             "currency": "KZT",
             "category": category,
             "address": address or "Алматы",
             "link": event_url,
-            "name_ru": title,
+            "name_ru": cleaned_title,
             "description_ru": description or f"Мероприятие в Алматы. {title}.",
         }
 
@@ -353,10 +369,10 @@ class Command(BaseCommand):
 
         return ""
 
-    def _extract_date(self, soup: BeautifulSoup) -> Optional[date]:
-        """Extract event date from the page."""
-        text = soup.get_text(" ", strip=True)
+    def _parse_date_from_text(self, text: str) -> Optional[date]:
+        """Helper to extract and parse all date candidates from text, returning the earliest match."""
         current_year = timezone.localdate().year
+        today = timezone.localdate()
 
         months_ru = {
             "января": 1, "февраля": 2, "марта": 3, "апреля": 4,
@@ -367,47 +383,64 @@ class Command(BaseCommand):
             "сентябрь": 9, "октябрь": 10, "ноябрь": 11, "декабрь": 12,
         }
 
-        # Pattern: "20 февраля" or "20 февраля 2026"
-        for month_name, month_num in months_ru.items():
-            pattern = rf"(\d{{1,2}})\s+{re.escape(month_name)}(?:\s+(\d{{4}}))?"
-            matches = re.finditer(pattern, text, re.IGNORECASE)
+        candidates = []
 
-            for match in matches:
+        # Find word-based dates: "20 февраля" or "20 февраля 2026"
+        for month_name, month_num in months_ru.items():
+            pattern = rf"\b(\d{{1,2}})\s+{re.escape(month_name)}(?:\s+(\d{{4}}))?\b"
+            for match in re.finditer(pattern, text, re.IGNORECASE):
                 day = int(match.group(1))
                 year = int(match.group(2)) if match.group(2) else current_year
                 try:
                     candidate = date(year, month_num, day)
-
-                    # If year is omitted and parsed date is too far in the past,
-                    # assume next year for seasonal listings around year boundaries.
-                    if match.group(2) is None and candidate < timezone.localdate():
+                    # Shift to next year only if year is omitted and the candidate date is truly in the past
+                    if match.group(2) is None and candidate < today:
                         try:
                             candidate = date(current_year + 1, month_num, day)
                         except ValueError:
                             pass
-
-                    return candidate
+                    candidates.append((match.start(), candidate))
                 except ValueError:
                     continue
 
-        # Pattern: DD.MM.YYYY or DD.MM
-        match = re.search(r"\b(\d{1,2})\.(\d{1,2})(?:\.(\d{4}))?\b", text)
-        if match:
+        # Find numeric dates: DD.MM.YYYY or DD.MM
+        pattern_numeric = r"\b(\d{1,2})\.(\d{1,2})(?:\.(\d{4}))?\b"
+        for match in re.finditer(pattern_numeric, text):
             day = int(match.group(1))
             month = int(match.group(2))
             year = int(match.group(3)) if match.group(3) else current_year
             try:
                 candidate = date(year, month, day)
-                if match.group(3) is None and candidate < timezone.localdate():
+                if match.group(3) is None and candidate < today:
                     try:
                         candidate = date(current_year + 1, month, day)
                     except ValueError:
                         pass
-                return candidate
+                candidates.append((match.start(), candidate))
             except ValueError:
-                pass
+                continue
 
-        return None
+        if not candidates:
+            return None
+
+        # Sort candidates by their appearance in the text (earliest first)
+        candidates.sort(key=lambda x: x[0])
+        return candidates[0][1]
+
+    def _extract_date(self, soup: BeautifulSoup) -> Optional[date]:
+        """Extract event date from the page."""
+        # 1. Try specific date classes first for maximum accuracy
+        for cls in ["single_date", "date_picker_header", "date"]:
+            elem = soup.find(class_=cls)
+            if elem:
+                val = elem.get_text(" ", strip=True)
+                candidate = self._parse_date_from_text(val)
+                if candidate:
+                    return candidate
+
+        # 2. Fallback to extracting from the whole page body, taking the first occurring date
+        text = soup.get_text(" ", strip=True)
+        return self._parse_date_from_text(text)
 
     def _extract_time(self, soup: BeautifulSoup) -> Optional[dtime]:
         """Extract event start time from the page."""
@@ -535,6 +568,26 @@ class Command(BaseCommand):
             },
             {
                 "language_id": LANG_KZ,
+                "name": name_ru,
+                "description": desc_ru,
+            },
+            {
+                "language_id": LANG_TR,
+                "name": name_ru,
+                "description": desc_ru,
+            },
+            {
+                "language_id": LANG_ZH,
+                "name": name_ru,
+                "description": desc_ru,
+            },
+            {
+                "language_id": LANG_HI,
+                "name": name_ru,
+                "description": desc_ru,
+            },
+            {
+                "language_id": LANG_KO,
                 "name": name_ru,
                 "description": desc_ru,
             },

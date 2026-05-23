@@ -36,10 +36,13 @@ class PlaceTranslation(models.Model):
     """Translation for a Place in a specific language."""
 
     class Language(models.IntegerChoices):
-        LANGUAGE_0 = 0
-        LANGUAGE_1 = 1
-        LANGUAGE_2 = 2
-        LANGUAGE_3 = 3
+        LANGUAGE_0 = 0   # en
+        LANGUAGE_1 = 1   # ru
+        LANGUAGE_2 = 2   # kz
+        LANGUAGE_3 = 3   # tr
+        LANGUAGE_4 = 4   # zh
+        LANGUAGE_5 = 5   # hi
+        LANGUAGE_6 = 6   # ko
 
     place = models.ForeignKey(
         Place,

@@ -17,7 +17,16 @@ function formatDayLabel(dateStr, t, lang) {
     if (diffDays === 0) return t.info.weather.today
     if (diffDays === 1) return t.info.weather.tomorrow
 
-    const locale = lang === 'kz' ? 'kk-KZ' : lang === 'ru' ? 'ru-RU' : 'en-US'
+    const locales = {
+        kz: 'kk-KZ',
+        ru: 'ru-RU',
+        zh: 'zh-CN',
+        tr: 'tr-TR',
+        hi: 'hi-IN',
+        ko: 'ko-KR',
+        en: 'en-US'
+    }
+    const locale = locales[lang] || 'en-US'
     return date.toLocaleDateString(locale, { weekday: 'short', month: 'short', day: 'numeric' })
 }
 

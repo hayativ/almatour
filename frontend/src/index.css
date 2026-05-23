@@ -30,7 +30,7 @@
   --radius-lg: 20px;
   --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.5);
-  --font: 'Inter', system-ui, -apple-system, sans-serif;
+  --font: 'Inter', 'Noto Sans SC', 'Noto Sans KR', 'Noto Sans Devanagari', system-ui, -apple-system, sans-serif;
   --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 

@@ -11,13 +11,33 @@ export default function Navbar() {
     const { isDark, toggleTheme } = useTheme()
     const location = useLocation()
     const [menuOpen, setMenuOpen] = useState(false)
+    const [dropdownOpen, setDropdownOpen] = useState(false)
+
+    const languages = [
+        { code: 'en', label: 'English' },
+        { code: 'ru', label: 'Русский' },
+        { code: 'kz', label: 'Қазақша' },
+        { code: 'zh', label: '中文' },
+        { code: 'tr', label: 'Türkçe' },
+        { code: 'hi', label: 'हिन्दी' },
+        { code: 'ko', label: '한국어' }
+    ]
 
     const isActive = (path) => location.pathname === path ? 'nav-link active' : 'nav-link'
 
     // Close menu on route change
     useEffect(() => {
         setMenuOpen(false)
+        setDropdownOpen(false)
     }, [location.pathname])
+
+    // Close dropdown on click outside
+    useEffect(() => {
+        if (!dropdownOpen) return
+        const handleOutsideClick = () => setDropdownOpen(false)
+        window.addEventListener('click', handleOutsideClick)
+        return () => window.removeEventListener('click', handleOutsideClick)
+    }, [dropdownOpen])
 
     // Prevent body scroll when menu open
     useEffect(() => {
@@ -50,16 +70,31 @@ export default function Navbar() {
                     <button className="theme-toggle" onClick={toggleTheme} title="Toggle theme">
                         {isDark ? '☀️' : '🌙'}
                     </button>
-                    <div className="lang-switcher">
-                        {['en', 'ru', 'kz'].map((l) => (
-                            <button
-                                key={l}
-                                className={`lang-btn ${lang === l ? 'active' : ''}`}
-                                onClick={() => setLanguage(l)}
-                            >
-                                {l.toUpperCase()}
-                            </button>
-                        ))}
+                    <div className="lang-dropdown">
+                        <button
+                            className="lang-dropdown-toggle"
+                            onClick={(e) => { e.stopPropagation(); setDropdownOpen(!dropdownOpen); }}
+                            aria-label="Select language"
+                        >
+                            <span className="lang-icon">🌐</span>
+                            <span className="lang-current-code">{lang.toUpperCase()}</span>
+                            <span className={`lang-arrow ${dropdownOpen ? 'open' : ''}`}>▾</span>
+                        </button>
+                        {dropdownOpen && (
+                            <ul className="lang-dropdown-menu fade-in">
+                                {languages.map((l) => (
+                                    <li key={l.code}>
+                                        <button
+                                            className={`lang-dropdown-item ${lang === l.code ? 'active' : ''}`}
+                                            onClick={() => setLanguage(l.code)}
+                                        >
+                                            <span className="lang-item-code">{l.code.toUpperCase()}</span>
+                                            <span className="lang-item-name">{l.label}</span>
+                                        </button>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
                     </div>
                     {user ? (
                         <Link to="/profile" className="nav-profile-btn nav-profile-desktop">{t.nav.profile}</Link>

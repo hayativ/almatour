@@ -7,7 +7,7 @@ import './Events.css'
 const CATEGORIES = [null, 0, 1, 2, 3]
 
 export default function Events() {
-    const { t } = useLang()
+    const { t, lang } = useLang()
     const [events, setEvents] = useState([])
     const [loading, setLoading] = useState(true)
     const [category, setCategory] = useState(null)
@@ -36,7 +36,13 @@ export default function Events() {
         t.events.category3,
     ]
 
-    const getName = (item) => item.translations?.[0]?.name || `Event #${item.id}`
+    const LANG_ID_MAP = { en: 0, ru: 1, kz: 2, tr: 3, zh: 4, hi: 5, ko: 6 }
+
+    const getName = (item) => {
+        const langId = LANG_ID_MAP[lang] ?? 0
+        const tr = item.translations?.find(x => x.language_id === langId) || item.translations?.[0]
+        return tr?.name || `Event #${item.id}`
+    }
 
     return (
         <div className="events-page container">

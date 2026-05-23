@@ -10,7 +10,7 @@ class PlaceTranslationSerializer(serializers.ModelSerializer):
         model = PlaceTranslation
         fields = ['id', 'language_id', 'name', 'timetable', 'description']
         extra_kwargs = {
-            'language_id': {'help_text': 'Language identifier (0=en, 1=ru, 2=kz, 3=tr).'},
+            'language_id': {'help_text': 'Language identifier (0=en, 1=ru, 2=kz, 3=tr, 4=zh, 5=hi, 6=ko).'},
             'name': {'help_text': 'Translated place name.'},
             'timetable': {'help_text': 'Translated opening-hours / timetable text.'},
             'description': {'help_text': 'Translated place description.'},

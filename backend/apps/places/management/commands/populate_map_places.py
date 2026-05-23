@@ -204,8 +204,8 @@ class Command(BaseCommand):
                 defaults={
                     'category': item['category'],
                     'address': item['address'],
-                    'latitude': item['lat'],
-                    'longitude': item['lng'],
+                    'lat': item['lat'],
+                    'lng': item['lng'],
                     'image': f"https://picsum.photos/seed/{item['slug']}/800/600",
                     'link': 'https://almatour.kz',
                 }
@@ -213,13 +213,13 @@ class Command(BaseCommand):
             if created:
                 self.stdout.write(self.style.SUCCESS(f"Created place: {item['name']}"))
             else:
-                place.latitude = item['lat']
-                place.longitude = item['lng']
+                place.lat = item['lat']
+                place.lng = item['lng']
                 place.save()
                 self.stdout.write(self.style.WARNING(f"Updated place coordinates: {item['name']}"))
 
             # Create translations
-            for lang_id, lang_code in [(0, 'en'), (1, 'ru'), (2, 'kz')]:
+            for lang_id, lang_code in [(0, 'en'), (1, 'ru'), (2, 'kz'), (3, 'tr'), (4, 'zh'), (5, 'hi'), (6, 'ko')]:
                 PlaceTranslation.objects.update_or_create(
                     place=place,
                     language_id=lang_id,

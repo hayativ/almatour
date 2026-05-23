@@ -1,4 +1,5 @@
 from datetime import date
+from django.utils import timezone
 
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets
@@ -64,7 +65,7 @@ class EventViewSet(viewsets.ReadOnlyModelViewSet):
 
     def get_queryset(self):
         return (
-            Event.objects.filter(deleted_at__isnull=True, date__gte=date.today())
+            Event.objects.filter(deleted_at__isnull=True, date__gte=timezone.localdate())
             .prefetch_related('translations')
             .order_by('date', 'start_time')
         )

@@ -6,7 +6,7 @@ import { getImageUrl, handleImageError } from '../utils/imageUrl'
 import './PlaceDetail.css'
 
 /* Map lang code to DB language_id: en=1, ru=2, kz=3 */
-const LANG_ID_MAP = { en: 1, ru: 2, kz: 3 }
+const LANG_ID_MAP = { en: 0, ru: 1, kz: 2, tr: 3, zh: 4, hi: 5, ko: 6 }
 
 export default function PlaceDetail() {
     const { t, lang } = useLang()

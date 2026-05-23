@@ -5,7 +5,7 @@ import { useLang } from '../i18n/translations'
 import './Home.css'
 
 export default function Home() {
-    const { t } = useLang()
+    const { t, lang } = useLang()
     const [places, setPlaces] = useState([])
     const [events, setEvents] = useState([])
     const [ads, setAds] = useState([])
@@ -24,13 +24,17 @@ export default function Home() {
         })
     }, [])
 
+    const LANG_ID_MAP = { en: 0, ru: 1, kz: 2, tr: 3, zh: 4, hi: 5, ko: 6 }
+
     const getName = (item) => {
-        const tr = item.translations?.[0]
+        const langId = LANG_ID_MAP[lang] ?? 0
+        const tr = item.translations?.find(x => x.language_id === langId) || item.translations?.[0]
         return tr?.name || `#${item.id}`
     }
 
     const getDesc = (item) => {
-        const tr = item.translations?.[0]
+        const langId = LANG_ID_MAP[lang] ?? 0
+        const tr = item.translations?.find(x => x.language_id === langId) || item.translations?.[0]
         return tr?.description || ''
     }
 
