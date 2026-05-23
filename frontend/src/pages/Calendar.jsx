@@ -250,7 +250,7 @@ export default function Calendar() {
                                                         <h4>{getName(ev)}</h4>
                                                     </Link>
                                                     {ev?.start_time && (
-                                                        <span className="event-time">🕐 {ev.start_time.slice(0, 5)}</span>
+                                                        <span className="event-time">{ev.start_time.slice(0, 5)}</span>
                                                     )}
                                                 </div>
                                                 <button
