@@ -141,6 +141,9 @@ const translations = {
             addToCalendar: 'Add to Calendar',
             removeFromCalendar: 'Remove',
             mins: 'min',
+            sortByDate: 'By date',
+            sortPriceAsc: 'Lowest price first',
+            sortPriceDesc: 'Highest price first',
         },
         calendar: {
             title: 'My Calendar',
@@ -323,6 +326,9 @@ const translations = {
             addToCalendar: 'Добавить',
             removeFromCalendar: 'Удалить',
             mins: 'мин',
+            sortByDate: 'По дате',
+            sortPriceAsc: 'Сначала дешевые',
+            sortPriceDesc: 'Сначала дорогие',
         },
         calendar: {
             title: 'Мой календарь',
@@ -505,6 +511,9 @@ const translations = {
             addToCalendar: 'Қосу',
             removeFromCalendar: 'Жою',
             mins: 'мин',
+            sortByDate: 'Күні бойынша',
+            sortPriceAsc: 'Алдымен арзан',
+            sortPriceDesc: 'Алдымен қымбат',
         },
         calendar: {
             title: 'Менің күнтізбем',
@@ -688,6 +697,9 @@ const translations = {
             addToCalendar: '添加到日历',
             removeFromCalendar: '移除',
             mins: '分钟',
+            sortByDate: '按日期',
+            sortPriceAsc: '价格从低到高',
+            sortPriceDesc: '价格从高到低',
         },
         calendar: {
             title: '我的日历',
@@ -870,6 +882,9 @@ const translations = {
             addToCalendar: 'Takvime Ekle',
             removeFromCalendar: 'Kaldır',
             mins: 'dk',
+            sortByDate: 'Tarihe göre',
+            sortPriceAsc: 'Önce en düşük fiyat',
+            sortPriceDesc: 'Önce en yüksek fiyat',
         },
         calendar: {
             title: 'Takvimim',
@@ -1052,6 +1067,9 @@ const translations = {
             addToCalendar: 'कैलेंडर में जोड़ें',
             removeFromCalendar: 'हटाएं',
             mins: 'मिनट',
+            sortByDate: 'तारीख के अनुसार',
+            sortPriceAsc: 'सबसे कम कीमत पहले',
+            sortPriceDesc: 'सबसे अधिक कीमत पहले',
         },
         calendar: {
             title: 'मेरा कैलेंडर',
@@ -1234,6 +1252,9 @@ const translations = {
             addToCalendar: '캘린더에 추가',
             removeFromCalendar: '삭제',
             mins: '분',
+            sortByDate: '날짜순',
+            sortPriceAsc: '낮은 가격순',
+            sortPriceDesc: '높은 가격순',
         },
         calendar: {
             title: '내 캘린더',

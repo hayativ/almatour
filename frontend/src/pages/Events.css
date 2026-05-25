@@ -41,12 +41,49 @@
     margin-bottom: 0.5rem;
 }
 
-/* ===== Category Filter Buttons ===== */
+/* ===== Controls: Categories + Sorting ===== */
+.events-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
 .category-filters {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-bottom: 1.5rem;
+}
+
+.sort-control {
+    min-width: 220px;
+}
+
+.sort-control select {
+    background: var(--bg-card);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    min-height: 44px;
+    outline: none;
+    transition: all var(--transition);
+}
+
+.sort-control select:hover {
+    border-color: var(--accent);
+    background: var(--bg-card-hover);
+}
+
+.sort-control select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-glow);
 }
 
 .filter-btn {
@@ -96,12 +133,20 @@
         grid-template-columns: 1fr;
     }
 
+    .events-controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
     .category-filters {
         overflow-x: auto;
         flex-wrap: nowrap;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
         padding-bottom: 0.25rem;
+        width: 100%;
     }
 
     .category-filters::-webkit-scrollbar {
@@ -111,6 +156,10 @@
     .filter-btn {
         flex-shrink: 0;
         white-space: nowrap;
+    }
+
+    .sort-control {
+        width: 100%;
     }
 }
 
