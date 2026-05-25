@@ -444,6 +444,24 @@ class Command(BaseCommand):
 
     def _extract_time(self, soup: BeautifulSoup) -> Optional[dtime]:
         """Extract event start time from the page."""
+        # 1. Try to find the time element directly via svg icon
+        for svg in soup.find_all("svg"):
+            classes = svg.get("class", [])
+            use = svg.find("use")
+            href = use.get("xlink:href", "") if use else ""
+            if "svg-icon--time" in classes or "#time" in href:
+                parent = svg.find_parent(class_="group")
+                if parent:
+                    text_elem = parent.find(class_="text")
+                    val = text_elem.get_text(strip=True) if text_elem else parent.get_text(strip=True)
+                    # parse HH:MM (can be 24h format on site)
+                    m = re.search(r"(\d{1,2})[:\.](\d{2})", val)
+                    if m:
+                        hour, minute = int(m.group(1)), int(m.group(2))
+                        if 0 <= hour < 24 and 0 <= minute < 60:
+                            return dtime(hour, minute)
+
+        # 2. Fallback to general text regex
         text = soup.get_text(" ", strip=True)
 
         match = re.search(r"(?:в|начало|время|старт)\s*:?\s*(\d{1,2})[:\.](\d{2})", text)
@@ -486,6 +504,20 @@ class Command(BaseCommand):
 
     def _extract_address(self, soup: BeautifulSoup) -> str:
         """Extract venue / address from the page."""
+        # 1. Try to find the address element directly via svg icon
+        for svg in soup.find_all("svg"):
+            classes = svg.get("class", [])
+            use = svg.find("use")
+            href = use.get("xlink:href", "") if use else ""
+            if "svg-icon--location" in classes or "#location" in href:
+                parent = svg.find_parent(class_="group")
+                if parent:
+                    text_elem = parent.find(class_="text")
+                    val = text_elem.get_text(strip=True) if text_elem else parent.get_text(strip=True)
+                    if len(val) > 3:
+                        return val[:200]
+
+        # 2. Fallback to patterns
         text = soup.get_text("\n", strip=True)
 
         patterns = [

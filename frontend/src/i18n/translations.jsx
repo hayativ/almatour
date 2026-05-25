@@ -27,6 +27,7 @@ const translations = {
             souvenirsDesc: 'Find the best souvenir shops in Almaty',
             appsDesc: 'Discover useful apps for your trip',
             visitSite: 'Visit Site',
+            downloadApp: 'Download',
             emergencyCategory: 'Emergency Numbers',
             emergencyDesc: 'Important phone numbers for emergencies',
             translator: {
@@ -208,6 +209,7 @@ const translations = {
             souvenirsDesc: 'Лучшие сувенирные магазины Алматы',
             appsDesc: 'Полезные приложения для путешествия',
             visitSite: 'Перейти',
+            downloadApp: 'Скачать',
             emergencyCategory: 'Экстренные номера',
             emergencyDesc: 'Важные телефоны для экстренных ситуаций',
             translator: {
@@ -389,6 +391,7 @@ const translations = {
             souvenirsDesc: 'Алматыдағы ең жақсы сувенир дүкендері',
             appsDesc: 'Сапарыңыз үшін пайдалы қосымшалар',
             visitSite: 'Өту',
+            downloadApp: 'Жүктеу',
             emergencyCategory: 'Жедел нөмірлер',
             emergencyDesc: 'Төтенше жағдайлар үшін маңызды телефондар',
             translator: {
@@ -571,6 +574,7 @@ const translations = {
             souvenirsDesc: '寻找阿拉木图最佳纪念品商店',
             appsDesc: '发现对您旅程有用的应用程序',
             visitSite: '访问网站',
+            downloadApp: '下载',
             emergencyCategory: '紧急电话',
             emergencyDesc: '紧急情况下的重要电话号码',
             translator: {
@@ -752,6 +756,7 @@ const translations = {
             souvenirsDesc: "Almatı'daki en iyi hediyelik eşya dükkanlarını bulun",
             appsDesc: 'Seyahatiniz için yararlı uygulamaları keşfedin',
             visitSite: 'Siteyi Ziyaret Et',
+            downloadApp: 'İndir',
             emergencyCategory: 'Acil Durum Numaraları',
             emergencyDesc: 'Acil durumlar için önemli telefon numaraları',
             translator: {
@@ -933,6 +938,7 @@ const translations = {
             souvenirsDesc: 'अल्माटी में सबसे अच्छी स्मारिका दुकानें खोजें',
             appsDesc: 'अपनी यात्रा के लिए उपयोगी ऐप्स खोजें',
             visitSite: 'साइट पर जाएं',
+            downloadApp: 'डाउनलोड',
             emergencyCategory: 'आपातकालीन नंबर',
             emergencyDesc: 'आपातकालीन स्थितियों के लिए महत्वपूर्ण फोन नंबर',
             translator: {
@@ -1114,6 +1120,7 @@ const translations = {
             souvenirsDesc: '알마티 최고의 기념품 판매점 찾기',
             appsDesc: '여행에 유용한 앱을 발견하세요',
             visitSite: '사이트 방문',
+            downloadApp: '다운로드',
             emergencyCategory: '긴급 연락처',
             emergencyDesc: '비상 상황을 위한 중요 전화번호',
             translator: {

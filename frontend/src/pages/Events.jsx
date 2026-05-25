@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { getEvents } from '../api/client'
 import { useLang } from '../i18n/translations'
+import { formatDateCIS } from '../utils/dateFormat'
 import './Events.css'
 
 const CATEGORIES = [null, 0, 1, 2, 3]
@@ -73,7 +74,7 @@ export default function Events() {
                                 <div className="ev-body">
                                     <h3>{getName(ev)}</h3>
                                     <div className="ev-meta">
-                                        <span>{ev.date}</span>
+                                        <span>{formatDateCIS(ev.date)}</span>
                                         <span>{ev.start_time?.slice(0, 5)}</span>
                                     </div>
                                     <div className="ev-cost">

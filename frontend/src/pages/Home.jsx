@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { getPlaces, getEvents, getAdvertisements } from '../api/client'
 import { useLang } from '../i18n/translations'
+import { formatDateCIS } from '../utils/dateFormat'
 import './Home.css'
 
 export default function Home() {
@@ -114,9 +115,9 @@ export default function Home() {
                                 <div className="event-info">
                                     <h3>{getName(ev)}</h3>
                                     <div className="event-meta">
-                                        <span>📅 {ev.date}</span>
-                                        <span>🕐 {ev.start_time?.slice(0, 5)}</span>
-                                        <span>{ev.cost > 0 ? `💰 ${ev.cost} ${ev.currency}` : `✨ ${t.events.free}`}</span>
+                                        <span>{formatDateCIS(ev.date)}</span>
+                                        <span>{ev.start_time?.slice(0, 5)}</span>
+                                        <span>{ev.cost > 0 ? `${ev.cost} ${ev.currency}` : `${t.events.free}`}</span>
                                     </div>
                                 </div>
                             </Link>

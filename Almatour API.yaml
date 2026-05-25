@@ -725,6 +725,9 @@ components:
         description:
           type: string
           description: Short description of the app.
+        link:
+          type: string
+          description: AppStore download URL.
       required:
       - description
       - id
