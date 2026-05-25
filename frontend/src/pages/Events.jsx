@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { getEvents } from '../api/client'
 import { useLang } from '../i18n/translations'
+import { formatDateCIS } from '../utils/dateFormat'
 import './Events.css'
 
 const CATEGORIES = [null, 0, 1, 2, 3]
@@ -11,6 +12,7 @@ export default function Events() {
     const [events, setEvents] = useState([])
     const [loading, setLoading] = useState(true)
     const [category, setCategory] = useState(null)
+    const [sortOption, setSortOption] = useState('date')
     const [page, setPage] = useState(1)
     const [totalPages, setTotalPages] = useState(1)
 
@@ -18,6 +20,7 @@ export default function Events() {
         setLoading(true)
         const params = { page }
         if (category !== null) params.category = category
+        if (sortOption) params.ordering = sortOption
         getEvents(params)
             .then((res) => {
                 setEvents(res.data.results || [])
@@ -26,7 +29,7 @@ export default function Events() {
             })
             .catch(() => setEvents([]))
             .finally(() => setLoading(false))
-    }, [category, page])
+    }, [category, sortOption, page])
 
     const catLabels = [
         t.events.allCategories,
@@ -48,16 +51,30 @@ export default function Events() {
         <div className="events-page container">
             <h1>{t.events.title}</h1>
 
-            <div className="category-filters">
-                {CATEGORIES.map((cat, i) => (
-                    <button
-                        key={i}
-                        className={`filter-btn ${category === cat ? 'active' : ''}`}
-                        onClick={() => { setCategory(cat); setPage(1) }}
+            <div className="events-controls">
+                <div className="category-filters">
+                    {CATEGORIES.map((cat, i) => (
+                        <button
+                            key={i}
+                            className={`filter-btn ${category === cat ? 'active' : ''}`}
+                            onClick={() => { setCategory(cat); setPage(1) }}
+                        >
+                            {catLabels[i]}
+                        </button>
+                    ))}
+                </div>
+
+                <div className="sort-control">
+                    <select
+                        value={sortOption}
+                        onChange={(e) => { setSortOption(e.target.value); setPage(1) }}
+                        aria-label="Sort events"
                     >
-                        {catLabels[i]}
-                    </button>
-                ))}
+                        <option value="date">{t.events.sortByDate}</option>
+                        <option value="price_asc">{t.events.sortPriceAsc}</option>
+                        <option value="price_desc">{t.events.sortPriceDesc}</option>
+                    </select>
+                </div>
             </div>
 
             {loading ? (
@@ -73,11 +90,11 @@ export default function Events() {
                                 <div className="ev-body">
                                     <h3>{getName(ev)}</h3>
                                     <div className="ev-meta">
-                                        <span>{ev.date}</span>
+                                        <span>{formatDateCIS(ev.date)}</span>
                                         <span>{ev.start_time?.slice(0, 5)}</span>
                                     </div>
                                     <div className="ev-cost">
-                                        {ev.cost > 0 ? `${ev.cost} ${ev.currency}` : t.events.free}
+                                        {(ev.cost && ev.cost > 0) ? `${ev.cost} ${ev.currency}` : t.events.free}
                                     </div>
                                 </div>
                             </Link>

@@ -39,6 +39,11 @@ export default function Apps() {
                             <div className="app-body">
                                 <h3>{item.name}</h3>
                                 {item.description && <p className="app-desc">{item.description}</p>}
+                                {item.link && (
+                                    <a href={item.link} target="_blank" rel="noopener noreferrer" className="app-link btn btn-sm btn-primary">
+                                        {t.info.downloadApp}
+                                    </a>
+                                )}
                             </div>
                         </div>
                     ))}
@@ -47,4 +52,3 @@ export default function Apps() {
         </div>
     )
 }
-

@@ -24,6 +24,7 @@ class App(models.Model):
     name = models.TextField()
     image = models.TextField()
     description = models.TextField()
+    link = models.TextField(blank=True, default='')
 
     class Meta:
         db_table = 'info_app'

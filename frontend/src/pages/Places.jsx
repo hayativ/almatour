@@ -5,6 +5,7 @@ import 'leaflet/dist/leaflet.css'
 import { getPlaces } from '../api/client'
 import { useLang } from '../i18n/translations'
 import { useTheme } from '../theme/ThemeContext'
+import { getImageUrl, handleImageError } from '../utils/imageUrl'
 import './Places.css'
 
 const ALMATY_CENTER = [43.238, 76.9286]
@@ -78,6 +79,12 @@ export default function Places() {
                     >
                         <Popup>
                             <div className="map-popup-content">
+                                <img
+                                    src={getImageUrl(p.image)}
+                                    alt={tr?.name}
+                                    className="map-popup-img"
+                                    onError={handleImageError}
+                                />
                                 <strong>{tr?.name || `Place #${p.id}`}</strong>
                                 <p>{p.address}</p>
                                 <button

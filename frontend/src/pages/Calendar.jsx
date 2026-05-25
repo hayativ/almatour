@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { getCalendarEvents, addCalendarEvent, removeCalendarEvent, getEvents, getEvent } from '../api/client'
 import { useLang } from '../i18n/translations'
+import { formatDateCIS } from '../utils/dateFormat'
 import './Calendar.css'
 
 function getDaysInMonth(year, month) {
@@ -296,7 +297,7 @@ export default function Calendar() {
                                     <div key={ev.id} className="add-event-row" onClick={() => handleAddEvent(ev.id)}>
                                         <div>
                                             <strong>{getName(ev)}</strong>
-                                            <span className="add-event-date">📅 {ev.date}</span>
+                                            <span className="add-event-date">{formatDateCIS(ev.date)}</span>
                                         </div>
                                         <span className="add-btn-icon">+</span>
                                     </div>

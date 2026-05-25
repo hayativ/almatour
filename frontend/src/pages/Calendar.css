@@ -206,7 +206,7 @@
 }
 
 .modal-card {
-    background: var(--bg-secondary, #1e293b);
+    background: var(--bg-card);
     border-radius: 14px;
     width: 90%;
     max-width: 520px;
@@ -214,7 +214,9 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-lg);
+    color: var(--text);
     animation: slideUp 0.25s ease-out;
 }
 
@@ -235,23 +237,25 @@
     justify-content: space-between;
     align-items: center;
     padding: 1.25rem 1.25rem 0.75rem;
+    color: var(--text);
 }
 
 .modal-header h2 {
     margin: 0;
     font-size: 1.15rem;
+    font-weight: 700;
 }
 
 .modal-close {
     background: none;
     border: none;
-    color: inherit;
+    color: var(--text-dim);
     font-size: 1.2rem;
     cursor: pointer;
     padding: 8px;
     border-radius: 6px;
     opacity: 0.6;
-    transition: opacity 0.2s;
+    transition: all var(--transition);
     min-width: 44px;
     min-height: 44px;
     display: flex;
@@ -261,21 +265,29 @@
 
 .modal-close:hover {
     opacity: 1;
+    color: var(--text);
+    background: var(--bg-card-hover);
 }
 
 .modal-search {
     margin: 0 1.25rem 0.75rem;
     padding: 0.6rem 0.8rem;
     border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    background: rgba(255, 255, 255, 0.05);
-    color: inherit;
+    border: 1px solid var(--border);
+    background: var(--bg-dark);
+    color: var(--text);
     font-size: 0.9rem;
     outline: none;
+    transition: all var(--transition);
+}
+
+.modal-search::placeholder {
+    color: var(--text-muted);
 }
 
 .modal-search:focus {
     border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-glow);
 }
 
 .modal-body {
@@ -292,13 +304,16 @@
     padding: 0.7rem 0.8rem;
     border-radius: 8px;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: all var(--transition);
     margin-bottom: 4px;
     min-height: 48px;
+    color: var(--text);
+    border: 1px solid transparent;
 }
 
 .add-event-row:hover {
-    background: var(--accent-glow);
+    background: var(--bg-card-hover);
+    border-color: var(--border);
 }
 
 .add-event-row div {
@@ -309,7 +324,7 @@
 
 .add-event-date {
     font-size: 0.8rem;
-    opacity: 0.6;
+    color: var(--text-dim);
 }
 
 .add-btn-icon {
@@ -324,6 +339,11 @@
     border-radius: 50%;
     background: var(--accent-glow);
     flex-shrink: 0;
+    transition: all var(--transition);
+}
+
+.add-event-row:hover .add-btn-icon {
+    transform: scale(1.1);
 }
 
 .no-results {

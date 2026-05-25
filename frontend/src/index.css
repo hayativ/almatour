@@ -171,6 +171,7 @@ h3 {
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 24px var(--accent-glow);
+  color: #fff;
 }
 
 .btn-secondary {
@@ -190,6 +191,7 @@ h3 {
 
 .btn-danger:hover {
   background: #dc2626;
+  color: #fff;
 }
 
 .btn-sm {

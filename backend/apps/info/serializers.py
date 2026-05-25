@@ -22,11 +22,12 @@ class AppSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = App
-        fields = ['id', 'name', 'image', 'description']
+        fields = ['id', 'name', 'image', 'description', 'link']
         extra_kwargs = {
             'name': {'help_text': 'Application name.'},
             'image': {'help_text': 'App icon/image URL or path.'},
             'description': {'help_text': 'Short description of the app.'},
+            'link': {'help_text': 'App Store / download link.'},
         }
 
 

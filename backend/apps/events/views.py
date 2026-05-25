@@ -64,11 +64,18 @@ class EventViewSet(viewsets.ReadOnlyModelViewSet):
     filterset_fields = ['category']
 
     def get_queryset(self):
-        return (
+        ordering = self.request.query_params.get('ordering', 'date')
+        queryset = (
             Event.objects.filter(deleted_at__isnull=True, date__gte=timezone.localdate())
             .prefetch_related('translations')
-            .order_by('date', 'start_time')
         )
+        if ordering == 'price_asc':
+            queryset = queryset.order_by('cost', 'date', 'start_time')
+        elif ordering == 'price_desc':
+            queryset = queryset.order_by('-cost', 'date', 'start_time')
+        else:
+            queryset = queryset.order_by('date', 'start_time')
+        return queryset
 
 
 @extend_schema_view(

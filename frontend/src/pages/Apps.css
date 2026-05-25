@@ -51,6 +51,11 @@
     line-height: 1.6;
 }
 
+.app-link {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
 .no-results {
     text-align: center;
     color: var(--text-dim);
